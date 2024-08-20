@@ -4380,9 +4380,86 @@
     <Scripts>
       <ScriptFolder Name="Main">
         <SubFolders>
+          <ScriptFolder Name="ThirdParty">
+            <SubFolders />
+            <ScriptAndHeaders>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>TwoClickHandler.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1497392481</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>TwoClickHandler.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1497392481</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Tween.ash</FileName>
+                    <Name>Tween</Name>
+                    <Description>In-betweening functions for AGS.</Description>
+                    <Author>Edmundo Ruiz Ghanem et al.</Author>
+                    <Version>2.4.0</Version>
+                    <Key>1249765699</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Tween.asc</FileName>
+                    <Name>Tween</Name>
+                    <Description>In-betweening functions for AGS.</Description>
+                    <Author>Edmundo Ruiz Ghanem et al.</Author>
+                    <Version>2.4.0</Version>
+                    <Key>1249765699</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+            </ScriptAndHeaders>
+          </ScriptFolder>
           <ScriptFolder Name="Clickpulp">
             <SubFolders />
             <ScriptAndHeaders>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>CutsceneHelpers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>305803183</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>CutsceneHelpers.asc</FileName>
+                    <Name>CutsceneHelpers</Name>
+                    <Description>Helper and extender functions to use in cut-scenes</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>0.1.0</Version>
+                    <Key>305803183</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
@@ -4435,30 +4512,6 @@
           </ScriptFolder>
         </SubFolders>
         <ScriptAndHeaders>
-          <ScriptAndHeader>
-            <ScriptAndHeader_Header>
-              <Script>
-                <FileName>TwoClickHandler.ash</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1497392481</Key>
-                <IsHeader>True</IsHeader>
-              </Script>
-            </ScriptAndHeader_Header>
-            <ScriptAndHeader_Script>
-              <Script>
-                <FileName>TwoClickHandler.asc</FileName>
-                <Name />
-                <Description />
-                <Author />
-                <Version />
-                <Key>1497392481</Key>
-                <IsHeader>False</IsHeader>
-              </Script>
-            </ScriptAndHeader_Script>
-          </ScriptAndHeader>
           <ScriptAndHeader>
             <ScriptAndHeader_Header>
               <Script>
