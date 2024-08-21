@@ -27,9 +27,19 @@
 
 #define CutsceneHelpers_000100
 
-/// (Cutscene Helpers) Animate object during cutscene. It skips to end frame if cut-scene is skipped.
+/// (Cutscene Helpers) Animate Room Object during cutscene. It skips to end frame if cut-scene is skipped.
 import void AnimateDuringCutscene(
   this Object*, int loop, int delay,
+  RepeatStyle repeatStyle = eOnce,
+  BlockingStyle blockingStyle = eBlock,
+  Direction direction = eForwards,
+  int frame = 0,
+  int volume = 100
+);
+
+/// (Cutscene Helpers) Animate Button during cutscene. It skips to end frame if cut-scene is skipped.
+import void AnimateDuringCutscene(
+  this Button*, int loop, int delay,
   RepeatStyle repeatStyle = eOnce,
   BlockingStyle blockingStyle = eBlock,
   Direction direction = eForwards,

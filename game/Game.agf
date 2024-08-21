@@ -4439,30 +4439,6 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>CutsceneHelpers.ash</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>305803183</Key>
-                    <IsHeader>True</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Header>
-                <ScriptAndHeader_Script>
-                  <Script>
-                    <FileName>CutsceneHelpers.asc</FileName>
-                    <Name>CutsceneHelpers</Name>
-                    <Description>Helper and extender functions to use in cut-scenes</Description>
-                    <Author>Clickpulp, LLC</Author>
-                    <Version>0.1.0</Version>
-                    <Key>305803183</Key>
-                    <IsHeader>False</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Script>
-              </ScriptAndHeader>
-              <ScriptAndHeader>
-                <ScriptAndHeader_Header>
-                  <Script>
                     <FileName>TestHelpers.ash</FileName>
                     <Name />
                     <Description />
@@ -4480,6 +4456,30 @@
                     <Author>Clickpulp, LLC</Author>
                     <Version>1.0.0</Version>
                     <Key>559684183</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>CutsceneHelpers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>305803183</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>CutsceneHelpers.asc</FileName>
+                    <Name>CutsceneHelpers</Name>
+                    <Description>Helper and extender functions to use in cut-scenes</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>0.1.0</Version>
+                    <Key>305803183</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>
