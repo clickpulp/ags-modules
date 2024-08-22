@@ -61,6 +61,7 @@ managed struct InputMapping {
   protected bool _wasPressedOnce;
   
   bool Enabled;
+  writeprotected bool HasAxisMapping;
   writeprotected MouseButton TriggerMouseClick; // Rename to SimulatedMouseButton
   writeprotected eKeyCode TriggerKeyPress; // Renamed to SimulatedKeyCode
   
