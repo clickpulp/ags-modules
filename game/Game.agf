@@ -659,7 +659,12 @@
       <Message ID="999" />
     </GlobalMessages>
     <OldInteractionVariables />
-    <Plugins />
+    <Plugins>
+      <Plugin>
+        <FileName>agscontrollerpulp.dll</FileName>
+        <Data></Data>
+      </Plugin>
+    </Plugins>
     <Rooms>
       <UnloadedRoomFolder Name="Main">
         <SubFolders />
@@ -4456,6 +4461,30 @@
                     <Author>Clickpulp, LLC</Author>
                     <Version>1.0.0</Version>
                     <Key>559684183</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>InputMap.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1133530137</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>InputMap.asc</FileName>
+                    <Name>Input Map</Name>
+                    <Description>Map keyboard, controller, and mouse to an input object</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1133530137</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>
