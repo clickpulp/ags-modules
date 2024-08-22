@@ -1933,7 +1933,7 @@
             <SpeechView>0</SpeechView>
             <StartX>122</StartX>
             <StartY>142</StartY>
-            <StartingRoom>300</StartingRoom>
+            <StartingRoom>1</StartingRoom>
             <ThinkingView>0</ThinkingView>
             <TurnBeforeWalking>True</TurnBeforeWalking>
             <UniformMovementSpeed>True</UniformMovementSpeed>
@@ -4468,6 +4468,30 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>CutsceneHelpers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>305803183</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>CutsceneHelpers.asc</FileName>
+                    <Name>CutsceneHelpers</Name>
+                    <Description>Helper and extender functions to use in cut-scenes</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>0.1.0</Version>
+                    <Key>305803183</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>InputMap.ash</FileName>
                     <Name />
                     <Description />
@@ -4492,23 +4516,50 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>CutsceneHelpers.ash</FileName>
+                    <FileName>InputMappings.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
                     <Version />
-                    <Key>305803183</Key>
+                    <Key>1361956071</Key>
                     <IsHeader>True</IsHeader>
                   </Script>
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>CutsceneHelpers.asc</FileName>
-                    <Name>CutsceneHelpers</Name>
-                    <Description>Helper and extender functions to use in cut-scenes</Description>
+                    <FileName>InputMappings.asc</FileName>
+                    <Name>Input Mappings</Name>
+                    <Description>Input mapping object configuration and exports</Description>
                     <Author>Clickpulp, LLC</Author>
-                    <Version>0.1.0</Version>
-                    <Key>305803183</Key>
+                    <Version />
+                    <Key>1361956071</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>PlayerDirectControl.ash</FileName>
+                    <Name>KeyboardMovement</Name>
+                    <Description>Allows to move the player character using the keyboard.
+
+See KeyboardMovement.txt for details.
+</Description>
+                    <Author>Rui "Brisby" Pires / strazer</Author>
+                    <Version>1.02</Version>
+                    <Key>160503183</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>PlayerDirectControl.asc</FileName>
+                    <Name>Player Direct Control</Name>
+                    <Description>Allows to move the player character directly with input (keyboard, gamepad).</Description>
+                    <Author>Clickpulp, LLC / Rui "Brisby" Pires / strazer</Author>
+                    <Version>1.0.o</Version>
+                    <Key>160503183</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>
