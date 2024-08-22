@@ -29,6 +29,7 @@
 
 #define MAX_INPUTS 32
 #define MAX_MAPPINGS_PER_INPUT 8
+#define GAMEPAD_DEADZONE 6554 // 32768 * 0.2
 
 enum InputMappingType {
   eInputMappingKey,
