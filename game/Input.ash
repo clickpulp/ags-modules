@@ -29,7 +29,7 @@
 
 #define MAX_INPUTS 32
 #define MAX_MAPPINGS_PER_INPUT 8
-#define GAMEPAD_DEADZONE 6554 // 32768 * 0.2
+#define INPUT_AXIS_DEADZONE 6554 // 32768 * 0.2
 
 enum InputMappingType {
   eInputMappingKey,
@@ -80,6 +80,18 @@ managed struct InputMapping {
   import void AddControllerAxis(InputMappingAxisDirection axisDirection);
   import void AddControllerPOV(ControllerPOV pov);
   import int GetAxis();
+};
+
+struct AxisTracker {
+  protected bool _moving;
+  
+  writeprotected int Value;
+  writeprotected bool InDeadZone;
+  writeprotected bool IsPressed;
+  writeprotected bool IsMovingByAxis;
+  
+  import void Update(InputMapping* negativeInput, InputMapping* positiveInput);
+  import bool IsMoving(RepeatStyle repeat = eRepeat);
 };
 
 #endif // __INPUT_MODULE__

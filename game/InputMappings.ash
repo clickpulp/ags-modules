@@ -28,3 +28,6 @@ import InputMapping* inputPrimaryButton;
 import InputMapping* inputSecondaryButton;
 import InputMapping* inputInvButton;
 import InputMapping* inputPauseSkipButton;
+
+import AxisTracker axisLeftHorizontal;
+import AxisTracker axisLeftVertical;
