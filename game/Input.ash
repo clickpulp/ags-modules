@@ -1,4 +1,4 @@
-// TERMS OF USE - AGS INPUT MAP MODULE (ags-input-map-module)
+// TERMS OF USE - AGS INPUT MODULE (ags-input-module)
 //
 // MIT License
 //
@@ -22,10 +22,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __INPUT_MAP_MODULE__
-#define __INPUT_MAP_MODULE__
+#ifndef __INPUT_MODULE__
+#define __INPUT_MODULE__
 
-#define InputMap_010000
+#define Input_010000
 
 #define MAX_INPUTS 32
 #define MAX_MAPPINGS_PER_INPUT 8
@@ -82,4 +82,4 @@ managed struct InputMapping {
   import int GetAxis();
 };
 
-#endif // __INPUT_MAP_MODULE__
+#endif // __INPUT_MODULE__
