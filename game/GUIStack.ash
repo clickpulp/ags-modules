@@ -22,45 +22,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-int GetCenterY(this Character*) {
-  ViewFrame* vf = Game.GetViewFrame(this.View, this.Loop, this.Frame);
-  if (vf == null) return this.y;
-  
-  return this.y - ((Game.SpriteHeight[vf.Graphic] * this.Scaling) / 100) / 2;
-}
+#ifndef __GUI_STACK_MODULE__
+#define __GUI_STACK_MODULE__
 
-Point* Create(static Point, int x, int y) {
-  Point* p = new Point;
-  p.x = x;
-  p.y = y;
-  
-  return p;
-}
+#define GUIStackModule 010000
 
-Point* GetPosition(this Mouse*) {
-  return Point.Create(mouse.x, mouse.y);
-}
+struct GUIStack {
+  import static readonly attribute int GUICount;
+  
+  import static void Init(GUI* overlayGUI);
+  import static void PushGUI(GUI* g, bool withOverlay=true, GUIControl* controlToFocus=0);
+  import static void PopGUI();
+  import static void PopAllGUIs();
+};
 
-void PlaceOnControl(static Mouse, GUIControl* control) {
-  if (control == null) {
-    System.Log(eLogWarn, "[Mouse] PlaceOnControl: control arg is null");
-    return;
-  }
-  
-  GUI* parent = control.OwningGUI;
-  int x = parent.X + control.X + control.Width/2;
-  int y = parent.Y + control.Y;
-  
-  if (control.AsListBox != null) {
-    y += 10;
-  }
-  else if (control.AsInvWindow != null) {
-    x = parent.X + control.X + control.AsInvWindow.ItemWidth/2;
-    y += control.AsInvWindow.ItemHeight/2;
-  }
-  else {
-    y += control.Height / 2;
-  }
-  
-  Mouse.SetPosition(x, y);
-}
+#endif // __GUI_STACK_MODULE__
