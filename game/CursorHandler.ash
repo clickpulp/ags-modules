@@ -1,3 +1,5 @@
+// TERMS OF USE - AGS CURSOR HANDLER MODULE (ags-cursor-handler-module)
+//
 // MIT License
 //
 // Copyright (c) 2024 Clickpulp, LLC
@@ -20,16 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import InputMapping* inputUp;
-import InputMapping* inputDown;
-import InputMapping* inputLeft;
-import InputMapping* inputRight;
-import InputMapping* inputPrimaryButton;
-import InputMapping* inputSecondaryButton;
-import InputMapping* inputInvButton;
-import InputMapping* inputPauseSkipButton;
+#ifndef __CURSOR_HANDLER_MODULE__
+#define __CURSOR_HANDLER_MODULE__
 
-import AxisTracker axisLeftHorizontal;
-import AxisTracker axisLeftVertical;
-import AxisTracker axisCursorX;
-import AxisTracker axisCursorY;
+#define CursorHandler_010000
+
+#endif // __CURSOR_HANDLER_MODULE__
