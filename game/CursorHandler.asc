@@ -1,4 +1,4 @@
-// TERMS OF USE - AGS CURSOR HANDLER MODULE (ags-cursor-handler-module)
+// TERMS OF USE - CLICKPULP AGS MODULES (clickpulp-ags-modules)
 //
 // MIT License
 //

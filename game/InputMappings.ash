@@ -1,3 +1,5 @@
+// TERMS OF USE - CLICKPULP AGS MODULES (clickpulp-ags-modules)
+//
 // MIT License
 //
 // Copyright (c) 2024 Clickpulp, LLC

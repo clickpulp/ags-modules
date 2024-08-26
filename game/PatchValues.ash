@@ -1,4 +1,4 @@
-// TERMS OF USE - AGS PATCH VALUES MODULE (ags-patchvalues-module)
+// TERMS OF USE - CLICKPULP AGS MODULES (clickpulp-ags-modules)
 //
 // MIT License
 //

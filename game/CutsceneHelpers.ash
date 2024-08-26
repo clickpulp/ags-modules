@@ -1,4 +1,4 @@
-// TERMS OF USE - AGS SKIPABLE EXTENSIONS MODULE (ags-cutscene-helpers-module)
+// TERMS OF USE - CLICKPULP AGS MODULES (clickpulp-ags-modules)
 //
 // MIT License
 //
