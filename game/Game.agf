@@ -4468,6 +4468,30 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>ClickpulpExteners.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1652464927</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>ClickpulpExteners.asc</FileName>
+                    <Name>Clickpulp Extenders</Name>
+                    <Description>Extender functions for existing AGS structs</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1652464927</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>IsInBlockingScript.ash</FileName>
                     <Name />
                     <Description />
