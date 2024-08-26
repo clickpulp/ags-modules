@@ -4588,6 +4588,30 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>GUIStack.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1401199531</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>GUIStack.asc</FileName>
+                    <Name>GUI Stack</Name>
+                    <Description>Better management for GUIs</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1401199531</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>PlayerDirectControl.ash</FileName>
                     <Name>KeyboardMovement</Name>
                     <Description>Allows to move the player character using the keyboard.
@@ -4632,30 +4656,6 @@ See KeyboardMovement.txt for details.
                     <Author />
                     <Version />
                     <Key>719290265</Key>
-                    <IsHeader>False</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Script>
-              </ScriptAndHeader>
-              <ScriptAndHeader>
-                <ScriptAndHeader_Header>
-                  <Script>
-                    <FileName>GUIStack.ash</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>1401199531</Key>
-                    <IsHeader>True</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Header>
-                <ScriptAndHeader_Script>
-                  <Script>
-                    <FileName>GUIStack.asc</FileName>
-                    <Name>GUI Stack</Name>
-                    <Description>Better management for GUIs</Description>
-                    <Author>Clickpulp, LLC</Author>
-                    <Version>1.0.0</Version>
-                    <Key>1401199531</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>
