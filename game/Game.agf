@@ -1689,6 +1689,27 @@
               </GUIButton>
             </Controls>
           </GUIMain>
+          <GUIMain>
+            <NormalGUI>
+              <BackgroundColor>16</BackgroundColor>
+              <BackgroundImage>0</BackgroundImage>
+              <BorderColor>16</BorderColor>
+              <Clickable>True</Clickable>
+              <Height>200</Height>
+              <ID>7</ID>
+              <Left>0</Left>
+              <Name>gOverlay</Name>
+              <OnClick />
+              <PopupStyle>Normal</PopupStyle>
+              <PopupYPos>0</PopupYPos>
+              <Top>0</Top>
+              <Transparency>50</Transparency>
+              <Visible>False</Visible>
+              <Width>320</Width>
+              <ZOrder>0</ZOrder>
+            </NormalGUI>
+            <Controls />
+          </GUIMain>
         </GUIs>
       </GUIFolder>
     </GUIs>
