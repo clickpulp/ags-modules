@@ -4,7 +4,7 @@
 //
 // Copyright (c) 2024 Clickpulp, LLC
 // Portions derived from the AGS KeyboardControl module by strazer
-// and the AGS CharacterControl module by Rui "Brisby" Pires
+// and the AGS CharacterControl module by Rui Pires
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
