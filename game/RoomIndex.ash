@@ -35,31 +35,33 @@ managed struct Rect {
   int right;
   
   import readonly attribute int Width;
+  import int get_Width();
+  
   import readonly attribute int Height;
+  import int get_Height();
+  
+  import Rect* Copy();
   
   import static Rect* Create(int left, int top, int right, int bottom);
-  
-  import int get_Width();
-  import int get_Height();
-};
-
-
-struct RoomEntity {  
-  bool initialised;
-  Rect* bounds;
-  
-  import void Update(int x, int y);
-  import void Clear();
 };
 
 struct RoomIndex {
   import static readonly attribute int EntityCount;
-  //import static readonly attribute RoomEntity Entities[];
+  
+  import static bool IsInitialized(int index);
+  import static Rect* GetBounds(int index);
+  
+  import static bool IsHotspot(int index);
+  import static bool IsCharacter(int index);
+  import static bool IsObject(int index);
+  
+  import static int ToHotspotIndex(int index);
+  import static int ToCharacterIndex(int index);
+  import static int ToObjectIndex(int index);
+  
+  import static Hotspot* GetHotspot(int index);
+  import static Character* GetCharacter(int index);
+  import static Object* GetObject(int index);
 };
-
-/*
-RoomIndex.Entities[i].IsCharacter();
-RoomIndex.GetCharacter(c.id).Bounds
-*/
 
 #endif // __ROOM_INDEX_MODULE__

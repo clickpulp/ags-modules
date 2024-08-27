@@ -155,6 +155,50 @@
         <Name>InstantUse</Name>
         <Type>Boolean</Type>
       </CustomPropertySchemaItem>
+      <CustomPropertySchemaItem>
+        <AppliesToCharacters>True</AppliesToCharacters>
+        <AppliesToHotspots>True</AppliesToHotspots>
+        <AppliesToInvItems>False</AppliesToInvItems>
+        <AppliesToObjects>True</AppliesToObjects>
+        <AppliesToRooms>False</AppliesToRooms>
+        <DefaultValue>0</DefaultValue>
+        <Description xml:space="preserve">[HintsHighlighter] Hint X Offset</Description>
+        <Name>HintX</Name>
+        <Type>Number</Type>
+      </CustomPropertySchemaItem>
+      <CustomPropertySchemaItem>
+        <AppliesToCharacters>True</AppliesToCharacters>
+        <AppliesToHotspots>True</AppliesToHotspots>
+        <AppliesToInvItems>False</AppliesToInvItems>
+        <AppliesToObjects>True</AppliesToObjects>
+        <AppliesToRooms>False</AppliesToRooms>
+        <DefaultValue>0</DefaultValue>
+        <Description xml:space="preserve">[HintsHighlighter] Hint Y Offset</Description>
+        <Name>HintY</Name>
+        <Type>Number</Type>
+      </CustomPropertySchemaItem>
+      <CustomPropertySchemaItem>
+        <AppliesToCharacters>False</AppliesToCharacters>
+        <AppliesToHotspots>True</AppliesToHotspots>
+        <AppliesToInvItems>False</AppliesToInvItems>
+        <AppliesToObjects>True</AppliesToObjects>
+        <AppliesToRooms>False</AppliesToRooms>
+        <DefaultValue>0</DefaultValue>
+        <Description xml:space="preserve">Is this thing a door?</Description>
+        <Name>IsDoor</Name>
+        <Type>Boolean</Type>
+      </CustomPropertySchemaItem>
+      <CustomPropertySchemaItem>
+        <AppliesToCharacters>False</AppliesToCharacters>
+        <AppliesToHotspots>True</AppliesToHotspots>
+        <AppliesToInvItems>False</AppliesToInvItems>
+        <AppliesToObjects>True</AppliesToObjects>
+        <AppliesToRooms>False</AppliesToRooms>
+        <DefaultValue>0</DefaultValue>
+        <Description xml:space="preserve">Mark this as an exit? 0 = No, 1-4 = Exit Direction</Description>
+        <Name>Exit</Name>
+        <Type>Number</Type>
+      </CustomPropertySchemaItem>
     </PropertyDefinitions>
     <GlobalMessages>
       <Message ID="500" />
@@ -4650,6 +4694,30 @@
                     <Author />
                     <Version />
                     <Key>1660818492</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>HintsHighlighter.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>635086894</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>HintsHighlighter.asc</FileName>
+                    <Name>Hints Highlighter</Name>
+                    <Description>Shows hints on screen. Based on work by Artium Nihamkim.</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>635086894</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>

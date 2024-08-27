@@ -1,8 +1,9 @@
-// TERMS OF USE - CLICKPULP AGS MODULES (clickpulp-ags-modules)
+// TERMS OF USE - HINTS HIGHLIGHTER MODULE (hints-highlighter-module)
 //
 // MIT License
 //
 // Copyright (c) 2024 Clickpulp, LLC
+// Portions copyright (c) 2018 Artium Nihamkin (artium@nihamkin.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,17 +23,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import InputMapping* inputUp;
-import InputMapping* inputDown;
-import InputMapping* inputLeft;
-import InputMapping* inputRight;
-import InputMapping* inputPrimaryButton;
-import InputMapping* inputSecondaryButton;
-import InputMapping* inputInvButton;
-import InputMapping* inputPauseSkipButton;
-import InputMapping* inputHintsButton;
+#ifndef __HINTS_HIGHLIGHTER_MODULE__
+#define __HINTS_HIGHLIGHTER_MODULE__
 
-import AxisTracker axisLeftHorizontal;
-import AxisTracker axisLeftVertical;
-import AxisTracker axisCursorX;
-import AxisTracker axisCursorY;
+#define HintsHighlighterModule 010000
+
+struct HintsHighlighter {  
+  /**
+    * This function will recalculate the overlay that contains all the hints.
+    * Do not run it every frame, it will cripple game's frame rate.
+    */
+	import static function CalculateHintsForRoom();
+  
+  /**
+   * Display the overlay that contains the hints.
+   */
+  import static function DisplayHints();
+  
+  /**
+   * Hide the overlay that contains the hints.
+   */
+  import static function HideHints();
+  
+  /**
+   * Enable the displaying of the hints.
+   */
+  import static function EnableHints();
+  
+  /**
+   * Disable the displaying of the hints. Calling DisplayHints will
+   * do nothing.
+   */
+  import static function DisableHints();
+};
+
+#endif // __HINTS_HIGHLIGHTER_MODULE__
