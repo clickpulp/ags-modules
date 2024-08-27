@@ -4677,6 +4677,30 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>RoomMarkers.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1808493595</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>RoomMarkers.asc</FileName>
+                    <Name>Room Markers</Name>
+                    <Description>Place spatial markers in rooms to mark exits, interactive objects, etc.</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1808493595</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>RoomIndex.ash</FileName>
                     <Name />
                     <Description />
