@@ -28,6 +28,16 @@
 
 #define RoomIndexModule 010000
 
+enum EntityFlagType {
+  eEntityFlagNone = 0, 
+  eEntityFlagTalk = 1, 
+  eEntityFlagInteract = 2,
+  eEntityFlagLookAt = 4,
+  eEntityFlagUseInv = 8,
+  eEntityFlagExit = 16,
+  eEntityFlagDoor = 32
+};
+
 managed struct Rect {
   int top;
   int bottom;
@@ -50,6 +60,7 @@ struct RoomIndex {
   
   import static bool IsInitialized(int index);
   import static Rect* GetBounds(int index);
+  import static int GetFlags(int index);
   
   import static bool IsHotspot(int index);
   import static bool IsCharacter(int index);
