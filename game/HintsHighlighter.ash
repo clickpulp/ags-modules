@@ -57,4 +57,8 @@ struct HintsHighlighter {
   import static function DisableHints();
 };
 
+import Point* GetHintPoint(this Hotspot*);
+import Point* GetHintPoint(this Character*);
+import Point* GetHintPoint(this Object*);
+
 #endif // __HINTS_HIGHLIGHTER_MODULE__
