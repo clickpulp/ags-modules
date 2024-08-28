@@ -22,19 +22,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __GUI_STACK_MODULE__
-#define __GUI_STACK_MODULE__
+#ifndef __RECT_MODULE__
+#define __RECT_MODULE__
 
-#define GUIStackModule 010000
+#define RectModule 010000
 
-struct GUIStack {
-  import static readonly attribute int GUICount;
-  import static readonly attribute bool ShowingGUI;
- 
-  import static void Init(GUI* overlayGUI);
-  import static void PushGUI(GUI* g, bool withOverlay=true, GUIControl* controlToFocus=0, bool closePreviousGUI=false);
-  import static void PopGUI();
-  import static void PopAllGUIs();
+managed struct Rect {
+  int top;
+  int bottom;
+  int left;
+  int right;
+  
+  import readonly attribute int Width;
+  import int get_Width();
+  
+  import readonly attribute int Height;
+  import int get_Height();
+  
+  import Rect* Copy();
+  import String ToString();
+  
+  import static Rect* Create(int left, int top, int right, int bottom);
 };
 
-#endif // __GUI_STACK_MODULE__
+#endif // __RECT_MODULE__

@@ -22,19 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __GUI_STACK_MODULE__
-#define __GUI_STACK_MODULE__
+#ifndef __PLAYER_COLLISION_MODULE__
+#define __PLAYER_COLLISION_MODULE__
 
-#define GUIStackModule 010000
+#define PlayerCollisionModule 010000
 
-struct GUIStack {
-  import static readonly attribute int GUICount;
-  import static readonly attribute bool ShowingGUI;
- 
-  import static void Init(GUI* overlayGUI);
-  import static void PushGUI(GUI* g, bool withOverlay=true, GUIControl* controlToFocus=0, bool closePreviousGUI=false);
-  import static void PopGUI();
-  import static void PopAllGUIs();
-};
-
-#endif // __GUI_STACK_MODULE__
+#endif

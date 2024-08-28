@@ -38,23 +38,6 @@ enum EntityFlagType {
   eEntityFlagDoor = 32
 };
 
-managed struct Rect {
-  int top;
-  int bottom;
-  int left;
-  int right;
-  
-  import readonly attribute int Width;
-  import int get_Width();
-  
-  import readonly attribute int Height;
-  import int get_Height();
-  
-  import Rect* Copy();
-  
-  import static Rect* Create(int left, int top, int right, int bottom);
-};
-
 struct RoomIndex {
   import static readonly attribute int EntityCount;
   
