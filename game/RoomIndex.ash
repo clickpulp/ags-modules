@@ -35,7 +35,8 @@ enum EntityFlagType {
   eEntityFlagLookAt = 4,
   eEntityFlagUseInv = 8,
   eEntityFlagExit = 16,
-  eEntityFlagDoor = 32
+  eEntityFlagDoor = 32, 
+  eEntityFlagSign = 64
 };
 
 struct RoomIndex {
