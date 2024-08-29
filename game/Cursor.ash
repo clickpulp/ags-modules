@@ -28,21 +28,23 @@
 #define Cursor_010000
 
 struct Cursor {
-  import static void PlaceOnClickTarget();
-
-  /// Returns whether the mouse mapping moved
-  import static bool DidMouseAxisUpdate();
-
-  // Sets the click target
-  import static void SetClickTarget(Point* clickTarget);
-
-  import static bool HasClickTarget();
-
+  /// Does it have a click target set?
+  import static readonly attribute bool HasClickTarget;
+  
+  /// Is it locked?
+  import static readonly attribute bool Locked;
+  
+  /// Sets the target for when to fire a mouse click and updates the Mouse position
+  import static void SetClickTarget(Point* clickTarget, bool force=false);
+  
+  /// Clears the Click Target
   import static void ClearClickTarget();
-
-  import static void EnableMouseCursor();
-
-  import static void DisableMouseCursor();
+  
+  /// Sets the Mouse position to the click target set
+  import static void SetMousePositionToClickTarget();
+  
+  // Locks/unlocks the cursor
+  import static void SetLocked(bool locked);
 };
 
 #endif // __CURSOR_MODULE__
