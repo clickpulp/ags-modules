@@ -34,4 +34,8 @@ import Point* Create(static Point, int x, int y);
 import void PlaceOnControl(static Mouse, GUIControl* control);
 import Point* GetPosition(this Mouse*);
 
+import void StartCustom(this Dialog*);
+import bool DidDialogEnd(static Dialog);
+import bool IsDialogRunning(static Dialog);
+
 #endif // __CLICKPULP_EXTENDERS_MODULE__

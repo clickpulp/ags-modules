@@ -4592,7 +4592,7 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>ClickpulpExteners.ash</FileName>
+                    <FileName>Extenders.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4603,8 +4603,8 @@
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>ClickpulpExteners.asc</FileName>
-                    <Name>Clickpulp Extenders</Name>
+                    <FileName>Extenders.asc</FileName>
+                    <Name>Extenders</Name>
                     <Description>Extender functions for existing AGS structs</Description>
                     <Author>Clickpulp, LLC</Author>
                     <Version>1.0.0</Version>
