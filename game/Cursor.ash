@@ -22,9 +22,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __CURSOR_HANDLER_MODULE__
-#define __CURSOR_HANDLER_MODULE__
+#ifndef __CURSOR_MODULE__
+#define __CURSOR_MODULE__
 
-#define CursorHandler_010000
+#define Cursor_010000
 
-#endif // __CURSOR_HANDLER_MODULE__
+struct Cursor {
+  import static void PlaceOnClickTarget();
+
+  /// Returns whether the mouse mapping moved
+  import static bool DidMouseAxisUpdate();
+
+  // Sets the click target
+  import static void SetClickTarget(Point* clickTarget);
+
+  import static bool HasClickTarget();
+
+  import static void ClearClickTarget();
+
+  import static void EnableMouseCursor();
+
+  import static void DisableMouseCursor();
+};
+
+#endif // __CURSOR_MODULE__

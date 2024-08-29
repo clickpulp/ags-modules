@@ -4467,6 +4467,30 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>arrowselect.ash</FileName>
+                    <Name>ArrowSelect</Name>
+                    <Description>Select things using arrows in point and click games.</Description>
+                    <Author>eri0o</Author>
+                    <Version>0.6.1</Version>
+                    <Key>989537072</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>arrowselect.asc</FileName>
+                    <Name>ArrowSelect</Name>
+                    <Description>Select things using arrows in point and click games.</Description>
+                    <Author>eri0o</Author>
+                    <Version>0.6.1</Version>
+                    <Key>989537072</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>TwoClickHandler.ash</FileName>
                     <Name />
                     <Description />
@@ -4712,6 +4736,54 @@
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>Cursor.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>719290265</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Cursor.asc</FileName>
+                    <Name>Cursor</Name>
+                    <Description>Handles cursor with multiple input types (gamepad, mouse, etc.)</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>719290265</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>InputHandling.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1187870549</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>InputHandling.asc</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1187870549</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>RoomMarkers.ash</FileName>
                     <Name />
                     <Description />
@@ -4804,30 +4876,6 @@ See KeyboardMovement.txt for details.
                     <Author>Clickpulp, LLC / Rui "Brisby" Pires / strazer</Author>
                     <Version>1.0.o</Version>
                     <Key>160503183</Key>
-                    <IsHeader>False</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Script>
-              </ScriptAndHeader>
-              <ScriptAndHeader>
-                <ScriptAndHeader_Header>
-                  <Script>
-                    <FileName>CursorHandler.ash</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>719290265</Key>
-                    <IsHeader>True</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Header>
-                <ScriptAndHeader_Script>
-                  <Script>
-                    <FileName>CursorHandler.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>719290265</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
                 </ScriptAndHeader_Script>
