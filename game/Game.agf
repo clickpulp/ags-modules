@@ -4505,6 +4505,30 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
+                    <FileName>CustomDialogGui.ash</FileName>
+                    <Name>CustomDialogGui</Name>
+                    <Description>provides an easy way to customize Dialogs GUIs</Description>
+                    <Author>abstauber</Author>
+                    <Version>1.9</Version>
+                    <Key>551174665</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>CustomDialogGui.asc</FileName>
+                    <Name>CustomDialogGui</Name>
+                    <Description>provides an easy way to customize Dialogs GUIs</Description>
+                    <Author>abstauber</Author>
+                    <Version>1.9</Version>
+                    <Key>551174665</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
                     <FileName>arrowselect.ash</FileName>
                     <Name>ArrowSelect</Name>
                     <Description>Select things using arrows in point and click games.</Description>
