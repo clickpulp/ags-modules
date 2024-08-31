@@ -52,6 +52,10 @@ enum InputMappingAxisDirection {
   eInputMappingAxisTriggerRight
 };
 
+struct Input {
+  import static readonly attribute bool ControllerConnected;
+};
+
 managed struct InputMapping {
   protected int _index;
   protected int _count;
@@ -64,6 +68,7 @@ managed struct InputMapping {
   writeprotected bool HasAxisMapping;
   writeprotected MouseButton TriggerMouseClick; // Rename to SimulatedMouseButton
   writeprotected eKeyCode TriggerKeyPress; // Renamed to SimulatedKeyCode
+  writeprotected bool MappedKeyPressed;
   
   import void Update(); // TODO: remove from autocomplete
   import void Delete();
@@ -71,6 +76,8 @@ managed struct InputMapping {
   import void AddMapping(InputMappingType type, int value);
   import void AddKey(eKeyCode keyCode, bool triggerKeyPress = false);
   import void AddMouseButton(MouseButton mouseButton, bool triggerClick = false);
+  
+  import eKeyCode GetMappedKey();
   
   import bool IsPressed(RepeatStyle style = eRepeat);
   

@@ -4630,7 +4630,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>Rect.ash</FileName>
+                    <FileName>Pulp_Rect.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4641,7 +4641,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>Rect.asc</FileName>
+                    <FileName>Pulp_Rect.asc</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4654,55 +4654,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>Extenders.ash</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>1652464927</Key>
-                    <IsHeader>True</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Header>
-                <ScriptAndHeader_Script>
-                  <Script>
-                    <FileName>Extenders.asc</FileName>
-                    <Name>Extenders</Name>
-                    <Description>Extender functions for existing AGS structs</Description>
-                    <Author>Clickpulp, LLC</Author>
-                    <Version>1.0.0</Version>
-                    <Key>1652464927</Key>
-                    <IsHeader>False</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Script>
-              </ScriptAndHeader>
-              <ScriptAndHeader>
-                <ScriptAndHeader_Header>
-                  <Script>
-                    <FileName>IsInBlockingScript.ash</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
-                    <Key>1518455316</Key>
-                    <IsHeader>True</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Header>
-                <ScriptAndHeader_Script>
-                  <Script>
-                    <FileName>IsInBlockingScript.asc</FileName>
-                    <Name>IsInBlockingScript</Name>
-                    <Description>Function to check if there is a blocking script running</Description>
-                    <Author>Clickpulp, LLC</Author>
-                    <Version>1.0.0</Version>
-                    <Key>1518455316</Key>
-                    <IsHeader>False</IsHeader>
-                  </Script>
-                </ScriptAndHeader_Script>
-              </ScriptAndHeader>
-              <ScriptAndHeader>
-                <ScriptAndHeader_Header>
-                  <Script>
-                    <FileName>Signal.ash</FileName>
+                    <FileName>Pulp_Signal.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4713,7 +4665,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>Signal.asc</FileName>
+                    <FileName>Pulp_Signal.asc</FileName>
                     <Name>Signal</Name>
                     <Description>Event dispatcher for AGS</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4726,7 +4678,55 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>CutsceneHelpers.ash</FileName>
+                    <FileName>Pulp_Extenders.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1652464927</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Pulp_Extenders.asc</FileName>
+                    <Name>Extenders</Name>
+                    <Description>Extender functions for existing AGS structs</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1652464927</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Pulp_IsInBlockingScript.ash</FileName>
+                    <Name />
+                    <Description />
+                    <Author />
+                    <Version />
+                    <Key>1518455316</Key>
+                    <IsHeader>True</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Header>
+                <ScriptAndHeader_Script>
+                  <Script>
+                    <FileName>Pulp_IsInBlockingScript.asc</FileName>
+                    <Name>IsInBlockingScript</Name>
+                    <Description>Function to check if there is a blocking script running</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
+                    <Key>1518455316</Key>
+                    <IsHeader>False</IsHeader>
+                  </Script>
+                </ScriptAndHeader_Script>
+              </ScriptAndHeader>
+              <ScriptAndHeader>
+                <ScriptAndHeader_Header>
+                  <Script>
+                    <FileName>Pulp_CutsceneHelpers.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4737,7 +4737,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>CutsceneHelpers.asc</FileName>
+                    <FileName>Pulp_CutsceneHelpers.asc</FileName>
                     <Name>CutsceneHelpers</Name>
                     <Description>Helper and extender functions to use in cut-scenes</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4750,7 +4750,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>GUIStack.ash</FileName>
+                    <FileName>Pulp_GUIStack.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4761,7 +4761,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>GUIStack.asc</FileName>
+                    <FileName>Pulp_GUIStack.asc</FileName>
                     <Name>GUI Stack</Name>
                     <Description>Better management for GUIs</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4774,7 +4774,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>Input.ash</FileName>
+                    <FileName>Pulp_Input.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4785,7 +4785,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>Input.asc</FileName>
+                    <FileName>Pulp_Input.asc</FileName>
                     <Name>Input</Name>
                     <Description>Map keyboard, controller, and mouse to an input object</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4798,7 +4798,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>PatchValues.ash</FileName>
+                    <FileName>Pulp_PatchValues.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4809,7 +4809,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>PatchValues.asc</FileName>
+                    <FileName>Pulp_PatchValues.asc</FileName>
                     <Name>Patch Values</Name>
                     <Description>Get/Set values that can be used when patching games already released without saved games</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4822,7 +4822,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>InputMappings.ash</FileName>
+                    <FileName>Pulp_InputMappings.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4833,7 +4833,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>InputMappings.asc</FileName>
+                    <FileName>Pulp_InputMappings.asc</FileName>
                     <Name>Input Mappings</Name>
                     <Description>Input mapping object configuration and exports</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4846,7 +4846,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>Cursor.ash</FileName>
+                    <FileName>Pulp_Cursor.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4857,7 +4857,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>Cursor.asc</FileName>
+                    <FileName>Pulp_Cursor.asc</FileName>
                     <Name>Cursor</Name>
                     <Description>Handles cursor with multiple input types (gamepad, mouse, etc.)</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4870,7 +4870,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>InputHandling.ash</FileName>
+                    <FileName>Pulp_InputHandling.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4881,7 +4881,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>InputHandling.asc</FileName>
+                    <FileName>Pulp_InputHandling.asc</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4894,7 +4894,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>RoomMarkers.ash</FileName>
+                    <FileName>Pulp_RoomMarkers.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4905,7 +4905,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>RoomMarkers.asc</FileName>
+                    <FileName>Pulp_RoomMarkers.asc</FileName>
                     <Name>Room Markers</Name>
                     <Description>Place spatial markers in rooms to mark exits, interactive objects, etc.</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4918,7 +4918,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>RoomIndex.ash</FileName>
+                    <FileName>Pulp_RoomIndex.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4929,7 +4929,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>RoomIndex.asc</FileName>
+                    <FileName>Pulp_RoomIndex.asc</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4942,7 +4942,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>HintsHighlighter.ash</FileName>
+                    <FileName>Pulp_HintsHighlighter.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -4953,7 +4953,7 @@ stop
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>HintsHighlighter.asc</FileName>
+                    <FileName>Pulp_HintsHighlighter.asc</FileName>
                     <Name>Hints Highlighter</Name>
                     <Description>Shows hints on screen. Based on work by Artium Nihamkim.</Description>
                     <Author>Clickpulp, LLC</Author>
@@ -4966,7 +4966,7 @@ stop
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>PlayerDirectControl.ash</FileName>
+                    <FileName>Pulp_PlayerDirectControl.ash</FileName>
                     <Name>KeyboardMovement</Name>
                     <Description>Allows to move the player character using the keyboard.
 
@@ -4980,7 +4980,7 @@ See KeyboardMovement.txt for details.
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>PlayerDirectControl.asc</FileName>
+                    <FileName>Pulp_PlayerDirectControl.asc</FileName>
                     <Name>Player Direct Control</Name>
                     <Description>Allows to move the player character directly with input (keyboard, gamepad).</Description>
                     <Author>Clickpulp, LLC / Rui "Brisby" Pires / strazer</Author>
@@ -4993,7 +4993,7 @@ See KeyboardMovement.txt for details.
               <ScriptAndHeader>
                 <ScriptAndHeader_Header>
                   <Script>
-                    <FileName>PlayerCollision.ash</FileName>
+                    <FileName>Pulp_PlayerCollision.ash</FileName>
                     <Name />
                     <Description />
                     <Author />
@@ -5004,7 +5004,7 @@ See KeyboardMovement.txt for details.
                 </ScriptAndHeader_Header>
                 <ScriptAndHeader_Script>
                   <Script>
-                    <FileName>PlayerCollision.asc</FileName>
+                    <FileName>Pulp_PlayerCollision.asc</FileName>
                     <Name />
                     <Description />
                     <Author />
