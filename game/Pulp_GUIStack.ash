@@ -30,11 +30,14 @@
 struct GUIStack {
   import static readonly attribute int GUICount;
   import static readonly attribute bool ShowingGUI;
+  import static readonly attribute GUI* TopGUI;
  
   import static void Init(GUI* overlayGUI);
-  import static void PushGUI(GUI* g, bool withOverlay=true, GUIControl* controlToFocus=0, bool closePreviousGUI=false);
+  import static void PushGUI(GUI* g, GUIControl* controlToFocus=0, bool closePreviousGUI=false, bool withOverlay=true);
   import static void PopGUI();
-  import static void PopAllGUIs();
+  import static void PopAllGUIs(GUI* untilGUI=0);
+  import static int GetGUIIndex(GUI* g);
+  import static bool IsGUIInStack(GUI* g);
 };
 
 #endif // __GUI_STACK_MODULE__

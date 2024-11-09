@@ -28,4 +28,8 @@
 
 #define CutsceneHelpers_010000
 
+struct PlayerDirectControl {
+  import static attribute bool Enabled;
+};
+
 #endif // __PLAYER_DIRECT_CONTROL__

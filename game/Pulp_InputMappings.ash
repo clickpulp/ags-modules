@@ -33,6 +33,8 @@ import InputMapping* inputExamineButton;
 import InputMapping* inputPauseButton;
 import InputMapping* inputSkipButton;
 import InputMapping* inputHintsButton;
+import InputMapping* inputPrevPage;
+import InputMapping* inputNextPage;
 
 import AxisTracker axisLeftHorizontal;
 import AxisTracker axisLeftVertical;

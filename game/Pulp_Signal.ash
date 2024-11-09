@@ -31,6 +31,7 @@ struct Signal {
   import static void Dispatch(const string name, int value0 = 0, int value1 = 0, int value2 = 0);
   import static bool WasDispatched(const string name);
   import static int GetValue(const string name, int index = 0);
+  import static bool WasDispatchedWithValue(const string name, int value, int index = 0);
 };
 
 #endif // __SIGNAL_MODULE__

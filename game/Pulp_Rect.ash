@@ -42,7 +42,11 @@ managed struct Rect {
   import Rect* Copy();
   import String ToString();
   
-  import static Rect* Create(int left, int top, int right, int bottom);
+  import Rect* ToScreenRect();
+  import Rect* ToRoomRect();
+  
+  import static Rect* Create(int left=0, int top=0, int right=0, int bottom=0);
+  import static Rect* FromPoints(Point* p0, Point* p1=0);
 };
 
 #endif // __RECT_MODULE__

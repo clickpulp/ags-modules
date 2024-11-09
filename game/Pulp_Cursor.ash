@@ -34,6 +34,12 @@ struct Cursor {
   /// Is it locked?
   import static readonly attribute bool Locked;
   
+  /// Wether the cursor can be moved with the arrow select system using the left arrow controls
+  import static readonly attribute bool ArrowSelectEnabled;
+  
+  /// Enables or disables ArrowSelect controls
+  import static void SetArrowSelectEnabled(bool enabled);
+  
   /// Sets the target for when to fire a mouse click and updates the Mouse position
   import static void SetClickTarget(Point* clickTarget, bool force=false);
   
