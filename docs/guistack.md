@@ -16,7 +16,7 @@ This uses functionality from other modules. The modules listed below need to be 
 
 ### Required
 
-* `arrowselect` (use the modified one in this repo)
+* `arrowselect` (Use the modified one in this repo. Will be made optional in the future.)
 * `Pulp_Extenders`
 * `Pulp_Signal`
 * `Pulp_Input` (For checking for gamepad, code can be commented out. Will be made optional in the future)
@@ -57,7 +57,6 @@ if (GUIStack.ShowingGUI) {}
 
 ## Signals
 
-* `gui_pushed` (GUI ID) - When a GUI is pushed
-* `gui_popped` (GUI ID) - When a GUI is popped
-* ~~`guis_popped` - When all GUIs have been popped~~
-  
+* `gui_pushed` (GUI ID) - Dispatched a GUI is pushed.
+* `gui_popped` (GUI ID) - Dispatched a GUI is popped.
+* `guis_popped` - Dispatched all GUIs have been popped through `GUIStack.PopAllGUIs`.
