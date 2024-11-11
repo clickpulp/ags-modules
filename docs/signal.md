@@ -4,9 +4,9 @@
 
 Signals modules that allow you to dispatch and check for messages across scripts, preventing cases where different parts of the code need to know of each other's existence. This is a common feature in other game engines, sometimes called event dispatching.
 
-## Module Dependencies
+## Dependencies
 
-* None
+* This module does not use any functionality from other modules.
 
 ## Usage
 

@@ -23,7 +23,7 @@ This uses functionality from other modules. The modules listed below need to be 
 
 ### Optional
 
-* `Pulp_TwoClickHandler`
+* `TwoClickHandler`
 
 ## Usage
 

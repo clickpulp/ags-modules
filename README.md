@@ -11,13 +11,13 @@ Monorepo for Adventure Game Studio (AGS) modules created by Clickpulp.
 
 ## Documentation
 
-See [`/docs`](./docs/index.md) for details.
+See [`/docs`](./docs/README.md) for details.
 
 ## Credits
 
 * Edmundo Ruiz Ghanem
 * strazer and Rui Pires (Pulp_PlayerDirectControl module based on KeyboardControl module)
-* Artium Nihamkin (Pulp_RoomIndex module based on hintshighlighting module)
+* Artium Nihamkin (Pulp_RoomIndex and Pulp_HintsHighlighter modules are based on hintshighlighting module)
 
 ## License
 
