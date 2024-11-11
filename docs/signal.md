@@ -4,11 +4,17 @@
 
 Signals modules that allow you to dispatch and check for messages across scripts, preventing cases where different parts of the code need to know of each other's existence. This is a common feature in other game engines, sometimes called event dispatching.
 
+## Module Dependencies
+
+* None
+
 ## Usage
 
 ```agscript
 // Dispatch a Signal:
 Signal.Dispatch("dancing_ended");
+
+// From a repeatedly execute call, you can check the signal:
 
 // Check if a Signal was dispatched:
 if (Signal.WasDispatched("dancing_ended")) {}

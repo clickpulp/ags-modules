@@ -10,6 +10,21 @@ It enables a game developer to "push" GUIs into a stack:
 * When the user "pops" out of the stack, the topmost GUI in the stack is hidden, and the previous GUI is shown.
 * If the player has a gamepad attached, it will restore the cursor to the previous position.
 
+## Dependencies
+
+This uses functionality from other modules. The modules listed below need to be placed above this module in the list of Modules.
+
+### Required
+
+* `arrowselect` (use the modified one in this repo)
+* `Pulp_Extenders`
+* `Pulp_Signal`
+* `Pulp_Input` (For checking for gamepad, code can be commented out. Will be made optional in the future)
+
+### Optional
+
+* `Pulp_TwoClickHandler`
+
 ## Usage
 
 ```agscript
@@ -39,4 +54,10 @@ if (GUIStack.ShowingGUI) {}
 ## API
 
 * [See Pulp_GUIStack header file](../game/Pulp_GUIStack.ash)
+
+## Signals
+
+* `gui_pushed` (GUI ID) - When a GUI is pushed
+* `gui_popped` (GUI ID) - When a GUI is popped
+* ~~`guis_popped` - When all GUIs have been popped~~
   
