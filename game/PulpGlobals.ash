@@ -25,6 +25,7 @@
 struct PulpGlobals {
   GUI* MainMenuGUI;
   GUI* InventoryGUI;
+  GUI* OverlayGUI;
 };
 
 import PulpGlobals pulpGlobals;
