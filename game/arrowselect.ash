@@ -42,6 +42,7 @@
 //
 // Look into module README for more info
 
+#define __ARROWSELECT_MODULE__
 
 #define MAX_HOTSPOTS_PER_ROOM 49
 #define MAX_LABELS 70

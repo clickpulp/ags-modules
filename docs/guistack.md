@@ -16,13 +16,14 @@ This uses functionality from other modules. The modules listed below need to be 
 
 ### Required
 
-* `arrowselect` (Use the modified one in this repo. Will be made optional in the future.)
 * `Pulp_Extenders`
 * `Pulp_Signal`
-* `Pulp_Input` (For checking for gamepad, code can be commented out. Will be made optional in the future)
+* `Pulp_Input`
 
 ### Optional
 
+* `arrowselect`
+* `Pulp_Input`
 * `TwoClickHandler`
 
 ## Usage
