@@ -24,7 +24,7 @@ void game_start() {
 * [`Pulp_Extenders`](../game/Pulp_Extenders.ash) - Functions that extend existing AGS Objects
 * [`Pulp_Rect`](../game/Pulp_Rect.ash) - A typical `Rect` object found in other game engines (x1, y1, x2, y2)
 * [`Pulp_IsInBlockingScript`](../game/Pulp_IsInBlockingScript.ash) - Function that checks if the game is running a blocking script.
-* [`Pulp_CutsceneHelpers`](../game/Pulp_CutsceneHelpers.ash) - Functions and events that improve cutscene management and skipping.
+* [`Pulp_CutsceneHelpers`](./cutscenehelpers.md) - Functions and events that improve cutscene management and skipping.
 * `Pulp_Input` - Input mapper that allow setting a generic key to multiple inputs (keyboard, or gamepad)
 * [`Pulp_GUIStack`](./guistack.md) - A better way to manage GUIs through a [stack data structure](https://www.thedshandbook.com/stacks/).
 * `Pulp_PatchValues` - An extra modules that allows you to set values after the game is released without breaking the saved games
