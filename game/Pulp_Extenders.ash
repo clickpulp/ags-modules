@@ -46,4 +46,7 @@ import int FindFirstActiveOption(this Dialog*, bool reverseSearch=false);
 import bool DidDialogEnd(static Dialog);
 import bool IsDialogRunning(static Dialog);
 
+/// Checks that the game is not paused before pausing the game
+import void PauseGameOnce();
+
 #endif // __CLICKPULP_EXTENDERS_MODULE__
