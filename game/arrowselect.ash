@@ -57,8 +57,8 @@ enum InteractiveType{
   eInteractiveTypeObject = eLocationObject,
   eInteractiveTypeCharacter = eLocationCharacter,
   eInteractiveTypeHotspot = eLocationHotspot,
-  eInteractiveTypeGUIControl,
-  eInteractiveTypeGUI,
+  eInteractiveTypeGUIControl = 4,
+  eInteractiveTypeGUI = 5,
 };
 
 managed struct Triangle{
@@ -76,6 +76,8 @@ managed struct Interactive{
   int ID;
   int owningGUI_ID;
   InteractiveType type;
+  
+  import String ToString();
 };
 
 struct ArrowSelect
