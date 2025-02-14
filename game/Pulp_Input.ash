@@ -52,8 +52,18 @@ enum InputMappingAxisDirection {
   eInputMappingAxisTriggerRight
 };
 
+enum InputControllerType {
+  eControllerTypeNone,
+  eControllerTypeUnknown, 
+  eControllerTypeNintendo, 
+  eControllerTypePlayStation,
+  eControllerTypeSteamDeck,
+  eControllerTypeXbox
+};
+
 struct Input {
   import static readonly attribute bool ControllerConnected;
+  import static readonly attribute InputControllerType ControllerType;
 };
 
 managed struct InputMapping {
@@ -61,21 +71,20 @@ managed struct InputMapping {
   protected int _count;
   protected InputMappingType _types[MAX_MAPPINGS_PER_INPUT];
   protected int _values[MAX_MAPPINGS_PER_INPUT];
+  protected int _rawPressedValue;
   protected int _pressedValue;
   protected bool _wasPressedOnce;
   
   bool Enabled;
   writeprotected bool HasAxisMapping;
-  writeprotected MouseButton TriggerMouseClick; // Rename to SimulatedMouseButton
-  writeprotected eKeyCode TriggerKeyPress; // Renamed to SimulatedKeyCode
   writeprotected bool MappedKeyPressed;
   
-  import void Update(); // TODO: remove from autocomplete
+  import void Update(); // $AUTOCOMPLETEIGNORE$
   import void Delete();
   
   import void AddMapping(InputMappingType type, int value);
-  import void AddKey(eKeyCode keyCode, bool triggerKeyPress = false);
-  import void AddMouseButton(MouseButton mouseButton, bool triggerClick = false);
+  import void AddKey(eKeyCode keyCode);
+  import void AddMouseButton(MouseButton mouseButton);
   
   import eKeyCode GetMappedKey();
   
