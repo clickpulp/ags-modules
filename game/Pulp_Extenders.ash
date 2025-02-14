@@ -32,8 +32,9 @@ import int GetCenterY(this Character*);
 import Point* Create(static Point, int x, int y);
 import void SetPosition(this Point*, int x, int y);
 
-import void PushPosition(static Mouse);
-import void PopPosition(static Mouse);
+import void PushHistory(static Mouse);
+import void PopHistory(static Mouse);
+import void ClearHistory(static Mouse);
 import void PlaceOnControl(static Mouse, GUIControl* control);
 import Point* GetPosition(this Mouse*);
 import void SetRoomPosition(this Mouse*, int x, int y);
