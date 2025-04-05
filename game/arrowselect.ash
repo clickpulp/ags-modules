@@ -44,8 +44,7 @@
 
 #define __ARROWSELECT_MODULE__
 
-#define MAX_HOTSPOTS_PER_ROOM 49
-#define MAX_LABELS 70
+#define ARROWSELECT_MAX_INTERACTIVES 128
 
 enum InteractiveFilter{
   eI_FilterOut=0, 
