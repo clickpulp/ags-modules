@@ -39,4 +39,10 @@ struct GUIStack {
   import static bool IsGUIInStack(GUI* g);
 };
 
+// GUI Extenders
+
+import bool IsInStack(this GUI*);
+import void Push(this GUI*, GUIControl* controlToFocus=0, bool closePreviousGUI=false, bool withOverlay=true);
+import void Pop(this GUI*);
+
 #endif // __GUI_STACK_MODULE__
