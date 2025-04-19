@@ -34,6 +34,7 @@ import void SetPosition(this Point*, int x, int y);
 
 import void PushHistory(static Mouse);
 import void PopHistory(static Mouse);
+import void ForgetLastHistory(static Mouse);
 import void ClearHistory(static Mouse);
 import void PlaceOnControl(static Mouse, GUIControl* control);
 import Point* GetPosition(this Mouse*);
