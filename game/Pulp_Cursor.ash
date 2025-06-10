@@ -49,8 +49,11 @@ struct Cursor {
   /// Sets the Mouse position to the click target set
   import static void SetMousePositionToClickTarget();
   
-  // Locks/unlocks the cursor
+  /// Locks/unlocks the cursor
   import static void SetLocked(bool locked);
+  
+  /// Move to next object by input press
+  import static void MoveByInput();
 };
 
 #endif // __CURSOR_MODULE__
