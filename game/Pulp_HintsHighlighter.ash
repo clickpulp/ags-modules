@@ -55,6 +55,9 @@ struct HintsHighlighter {
    * do nothing.
    */
   import static function DisableHints();
+  
+  /// Is Showing Hints?
+  import static bool IsShowingHints();
 };
 
 import Point* GetHintPoint(this Hotspot*);
