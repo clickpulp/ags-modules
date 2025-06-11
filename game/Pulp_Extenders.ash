@@ -30,6 +30,7 @@
 import int GetCenterY(this Character*);
 import int GetWidth(this Character*);
 import int GetHeight(this Character*);
+import int IsVisible(this Character*);
 
 import Point* Create(static Point, int x, int y);
 import void SetPosition(this Point*, int x, int y);
