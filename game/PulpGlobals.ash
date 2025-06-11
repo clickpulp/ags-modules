@@ -26,6 +26,7 @@ struct PulpGlobals {
   GUI* MainMenuGUI;
   GUI* InventoryGUI;
   GUI* OverlayGUI;
+  FontType TooltipFont;
 };
 
 import PulpGlobals pulpGlobals;
