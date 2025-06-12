@@ -31,6 +31,10 @@
 #define MAX_MAPPINGS_PER_INPUT 8
 #define INPUT_AXIS_DEADZONE 6554 // 32768 * 0.2
 
+#ifndef eOSNintendo
+#define eOSNintendo (eOSFreeBSD + 1)
+#endif
+
 enum InputMappingType {
   eInputMappingKey,
   eInputMappingMouseButton,
