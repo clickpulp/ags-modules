@@ -70,20 +70,20 @@ if (Signal.WasDispatchedWithValue("room_changed", 4, 1)) {} // Previous room (in
 
 ### Signal Dispatch Methods
 
-* `Signal.Dispatch(String name)` - Dispatch a signal with no values
-* `Signal.Dispatch(String name, int value1)` - Dispatch a signal with 1 value
-* `Signal.Dispatch(String name, int value1, int value2)` - Dispatch a signal with 2 values  
-* `Signal.Dispatch(String name, int value1, int value2, int value3)` - Dispatch a signal with 3 values
+- `Signal.Dispatch(String name)` - Dispatch a signal with no values
+- `Signal.Dispatch(String name, int value1)` - Dispatch a signal with 1 value
+- `Signal.Dispatch(String name, int value1, int value2)` - Dispatch a signal with 2 values  
+- `Signal.Dispatch(String name, int value1, int value2, int value3)` - Dispatch a signal with 3 values
 
 ### Signal Check Methods
 
-* `Signal.WasDispatched(String name)` - Check if a signal was dispatched this frame
-* `Signal.WasDispatchedWithValue(String name, int value)` - Check signal and first value
-* `Signal.WasDispatchedWithValue(String name, int value, int index)` - Check signal and value at index
+- `Signal.WasDispatched(String name)` - Check if a signal was dispatched this frame
+- `Signal.WasDispatchedWithValue(String name, int value)` - Check signal and first value
+- `Signal.WasDispatchedWithValue(String name, int value, int index)` - Check signal and value at index
 
 ### Signal Value Methods
 
-* `Signal.GetValue(String name, int index)` - Get value from dispatched signal by index
+- `Signal.GetValue(String name, int index)` - Get value from dispatched signal by index
 
 ## Advanced Usage
 
