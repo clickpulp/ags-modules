@@ -1,0 +1,169 @@
+# Clickpulp Room Index Module
+
+## About
+
+Provides a unified index of all interactive objects in the current room (hotspots, characters, and objects). This module analyzes the room and creates a list of all interactive elements with their bounds, properties, and types, making it easier to programmatically work with room elements.
+
+## Dependencies
+
+This module does not depend on other modules but is used by:
+
+### Used By
+
+* `Pulp_HintsHighlighter` - For finding interactive objects to highlight
+* Other modules that need to enumerate room objects
+
+## Key Features
+
+* **Unified object access**: Access hotspots, characters, and objects through a single index
+* **Bounds information**: Get the screen bounds of each interactive element
+* **Type checking**: Determine what type of object each index represents
+* **Flag system**: Check what interactions are available for each object
+
+## Usage
+
+### Getting Object Count
+
+```agscript
+// Get total number of interactive objects in the room
+int totalObjects = RoomIndex.EntityCount;
+
+Display("This room has %d interactive objects", totalObjects);
+```
+
+### Iterating Through Objects
+
+```agscript
+// Loop through all interactive objects in the room
+for (int i = 0; i < RoomIndex.EntityCount; i++) {
+  if (RoomIndex.IsInitialized(i)) {
+    Rect* bounds = RoomIndex.GetBounds(i);
+    
+    if (RoomIndex.IsHotspot(i)) {
+      Hotspot* hotspot = RoomIndex.GetHotspot(i);
+      Display("Found hotspot: %s", hotspot.Name);
+    }
+    else if (RoomIndex.IsCharacter(i)) {
+      Character* character = RoomIndex.GetCharacter(i);
+      Display("Found character: %s", character.Name);  
+    }
+    else if (RoomIndex.IsObject(i)) {
+      Object* object = RoomIndex.GetObject(i);
+      Display("Found object: %s", object.Name);
+    }
+  }
+}
+```
+
+### Checking Object Flags
+
+```agscript
+// Check what interactions are available for an object
+for (int i = 0; i < RoomIndex.EntityCount; i++) {
+  int flags = RoomIndex.GetFlags(i);
+  
+  if (flags & eEntityFlagTalk) {
+    // Object can be talked to
+  }
+  if (flags & eEntityFlagInteract) {
+    // Object can be interacted with
+  }
+  if (flags & eEntityFlagLookAt) {
+    // Object can be examined
+  }
+  if (flags & eEntityFlagUseInv) {
+    // Object accepts inventory items
+  }
+}
+```
+
+### Finding Objects at Position
+
+```agscript
+// Find what interactive object is at a specific position
+function CheckObjectAtPosition(int x, int y) {
+  for (int i = 0; i < RoomIndex.EntityCount; i++) {
+    if (RoomIndex.IsInitialized(i)) {
+      Rect* bounds = RoomIndex.GetBounds(i);
+      
+      if (x >= bounds.Left && x <= bounds.Right && 
+          y >= bounds.Top && y <= bounds.Bottom) {
+        
+        if (RoomIndex.IsHotspot(i)) {
+          return RoomIndex.GetHotspot(i);
+        }
+        // ... check other types
+      }
+    }
+  }
+  return null;
+}
+```
+
+## API
+
+### RoomIndex Struct
+
+* `RoomIndex.EntityCount` - Total number of entities in the index
+* `IsInitialized(int index)` - Check if the entity at index is valid
+* `GetBounds(int index)` - Get screen bounds rectangle for entity
+* `GetFlags(int index)` - Get interaction flags for entity
+
+### Type Checking API
+
+* `IsHotspot(int index)` - Check if entity is a hotspot
+* `IsCharacter(int index)` - Check if entity is a character  
+* `IsObject(int index)` - Check if entity is an object
+
+### Object Conversion API
+
+* `ToHotspotIndex(int index)` - Convert to hotspot array index
+* `ToCharacterIndex(int index)` - Convert to character array index
+* `ToObjectIndex(int index)` - Convert to object array index
+
+### Object Retrieval API
+
+* `GetHotspot(int index)` - Get hotspot pointer from index
+* `GetCharacter(int index)` - Get character pointer from index
+* `GetObject(int index)` - Get object pointer from index
+
+## Entity Flags
+
+The `EntityFlagType` enum defines what interactions are available:
+
+* `eEntityFlagNone` (0) - No interactions
+* `eEntityFlagTalk` (1) - Can talk to object
+* `eEntityFlagInteract` (2) - Can interact with object
+* `eEntityFlagLookAt` (4) - Can examine object
+* `eEntityFlagUseInv` (8) - Can use inventory on object
+* `eEntityFlagExit` (16) - Object is an exit
+* `eEntityFlagDoor` (32) - Object is a door
+* `eEntityFlagSign` (64) - Object is a sign/readable
+
+Flags can be combined using bitwise OR operations.
+
+## Best Practices
+
+1. **Check initialization**: Always verify `IsInitialized()` before accessing objects
+2. **Cache bounds**: Store bounds rectangles if doing multiple position checks
+3. **Type safety**: Always check object type before casting/accessing
+4. **Performance**: The index is built when the room loads, so accessing it is fast
+5. **Flag combinations**: Objects can have multiple interaction flags simultaneously
+
+## Integration Example
+
+```agscript
+// Example: Find all talkable characters in the room
+function FindTalkableCharacters() {
+  for (int i = 0; i < RoomIndex.EntityCount; i++) {
+    if (RoomIndex.IsInitialized(i) && RoomIndex.IsCharacter(i)) {
+      int flags = RoomIndex.GetFlags(i);
+      
+      if (flags & eEntityFlagTalk) {
+        Character* character = RoomIndex.GetCharacter(i);
+        Display("You can talk to %s", character.Name);
+      }
+    }
+  }
+}
+```

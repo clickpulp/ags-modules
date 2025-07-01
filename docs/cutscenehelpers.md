@@ -27,7 +27,7 @@ These audio playback replacement functions will avoid playing sounds if the cut-
 * `AudioClip.Play -> AudioClip.PlayDuringCutscene`
 * `AudioChannel.PlayFrom -> AudioClip.PlayFromDuringCutscene`
 
-The way you would use these functions is to replace the original function. For example, `oBluecup.Animate(...)` will become `oBluecup.AnimatDuringCutscene(...)`
+The way you would use these functions is to replace the original function. For example, `oBluecup.Animate(...)` will become `oBluecup.AnimateDuringCutscene(...)`
 
 Additionally, when skipping a cut-scene, the module will:
 
@@ -36,6 +36,72 @@ Additionally, when skipping a cut-scene, the module will:
 
 While these functions speed up the cut-scene skip process, there may be some side-effects. It's up to the developer to see any problems and work around them.
 
-## API
+## API Reference
 
-* [See Pulp_CutsceneHelpers header file](../game/Pulp_CutsceneHelpers.ash)
+### Object Animation Functions
+
+* `Object.AnimateDuringCutscene(...)` - Cutscene-aware version of `Object.Animate()`
+* `Button.AnimateDuringCutscene(...)` - Cutscene-aware version of `Button.Animate()`
+
+### Audio Functions
+
+* `AudioClip.PlayDuringCutscene(...)` - Cutscene-aware version of `AudioClip.Play()`
+* `AudioClip.PlayFromDuringCutscene(...)` - Cutscene-aware version of `AudioChannel.PlayFrom()`
+
+## Integration Examples
+
+### Basic Cutscene Setup
+
+```agscript
+function StartCutscene() {
+  StartCutscene();
+  
+  // Use cutscene-aware functions
+  player.Say("Let me show you something...");
+  oDoor.AnimateDuringCutscene(0, 3, eOnce, eBlock);
+  aOpenDoor.PlayDuringCutscene();
+  
+  Wait(60);
+  player.Walk(100, 100, eBlock);
+  
+  EndCutscene();
+}
+```
+
+### Complex Animation Sequence
+
+```agscript
+function ComplexCutscene() {
+  StartCutscene();
+  
+  // Multiple objects animating - will skip properly
+  oGears.AnimateDuringCutscene(0, 5, eRepeat, eNoBlock);
+  oLever.AnimateDuringCutscene(0, 2, eOnce, eBlock);
+  
+  player.Say("The machine is starting up!");
+  aMachineHum.PlayDuringCutscene();
+  
+  // Long wait that can be skipped instantly
+  Wait(300);
+  
+  btnPowerButton.AnimateDuringCutscene(0, 1, eOnce, eBlock);
+  player.Say("There we go!");
+  
+  EndCutscene();
+}
+```
+
+## Best Practices
+
+1. **Replace all blocking animations**: Use the cutscene-aware versions for any animations in cutscenes
+2. **Audio management**: Use audio cutscene functions to prevent sound overlap during skips
+3. **Wait optimization**: The module automatically handles `Wait()` calls, but keep them reasonable
+4. **Test skip behavior**: Always test that cutscenes skip properly and don't leave objects in wrong states
+5. **Side effects**: Be aware that rapid skipping might cause timing issues with complex sequences
+
+## Technical Details
+
+* Functions detect if a cutscene is being skipped using AGS's built-in cutscene state
+* Animations jump to their final frame instead of playing through when skipped
+* Audio is completely bypassed during skip to prevent audio buildup
+* `Wait()` calls are automatically fast-forwarded by the engine integration

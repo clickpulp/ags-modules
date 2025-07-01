@@ -8,7 +8,7 @@
 
 In a `game_start`, you can set your inventory and main menu gui optionally:
 
-```
+```agsscript
 void game_start() {
   pulpGlobals.MainMenuGUI = gYourMainMenu;
   pulpGlobals.InventoryGUI = gYourInventory;
@@ -17,22 +17,41 @@ void game_start() {
 
 ## Modules
 
-*NOTE: Not all the modules are documented.*
+### Core Modules
 
 * `PulpGlobals` - All the global values shared across modules
 * [`Pulp_Signal`](./signal.md) - Signals modules that allow you to dispatch and check for messages across scripts.
-* [`Pulp_Extenders`](../game/Pulp_Extenders.ash) - Functions that extend existing AGS Objects
-* [`Pulp_Rect`](../game/Pulp_Rect.ash) - A typical `Rect` object found in other game engines (x1, y1, x2, y2)
-* [`Pulp_IsInBlockingScript`](../game/Pulp_IsInBlockingScript.ash) - Function that checks if the game is running a blocking script.
-* [`Pulp_CutsceneHelpers`](./cutscenehelpers.md) - Functions and events that improve cutscene management and skipping.
-* `Pulp_Input` - Input mapper that allow setting a generic key to multiple inputs (keyboard, or gamepad)
+* [`Pulp_Extenders`](./extenders.md) - Functions that extend existing AGS Objects
+* [`Pulp_Rect`](./rect.md) - A typical `Rect` object found in other game engines (x1, y1, x2, y2)
+* [`Pulp_IsInBlockingScript`](./isinblockingscript.md) - Function that checks if the game is running a blocking script.
+
+### Input & Control Modules
+
+* [`Pulp_Input`](./input.md) - Input mapper that allows setting a generic action to multiple inputs (keyboard, mouse, or gamepad)
+* [`Pulp_InputMappings`](./inputmappings.md) - Creates and exports all the input mappings objects.
+* [`Pulp_InputHandling`](./inputhandling.md) - Adds interaction to all the mapped input objects.
+* [`Pulp_PlayerDirectControl`](./playerdirectcontrol.md) - A module that allows the player character to be controlled via keyboard using pathfinding.
+* [`Pulp_Cursor`](./cursor.md) - Improved cursor functions that allow it to be controlled from keyboard or controller.
+
+### GUI & Interface Modules
+
 * [`Pulp_GUIStack`](./guistack.md) - A better way to manage GUIs through a [stack data structure](https://www.thedshandbook.com/stacks/).
-* `Pulp_PatchValues` - An extra modules that allows you to set values after the game is released without breaking the saved games
-* `Pulp_InputMappings` - Creates and exports all the input mappings objects.
-* `Pulp_PlayerDirectControl` - A module that allows the player character to be controlled via keyboard using pathfinding.
-* `Pulp_Cursor` - Improved cursor functions that allow it to be controlled from keyboard or controller.
-* `Pulp_InputHandling` - Adds interaction to all the mapped input objects.
-* `Pulp_RoomMarkers` - Module to draw spatial markers in a room. Used by HintsHighlighter.
-* `Pulp_RoomIndex` - Provides a list (index) of all the active characters, objects, hotspots in the room, their size, and their properties.
-* `Pulp_HintsHighlighter` - When the player presses a key, they can see all the interactive objects in the room.
-* `Pulp_PlayerCollision` - Adds a collision on top of the player character so that interactive objects can be detected while walking around using keyboard or gamepad. (examples doors or characters.)
+* [`Pulp_Tooltip`](./tooltip.md) - Simple tooltip system for displaying contextual text information.
+
+### Cutscene & Audio Modules
+
+* [`Pulp_CutsceneHelpers`](./cutscenehelpers.md) - Functions and events that improve cutscene management and skipping.
+
+### Room & Object Modules
+
+* [`Pulp_RoomIndex`](./roomindex.md) - Provides a list (index) of all the active characters, objects, hotspots in the room, their size, and their properties.
+* [`Pulp_RoomMarkers`](./roommarkers.md) - Module to draw spatial markers in a room. Used by HintsHighlighter.
+* [`Pulp_HintsHighlighter`](./hintshighlighter.md) - When the player presses a key, they can see all the interactive objects in the room.
+
+### Player & Physics Modules
+
+* [`Pulp_PlayerCollision`](./playercollision.md) - Adds a collision on top of the player character so that interactive objects can be detected while walking around using keyboard or gamepad. (examples doors or characters.)
+
+### Utility Modules
+
+* [`Pulp_PatchValues`](./patchvalues.md) - An extra module that allows you to set values after the game is released without breaking the saved games
