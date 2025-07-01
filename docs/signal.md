@@ -11,18 +11,18 @@ This module lets different parts of your game talk to each other easily without 
 The diagram below shows the complete signal lifecycle in AGS:
 
 ```mermaid
-graph TD
-    A[Game Event Occurs] --> B[Signal.Dispatch called]
-    B --> C[Signal stored in memory]
-    C --> D[Game Loop Continues]
-    D --> E[repeatedly_execute called]
-    E --> F{Signal.WasDispatched check}
-    F -->|Yes| G[Handle the signal]
-    F -->|No| H[Continue with other code]
-    G --> I[End of Game Loop]
+graph LR
+    A[Game Event] --> B[Dispatch Signal]
+    B --> C[Store in Memory]
+    C --> D[Game Loop]
+    D --> E[Check Signal]
+    E --> F{Signal Found?}
+    F -->|Yes| G[Handle Signal]
+    F -->|No| H[Continue]
+    G --> I[End Frame]
     H --> I
-    I --> J[All signals cleared automatically]
-    J --> K[Next Game Loop begins]
+    I --> J[Clear Signals]
+    J --> K[Next Frame]
     K --> D
 ```
 
