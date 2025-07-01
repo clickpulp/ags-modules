@@ -12,6 +12,8 @@
 void game_start() {
   pulpGlobals.MainMenuGUI = gYourMainMenu;
   pulpGlobals.InventoryGUI = gYourInventory;
+  pulpGlobals.OverlayGUI = gYourOverlay;
+  pulpGlobals.TooltipFont = eFontForTooltip;
 }
 ```
 
