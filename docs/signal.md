@@ -12,14 +12,14 @@ The diagram below shows the complete signal lifecycle in AGS:
 
 ```mermaid
 flowchart TD
-    A["Game Event Occurs"] --> B["Signal.Dispatch called"]
+    A["Game Event"] --> B["Signal.Dispatch('door_opened')"]
     B --> C["Signal stored in memory"]
     C --> D["Game Loop Continues"]
-    D --> E["repeatedly_execute called"]
-    E --> F{"Signal.WasDispatched check?"}
+    D --> E["repeatedly_execute() called"]
+    E --> F{"Signal.WasDispatched('door_opened')?"}
     F -->|Yes| G["Handle the signal"]
     F -->|No| H["Continue with other code"]
-    G --> I["End of Game Loop"]
+    G --> I["End of Gameoop"]
     H --> I
     I --> J["All signals cleared automatically"]
     J --> K["Next Game Loop begins"]
