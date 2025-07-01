@@ -45,15 +45,83 @@ These properties are automatically detected and added to the clickable's flags w
 * **Type checking**: Determine what type of clickable each index represents
 * **Flag system**: Check what interactions are available for each clickable
 
+## Customizing Clickable Limits
+
+Think of this module like having three separate boxes (arrays) that store information about your clickables - one box for hotspots, one for characters, and one for objects. Each box has a fixed size that you can adjust. You can customize these box sizes by editing some settings at the top of `Pulp_RoomIndex.asc`:
+
+### Configuration Defines
+
+```agscript
+#define MAX_ROOM_HOTSPOTS_SUPPORTED 50  // Max: 49 (AGS limit)
+#define MAX_CHARACTERS_SUPPORTED 32     // Max: Unlimited
+#define MAX_ROOM_OBJECTS_SUPPORTED 64   // Max: 256 (AGS limit)
+#define TOTAL_HINTS_SUPPORTED 146       // Must equal sum of above three
+```
+
+### How to Modify
+
+1. **Count your clickables**: Think about your busiest room - how many hotspots, characters, and objects will players be able to click on?
+2. **Change the numbers**: Increase the values to match what you need
+3. **Update the total**: Always make sure `TOTAL_HINTS_SUPPORTED` equals the sum of your three box sizes (hotspots + characters + objects)
+4. **Test your game**: Bigger boxes use more computer memory, but let you have more clickables
+
+### Examples
+
+**For a large game:**
+
+```agscript
+#define MAX_ROOM_HOTSPOTS_SUPPORTED 49   // Use AGS maximum
+#define MAX_CHARACTERS_SUPPORTED 50      // Support crowded scenes
+#define MAX_ROOM_OBJECTS_SUPPORTED 100   // Many interactive objects
+#define TOTAL_HINTS_SUPPORTED 199        // 49 + 50 + 100
+```
+
+**For a minimal game:**
+
+```agscript
+#define MAX_ROOM_HOTSPOTS_SUPPORTED 20   // Fewer hotspots
+#define MAX_CHARACTERS_SUPPORTED 10      // Small cast
+#define MAX_ROOM_OBJECTS_SUPPORTED 30    // Simple rooms
+#define TOTAL_HINTS_SUPPORTED 60         // 20 + 10 + 30
+```
+
+### Important Notes
+
+* **AGS Engine Limits**: The game engine itself caps hotspots at 49 and objects at 256 - you can't go higher than these
+* **Memory Trade-off**: Bigger boxes use more computer memory, even if you don't fill them completely
+* **Performance**: More supported clickables means the game takes slightly longer to scan each room
+* **Math Requirement**: Your game will crash if `TOTAL_HINTS_SUPPORTED` doesn't equal the sum of your three box sizes
+* **Per-Room Limits**: These limits apply to each individual room, not your entire game
+
+### When to Adjust
+
+**Make your boxes bigger if:**
+
+* You get "Too many character in room" error messages when testing
+* Some clickable things in your rooms aren't being detected
+* You have rooms with lots of interactive elements (more than the default settings handle)
+
+**Make your boxes smaller if:**
+
+* You want to save computer memory (especially for older computers or mobile games)
+* Your game has consistently simple rooms with few clickables and you want slightly better performance
+
 ## Usage
 
 ### Getting Clickable Count
 
 ```agscript
-// Get total number of clickables in the room
-int totalClickables = RoomIndex.EntityCount;
+// Get actual number of clickables in the room
+int actualClickables = 0;
+for (int i = 0; i < RoomIndex.EntityCount; i++) {
+  if (RoomIndex.IsInitialized(i)) {
+    actualClickables++;
+  }
+}
 
-Display("This room has %d clickables", totalClickables);
+Display("This room has %d clickables", actualClickables);
+
+// Note: RoomIndex.EntityCount is the maximum supported clickables, not the actual count
 ```
 
 ### Iterating Through Clickables
