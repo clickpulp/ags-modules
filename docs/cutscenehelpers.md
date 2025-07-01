@@ -2,11 +2,11 @@
 
 ## About
 
-This module provides improvements for cut-scene management, particularly when skipping them so they don't take too long to skip.
+Makes your cutscenes skip much faster when players want to skip them. Nobody likes waiting 30 seconds for a cutscene to finish skipping!
 
-The problem with the way cut-scenes are skipped by the AGS engine is that they continue to play through the scene in the background without rendering them until it finds the `EndCutscene()` function. This means that for long animations, speech lines, and anything that is blocking, it will run frame by frame.
+**The problem this solves:** Normally when players skip a cutscene in AGS, the game still plays through everything in the background - every animation, every voice line, every pause - just without showing it. This means skipping can take forever.
 
-This module tries to prevent that by providing some ways to skip ahead so that the engine does not play these things frame by frame.
+**What this does:** Makes cutscenes actually skip instantly by jumping straight to the end instead of playing everything invisibly.
 
 ## Dependencies
 

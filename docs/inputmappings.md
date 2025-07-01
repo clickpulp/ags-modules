@@ -2,7 +2,9 @@
 
 ## About
 
-Creates and exports pre-configured input mapping objects for common game actions. This module provides ready-to-use InputMapping objects and AxisTracker objects that can be used throughout your game without having to create and configure them manually.
+Ready-made control setups so you don't have to wire up all the buttons yourself! This gives you standard controls (like movement, action buttons, menu navigation) that already work with keyboard, mouse, and gamepad.
+
+**Time saver:** Instead of spending time setting up "W/A/S/D + arrow keys + gamepad stick = movement", you just get working controls immediately.
 
 ## Dependencies
 

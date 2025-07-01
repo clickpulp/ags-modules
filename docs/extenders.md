@@ -2,7 +2,9 @@
 
 ## About
 
-Provides useful extensions and enhancements to existing AGS objects including Character, Point, Mouse, Dialog, and global game functions. These extensions add commonly needed functionality that isn't available in the base AGS engine.
+Adds handy new abilities to AGS objects that you probably wish were already there! Things like better mouse handling, smarter character functions, and improved dialog management.
+
+**What this gives you:** All those little utility functions you end up writing in every project - but already done and tested. Saves you time and makes your code cleaner.
 
 ## Dependencies
 

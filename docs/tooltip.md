@@ -2,7 +2,9 @@
 
 ## About
 
-A simple tooltip system that allows you to display text tooltips at specific screen coordinates. Useful for showing help text, item descriptions, or contextual information.
+Easily show helpful text when players hover over things in your game! Perfect for explaining what items do, giving hints, or showing extra information without cluttering your interface.
+
+**Great for:** Item descriptions, control hints, character names, or any time you want to give players more information without opening a whole dialog box.
 
 ## Dependencies
 

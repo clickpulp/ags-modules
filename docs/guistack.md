@@ -2,13 +2,15 @@
 
 ## About
 
-A better way to manage GUIs through a [stack data structure](https://www.thedshandbook.com/stacks/). This eases the use of not remembering the previous GUI and makes features like page flipping or deep menu navigation a lot easier to manage.
+This module makes nested menus work smoothly, like going from Main Menu → Options → Video Settings → Resolution. It remembers where you came from and handles the "back" button correctly.
 
-It enables a game developer to "push" GUIs into a stack:
+**Think of it like a stack of papers:** When you open a new menu, it goes on top of the stack. When you press "back" or "cancel," it removes the top menu and shows the one underneath.
 
-* When a GUI is pushed, the previous GUI is hidden (optionally) and the new GUI is placed on top.
-* When the user "pops" out of the stack, the topmost GUI in the stack is hidden, and the previous GUI is shown.
-* If the player has a gamepad attached, it will restore the cursor to the previous position.
+**What this solves:**
+
+* Players expect the back button to work consistently
+* You don't have to manually track which menu to return to
+* Gamepad users get their cursor positioned correctly when returning to previous menus
 
 ## Dependencies
 
@@ -26,9 +28,9 @@ This uses functionality from other modules. The modules listed below need to be 
 * `Pulp_Input`
 * `TwoClickHandler`
 
-## Usage
+## How To Use This
 
-The GUI Stack module provides two ways to interact with the stack: static methods on the `GUIStack` object, and extender functions that work directly on GUI objects.
+There are two ways to work with menus using this system. Both do the same thing, but the second way (GUI Extender Functions) is usually easier to read and write.
 
 ### Static Methods
 

@@ -2,7 +2,9 @@
 
 ## About
 
-Allows you to store and retrieve values that can be modified after the game is released without breaking saved games. This is useful for patches, updates, or configuration values that need to be changed post-release while maintaining save game compatibility.
+Need to change something in your game after you've already released it? This module lets you update settings, fix balance issues, or add new features without breaking anyone's saved games.
+
+**Perfect for:** Fixing difficulty issues, adding new options, tweaking game balance, or changing values that you realize need adjustment after players have been playing your game.
 
 ## Dependencies
 

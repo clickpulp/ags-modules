@@ -2,7 +2,9 @@
 
 ## About
 
-Provides a simple function to check if the game is currently running a blocking script. This is useful for determining when certain actions should be disabled or when the game state needs to be checked before performing operations.
+A handy way to check if the game is busy doing something (like playing a cutscene or showing dialog) so you know when to disable certain player actions.
+
+**Why you need this:** Sometimes you want to prevent players from opening menus or saving during cutscenes. This function tells you when the game is "busy" so you can disable those features temporarily.
 
 ## Dependencies
 

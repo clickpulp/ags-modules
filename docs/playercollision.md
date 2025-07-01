@@ -2,7 +2,14 @@
 
 ## About
 
-Adds intelligent collision detection around the player character to automatically detect nearby interactive objects. When the player moves close to doors, characters, exits, or signs, the system can automatically highlight them or set cursor targets, making keyboard and gamepad navigation much more intuitive.
+This module makes your game much more intuitive for players using keyboards or gamepads. When the player character walks near something they can interact with (like a door, person, or sign), the game automatically highlights it and positions the cursor there.
+
+**Why this makes your game better:**
+
+* Players don't have to hunt around with the cursor - the game helps them
+* Perfect for keyboard and gamepad users who can't point precisely
+* Makes interactions feel smooth and modern
+* Helps players discover interactive objects naturally while exploring
 
 ## Dependencies
 

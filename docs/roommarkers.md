@@ -2,7 +2,9 @@
 
 ## About
 
-Module for drawing spatial markers in rooms. These markers can be used to highlight areas, mark points of interest, or provide visual feedback to players. The markers are drawn as graphics at specific room coordinates and can be dynamically placed, cleared, and managed.
+Need to put visual indicators in your rooms? This module lets you place markers anywhere - perfect for highlighting important objects, showing quest objectives, or drawing attention to things players should notice.
+
+**Think of it like:** Sticky notes you can place anywhere in a room, except they're visual markers that appear in the game world.
 
 ## Dependencies
 

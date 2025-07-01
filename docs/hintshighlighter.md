@@ -2,7 +2,14 @@
 
 ## About
 
-When players press a designated key, this module highlights all interactive objects in the current room, making it easier to find hotspots, characters, and objects they can interact with. This is especially useful for adventure games where players might miss interactive elements.
+Ever played an adventure game and spent ages clicking everywhere trying to find what you can interact with? This module solves that problem! When players press a button (like Tab or a gamepad button), it highlights everything they can click on in the room.
+
+**Why your players will love this:**
+
+* No more pixel hunting - they can see exactly what's interactive
+* Great for accessibility - helps players with visual difficulties
+* Makes your game feel modern and player-friendly
+* Reduces frustration when players get stuck
 
 ## Dependencies
 

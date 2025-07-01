@@ -2,7 +2,9 @@
 
 ## About
 
-Central input processing system that handles all mapped input interactions across different game states. This module takes input from the `Pulp_InputMappings` and translates them into appropriate actions like mouse clicks, signal dispatches, and GUI interactions depending on the current game context.
+The smart system that automatically handles player input in different situations. When players are in a menu, it does menu things. When they're in a dialog, it does dialog things. When they're playing the game, it does game things.
+
+**What this means:** You don't have to write different input handling for every situation - this module figures out what the player probably wants to do based on what's happening in the game.
 
 ## Dependencies
 

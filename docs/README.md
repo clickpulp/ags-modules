@@ -1,12 +1,12 @@
 # Clickpulp AGS Modules Documentation
 
-*This doc is a work in progress. The modules are currently used for internal development but you are welcome to export and install them on your game as they are free to use.*
+*Welcome! These modules are tools to make your Adventure Game Studio game more modern and player-friendly. They're free to use and designed to save you time.*
 
-## Setup
+## Getting Started
 
-1. A lot of the modules depend on each other and you may need to install all of them in the exact order in which appear in the example game under the `Clickpulp` folder.
+**Important:** These modules work together like a team - some need others to work properly. Install them in the same order they appear in the example game's `Clickpulp` folder to avoid issues.
 
-In a `game_start`, you can set your inventory and main menu gui optionally:
+**Optional Setup:** If you want to use the input handling features, you can tell the modules which menus you're using. Add this to your `game_start` function:
 
 ```agsscript
 void game_start() {
@@ -15,43 +15,43 @@ void game_start() {
 }
 ```
 
-## Modules
+## What These Modules Do For Your Game
 
-### Core Modules
+### Essential Foundation
 
-* `PulpGlobals` - All the global values shared across modules
-* [`Pulp_Signal`](./signal.md) - Signals modules that allow you to dispatch and check for messages across scripts.
-* [`Pulp_Extenders`](./extenders.md) - Functions that extend existing AGS Objects
-* [`Pulp_Rect`](./rect.md) - A typical `Rect` object found in other game engines (x1, y1, x2, y2)
-* [`Pulp_IsInBlockingScript`](./isinblockingscript.md) - Function that checks if the game is running a blocking script.
+* `PulpGlobals` - Shared settings that help all modules work together
+* [`Pulp_Signal`](./signal.md) - Lets different parts of your game talk to each other easily
+* [`Pulp_Extenders`](./extenders.md) - Adds useful new abilities to AGS objects (like better mouse handling)
+* [`Pulp_Rect`](./rect.md) - Tools for working with rectangular areas (collision detection, UI layout)
+* [`Pulp_IsInBlockingScript`](./isinblockingscript.md) - Tells you when the game is busy (during cutscenes, etc.)
 
-### Input & Control Modules
+### Modern Controls & Input
 
-* [`Pulp_Input`](./input.md) - Input mapper that allows setting a generic action to multiple inputs (keyboard, mouse, or gamepad)
-* [`Pulp_InputMappings`](./inputmappings.md) - Creates and exports all the input mappings objects.
-* [`Pulp_InputHandling`](./inputhandling.md) - Adds interaction to all the mapped input objects.
-* [`Pulp_PlayerDirectControl`](./playerdirectcontrol.md) - A module that allows the player character to be controlled via keyboard using pathfinding.
-* [`Pulp_Cursor`](./cursor.md) - Improved cursor functions that allow it to be controlled from keyboard or controller.
+* [`Pulp_Input`](./input.md) - Let players use keyboard, mouse, or gamepad for the same actions
+* [`Pulp_InputMappings`](./inputmappings.md) - Pre-made control schemes that work with all input types
+* [`Pulp_InputHandling`](./inputhandling.md) - Automatically handles player input in different game situations
+* [`Pulp_PlayerDirectControl`](./playerdirectcontrol.md) - Let players move the character with arrow keys (like modern games)
+* [`Pulp_Cursor`](./cursor.md) - Smart cursor that works with keyboard and gamepad, not just mouse
 
-### GUI & Interface Modules
+### Better Menus & Interface
 
-* [`Pulp_GUIStack`](./guistack.md) - A better way to manage GUIs through a [stack data structure](https://www.thedshandbook.com/stacks/).
-* [`Pulp_Tooltip`](./tooltip.md) - Simple tooltip system for displaying contextual text information.
+* [`Pulp_GUIStack`](./guistack.md) - Makes nested menus work smoothly (like Options → Video → Resolution)
+* [`Pulp_Tooltip`](./tooltip.md) - Easy way to show helpful text when hovering over things
 
-### Cutscene & Audio Modules
+### Smoother Cutscenes
 
-* [`Pulp_CutsceneHelpers`](./cutscenehelpers.md) - Functions and events that improve cutscene management and skipping.
+* [`Pulp_CutsceneHelpers`](./cutscenehelpers.md) - Makes cutscenes skip faster and more reliably
 
-### Room & Object Modules
+### Smart Room Features
 
-* [`Pulp_RoomIndex`](./roomindex.md) - Provides a list (index) of all the active characters, objects, hotspots in the room, their size, and their properties.
-* [`Pulp_RoomMarkers`](./roommarkers.md) - Module to draw spatial markers in a room. Used by HintsHighlighter.
-* [`Pulp_HintsHighlighter`](./hintshighlighter.md) - When the player presses a key, they can see all the interactive objects in the room.
+* [`Pulp_RoomIndex`](./roomindex.md) - Automatically finds all the clickable things in each room
+* [`Pulp_RoomMarkers`](./roommarkers.md) - Places visual indicators in rooms (like highlighting important objects)
+* [`Pulp_HintsHighlighter`](./hintshighlighter.md) - Shows players what they can interact with (great for accessibility)
 
-### Player & Physics Modules
+### Intelligent Movement
 
-* [`Pulp_PlayerCollision`](./playercollision.md) - Adds a collision on top of the player character so that interactive objects can be detected while walking around using keyboard or gamepad. (examples doors or characters.)
+* [`Pulp_PlayerCollision`](./playercollision.md) - Automatically highlights objects when the player gets close (perfect for keyboard/gamepad users)
 
-### Utility Modules
+### Post-Release Support
 
-* [`Pulp_PatchValues`](./patchvalues.md) - An extra module that allows you to set values after the game is released without breaking the saved games
+* [`Pulp_PatchValues`](./patchvalues.md) - Change game settings after release without breaking saved games

@@ -2,7 +2,9 @@
 
 ## About
 
-A typical `Rect` object found in other game engines, representing a rectangle with left, top, right, and bottom coordinates. This is useful for collision detection, UI layout, bounds checking, and spatial calculations.
+Tools for working with rectangular areas in your game. Whether you need to check if things are colliding, position UI elements, or figure out if the player clicked inside a specific area, this module has you covered.
+
+**Common uses:** Checking if objects overlap, positioning buttons and menus, detecting clicks in specific areas, or keeping characters within certain boundaries.
 
 ## Dependencies
 

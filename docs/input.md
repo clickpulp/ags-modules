@@ -2,7 +2,9 @@
 
 ## About
 
-The Input module provides a flexible input mapping system that allows you to map game actions to multiple input sources (keyboard, mouse, and gamepad). Instead of checking for specific keys or buttons throughout your game, you can define generic input actions and map them to various input sources.
+This module lets you create controls that work with any input device - keyboard, mouse, or gamepad. Instead of saying "Press Space to jump," you can say "Press the Jump button" and let players use whatever they prefer: Space bar, mouse click, or gamepad A button.
+
+**Why this is helpful:** Modern players expect games to work with their preferred input method. Some use keyboards, others prefer gamepads, and some have accessibility needs requiring specific inputs.
 
 ## Dependencies
 
@@ -13,42 +15,44 @@ This module does not depend on other modules, but it works best with:
 * `Pulp_InputMappings` - Provides pre-configured input mappings
 * `Pulp_InputHandling` - Handles the actual input processing
 
-## Key Features
+## What This Does For Your Players
 
-* **Multi-input mapping**: Map a single action to multiple input sources (e.g., "jump" can be mapped to Space key, gamepad A button, and mouse click)
-* **Controller support**: Supports Xbox, PlayStation, Nintendo, and Steam Deck controllers with automatic detection
-* **Axis support**: Handle analog stick and trigger inputs with deadzone support
-* **Input repetition**: Control whether inputs repeat when held down
+* **Any input works**: One action (like "jump") can respond to multiple buttons - Space bar, gamepad A button, and mouse click all work
+* **All controllers supported**: Works automatically with Xbox, PlayStation, Nintendo, and Steam Deck controllers
+* **Smooth analog movement**: Gamepad sticks and triggers work naturally with sensitivity settings
+* **Smart button handling**: Choose whether holding a button repeats the action or just triggers once
 
 ## Usage
 
-### Creating Input Mappings
+### Setting Up Controls
+
+Here's how to create a "Jump" action that works with any input device:
 
 ```agscript
-// Create an input mapping for jumping
+// Create a new action called "jump"
 InputMapping* jumpInput = new InputMapping;
 
-// Add multiple input sources for the same action
-jumpInput.AddKey(eKeySpace);           // Spacebar
-jumpInput.AddMouseButton(eMouseLeft);  // Left mouse button
-jumpInput.AddControllerButton(eControllerA); // A button on controller
+// Let players use any of these to jump:
+jumpInput.AddKey(eKeySpace);           // Space bar on keyboard
+jumpInput.AddMouseButton(eMouseLeft);  // Left click with mouse
+jumpInput.AddControllerButton(eControllerA); // A button on gamepad
 
-// Enable the mapping
+// Turn on this control setup
 jumpInput.Enabled = true;
 ```
 
-### Checking for Input
+### Using the Controls in Your Game
 
 ```agscript
-// In your repeatedly_execute or input handling code:
+// Check if the player wants to jump (works with any input they mapped):
 if (jumpInput.IsPressed()) {
-  // Player pressed jump!
+  // Player pressed their jump button!
   player.Jump();
 }
 
-// Check for single press (no repeat)
+// For actions that should only happen once per press:
 if (jumpInput.IsPressed(eNoRepeat)) {
-  // Only triggers once per press
+  // This only triggers once, even if they hold the button down
 }
 ```
 

@@ -2,7 +2,9 @@
 
 ## About
 
-Provides a unified index of all interactive objects in the current room (hotspots, characters, and objects). This module analyzes the room and creates a list of all interactive elements with their bounds, properties, and types, making it easier to programmatically work with room elements.
+Automatically finds and organizes all the clickable things in each room - characters, objects, hotspots, everything! This makes it easy for other systems (like the hints highlighter) to work with all interactive elements without having to search for them manually.
+
+**Why this helps:** Instead of having to check every character, every object, and every hotspot separately, you can just ask "what can players interact with in this room?" and get a neat list.
 
 ## Dependencies
 

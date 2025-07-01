@@ -2,7 +2,14 @@
 
 ## About
 
-Enables direct keyboard and gamepad control of the player character using pathfinding. Instead of clicking to move, players can use keyboard keys or gamepad controls to move the character around the room with smooth pathfinding.
+Let players move the character with arrow keys or a gamepad instead of clicking everywhere! This makes your adventure game feel more like modern games where you can just walk around directly.
+
+**Why players love this:**
+
+* Feels natural for players used to modern games
+* Great for people who prefer keyboards or gamepads over mouse
+* Still uses AGS pathfinding, so characters walk around obstacles properly
+* Can be turned on/off, so you can offer both control styles
 
 ## Dependencies
 

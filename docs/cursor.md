@@ -11,16 +11,16 @@ This module works with the input system:
 ### Optional
 
 * `Pulp_Input` - For input mapping
-* `arrowselect` - For arrow-based navigation
+* `arrowselect` - For arrow-based navigation  
 * Controller plugins - For gamepad support
 
-## Key Features
+## What This Does For Your Players
 
-* **Multi-input cursor control**: Move cursor with keyboard, gamepad, or mouse
-* **Click targeting**: Set specific targets for automatic clicking
-* **Arrow select integration**: Works with arrow-based UI navigation
-* **Cursor locking**: Prevent cursor movement when needed
-* **Input-driven movement**: Move cursor based on input mappings
+* **Any input moves the cursor**: Players can use keyboard, gamepad, or mouse to control the cursor
+* **Smart auto-targeting**: The cursor can automatically move to important objects
+* **Works with menus**: Navigate menus smoothly with keyboard or gamepad
+* **Cursor can be locked**: Prevent cursor movement during cutscenes or special moments
+* **Feels responsive**: Cursor movement adapts to whatever input the player prefers
 
 ## Usage
 

@@ -2,7 +2,9 @@
 
 ## About
 
-Signals modules that allow you to dispatch and check for messages across scripts, preventing cases where different parts of the code need to know of each other's existence. This is a common feature in other game engines, sometimes called event dispatching.
+This module lets different parts of your game talk to each other easily without getting tangled up. Think of it like a message system - one part of your game can send a message saying "the player opened a door" and other parts can listen for that message and react.
+
+**Why this is useful:** Instead of having your scripts directly call each other (which gets messy), you can have them send and receive messages. This keeps your code organized and makes it easier to add new features later.
 
 ## Dependencies
 
