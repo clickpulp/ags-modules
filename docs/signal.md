@@ -8,33 +8,38 @@ This module lets different parts of your game talk to each other easily without 
 
 ## How Signals Work
 
-The diagram below shows the complete signal lifecycle in AGS:
+Signals follow a simple but important lifecycle in AGS:
 
-```mermaid
-flowchart TD
-    A["Game Event"] --> B["Signal.Dispatch('door_opened')"]
-    B --> C["Signal stored in memory"]
-    C --> D["Game Loop Continues"]
-    D --> E["repeatedly_execute() called"]
-    E --> F{"Signal.WasDispatched('door_opened')?"}
-    F -->|Yes| G["Handle the signal"]
-    F -->|No| H["Continue with other code"]
-    G --> I["End of Gameoop"]
-    H --> I
-    I --> J["All signals cleared automatically"]
-    J --> K["Next Game Loop begins"]
-    K --> D
-```
+### 1. Signal Dispatch
 
-**Key Points:**
-- **Signals are dispatched** when events happen anywhere in your game
-- **Signals are checked** during the game loop in `repeatedly_execute()` or `repeatedly_execute_always()`
-- **Signals last only one frame** - they're automatically cleared at the end of each frame
-- **Multiple handlers** can check for the same signal in different parts of your code
+When something happens in your game (like a door opening, button click, or character death), you call `Signal.Dispatch()` to send a message. This stores the signal in memory for the current frame.
+
+### 2. Game Loop Processing
+
+During each frame, AGS calls your `repeatedly_execute()` or `repeatedly_execute_always()` functions. This is where you check for signals using `Signal.WasDispatched()`.
+
+### 3. Signal Handling
+
+If a signal was dispatched this frame, your code can handle it by:
+
+- Getting signal values with `Signal.GetValue()`
+- Performing actions (play sounds, update UI, change game state, etc.)
+- Triggering other game systems
+
+### 4. Automatic Cleanup
+
+At the end of each frame, all signals are automatically cleared from memory. This means signals only last for one frame - you must check them before the frame ends.
+
+### Key Timing Rules
+
+- **Dispatch signals** from anywhere in your game (button events, room scripts, etc.)
+- **Check signals** only in `repeatedly_execute()` or `repeatedly_execute_always()`
+- **One frame only** - signals disappear after each frame
+- **Multiple listeners** - different parts of your code can all check the same signal
 
 ## Dependencies
 
-* This module does not use any functionality from other modules.
+- This module does not use any functionality from other modules.
 
 ## Usage
 
