@@ -107,27 +107,27 @@ if (gMainMenu.IsInStack()) {}
 Using GUI extender functions makes menu navigation more intuitive:
 
 ```c
-function ShowGameMenu() {
+void ShowGameMenu() {
   // Push main menu with cursor on continue button
   gMainMenu.Push(btnContinue);
 }
 
-function ShowOptionsMenu() {
+void ShowOptionsMenu() {
   // Push options on top of main menu
   gOptions.Push(btnVideoSettings);
 }
 
-function ShowVideoSettings() {
+void ShowVideoSettings() {
   // Push video settings on top of options
   gVideoSettings.Push(btnResolution);
 }
 
-function CloseCurrentMenu() {
+void CloseCurrentMenu() {
   // Pop the current top GUI (whichever it is)
   GUIStack.PopGUI();
 }
 
-function CloseSpecificMenu() {
+void CloseSpecificMenu() {
   // Pop a specific GUI if it's on top
   if (GUIStack.TopGUI == gVideoSettings) {
     gVideoSettings.Pop();
@@ -138,22 +138,22 @@ function CloseSpecificMenu() {
 ### Game State Management
 
 ```c
-function ShowInventory() {
+void ShowInventory() {
   // Always push inventory - stack handles previous GUI automatically
   gInventory.Push(invSlot1);
 }
 
-function ShowDialogBox() {
+void ShowDialogBox() {
   // Show dialog with overlay, keeping previous GUI visible
   gDialog.Push(btnDialogOK, false, true);
 }
 
-function ShowFullScreenMenu() {
+void ShowFullScreenMenu() {
   // Show menu and hide previous GUI completely
   gMainMenu.Push(btnContinue, true);
 }
 
-function HandleEscapeKey() {
+void HandleEscapeKey() {
   if (GUIStack.ShowingGUI) {
     if (GUIStack.TopGUI == gMainMenu) {
       // Close main menu entirely
@@ -168,7 +168,7 @@ function HandleEscapeKey() {
   }
 }
 
-function HandleInventoryToggle() {
+void HandleInventoryToggle() {
   if (gInventory.IsInStack()) {
     // Inventory is showing, close it
     gInventory.Pop();
@@ -198,7 +198,7 @@ function HandleInventoryToggle() {
 This example shows a complete implementation using both static methods and GUI extender functions:
 
 ```c
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Handle GUI stack signals
   if (Signal.WasDispatched("gui_pushed")) {
     int guiID = Signal.GetValue("gui_pushed", 0);
@@ -220,7 +220,7 @@ function repeatedly_execute() {
   }
 }
 
-function on_key_press(eKeyCode keycode) {
+void on_key_press(eKeyCode keycode) {
   if (keycode == eKeyEscape) {
     HandleEscapeKey();
   } else if (keycode == eKeyTab) {
@@ -230,7 +230,7 @@ function on_key_press(eKeyCode keycode) {
   }
 }
 
-function HandleEscapeKey() {
+void HandleEscapeKey() {
   if (GUIStack.ShowingGUI) {
     // Pop current GUI or close all if on main menu
     if (GUIStack.TopGUI == gMainMenu) {
@@ -244,7 +244,7 @@ function HandleEscapeKey() {
   }
 }
 
-function ToggleInventory() {
+void ToggleInventory() {
   // Use extender function to check and toggle inventory
   if (gInventory.IsInStack()) {
     gInventory.Pop();
@@ -253,21 +253,21 @@ function ToggleInventory() {
   }
 }
 
-function ShowHelpDialog() {
+void ShowHelpDialog() {
   // Show help as overlay without closing previous GUI
   gHelp.Push(btnHelpClose, false, true);
 }
 
 // Button event handlers using extender functions
-function btnOptions_OnClick(GUIControl *control, MouseButton button) {
+void btnOptions_OnClick(GUIControl *control, MouseButton button) {
   gOptions.Push(btnVideoSettings);
 }
 
-function btnSave_OnClick(GUIControl *control, MouseButton button) {
+void btnSave_OnClick(GUIControl *control, MouseButton button) {
   gSaveGame.Push(btnSaveSlot1, true); // Hide main menu
 }
 
-function btnLoad_OnClick(GUIControl *control, MouseButton button) {
+void btnLoad_OnClick(GUIControl *control, MouseButton button) {
   gLoadGame.Push(btnLoadSlot1, true); // Hide main menu
 }
 ```

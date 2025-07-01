@@ -29,7 +29,7 @@ ProcessPlayerInput();
 ### Input Handling
 
 ```c
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Only process input when not in a blocking script
   if (!IsInBlockingScript()) {
     if (inputMenuButton.IsPressed()) {
@@ -46,7 +46,7 @@ function repeatedly_execute() {
 ### GUI Management
 
 ```c
-function UpdateGUI() {
+void UpdateGUI() {
   // Disable certain GUI elements during blocking scripts
   bool allowInput = !IsInBlockingScript();
   
@@ -78,7 +78,7 @@ A blocking script is any script that prevents normal game interaction, including
 ### Preventing Input During Cutscenes
 
 ```c
-function on_key_press(eKeyCode keycode) {
+void on_key_press(eKeyCode keycode) {
   if (IsInBlockingScript()) {
     // Don't process regular input during cutscenes
     return;
@@ -94,7 +94,7 @@ function on_key_press(eKeyCode keycode) {
 ### Conditional Save/Load
 
 ```c
-function AttemptQuickSave() {
+void AttemptQuickSave() {
   if (IsInBlockingScript()) {
     Display("Cannot save during cutscenes or dialog.");
     return;
@@ -108,7 +108,7 @@ function AttemptQuickSave() {
 ### Dynamic UI Updates
 
 ```c
-function interface_click(int interface, int button) {
+void interface_click(int interface, int button) {
   if (button == btnQuickActions) {
     if (IsInBlockingScript()) {
       // Show limited options during blocking scripts
@@ -124,7 +124,7 @@ function interface_click(int interface, int button) {
 ### Background System Updates
 
 ```c
-function repeatedly_execute_always() {
+void repeatedly_execute_always() {
   // Some systems should only run when player has control
   if (!IsInBlockingScript()) {
     UpdateAmbientSounds();
@@ -152,7 +152,7 @@ function repeatedly_execute_always() {
 // Example: Smart pause system that respects blocking scripts
 bool gamePaused = false;
 
-function on_key_press(eKeyCode keycode) {
+void on_key_press(eKeyCode keycode) {
   if (keycode == eKeySpace) { // Space to pause
     if (IsInBlockingScript()) {
       // Can't pause during cutscenes, but can skip
@@ -166,7 +166,7 @@ function on_key_press(eKeyCode keycode) {
   }
 }
 
-function TogglePause() {
+void TogglePause() {
   if (gamePaused) {
     UnPauseGame();
     gamePaused = false;
@@ -176,7 +176,7 @@ function TogglePause() {
   }
 }
 
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Update pause button text based on context
   if (IsInBlockingScript()) {
     btnPause.Text = "Skip";

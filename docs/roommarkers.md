@@ -53,14 +53,13 @@ RoomMarkers.ClearAll();
 ```c
 int nextMarkerID = 1;
 
-function PlaceQuestMarker(int x, int y) {
+void PlaceQuestMarker(int x, int y) {
   // Place a quest marker and return its ID
   RoomMarkers.Place(nextMarkerID, x, y, QUEST_MARKER_GRAPHIC);
   nextMarkerID++;
-  return nextMarkerID - 1;
 }
 
-function RemoveQuestMarker(int markerID) {
+void RemoveQuestMarker(int markerID) {
   RoomMarkers.Clear(markerID);
 }
 ```
@@ -83,7 +82,7 @@ function RemoveQuestMarker(int markerID) {
 ### Highlighting Interactive Objects
 
 ```c
-function HighlightInteractiveObjects() {
+void HighlightInteractiveObjects() {
   int markerID = 1;
   
   // Mark all hotspots
@@ -105,7 +104,7 @@ function HighlightInteractiveObjects() {
   }
 }
 
-function ClearHighlights() {
+void ClearHighlights() {
   RoomMarkers.ClearAll();
 }
 ```
@@ -116,7 +115,7 @@ function ClearHighlights() {
 int[] questMarkerIDs = new int[10];
 int questMarkerCount = 0;
 
-function AddQuestWaypoint(int x, int y, int questType) {
+void AddQuestWaypoint(int x, int y, int questType) {
   int graphic = GetQuestMarkerGraphic(questType);
   int markerID = GetNextMarkerID();
   
@@ -127,7 +126,7 @@ function AddQuestWaypoint(int x, int y, int questType) {
   questMarkerCount++;
 }
 
-function ClearQuestWaypoints() {
+void ClearQuestWaypoints() {
   for (int i = 0; i < questMarkerCount; i++) {
     RoomMarkers.Clear(questMarkerIDs[i]);
   }
@@ -140,7 +139,7 @@ function ClearQuestWaypoints() {
 ```c
 int feedbackMarkerID = -1;
 
-function ShowTemporaryMarker(int x, int y, int duration) {
+void ShowTemporaryMarker(int x, int y, int duration) {
   // Clear any existing temporary marker
   if (feedbackMarkerID != -1) {
     RoomMarkers.Clear(feedbackMarkerID);
@@ -154,7 +153,7 @@ function ShowTemporaryMarker(int x, int y, int duration) {
   SetTimer(TEMP_MARKER_TIMER, duration);
 }
 
-function on_event(EventType event, int data) {
+void on_event(EventType event, int data) {
   if (event == eEventGameCyclesLate && data == TEMP_MARKER_TIMER) {
     if (feedbackMarkerID != -1) {
       RoomMarkers.Clear(feedbackMarkerID);
@@ -167,7 +166,7 @@ function on_event(EventType event, int data) {
 ### Room Transition Markers
 
 ```c
-function MarkRoomExits() {
+void MarkRoomExits() {
   // Mark all room exits with directional indicators
   RoomMarkers.Place(EXIT_NORTH, 160, 50, ARROW_UP_GRAPHIC);
   RoomMarkers.Place(EXIT_SOUTH, 160, 190, ARROW_DOWN_GRAPHIC);
@@ -175,7 +174,7 @@ function MarkRoomExits() {
   RoomMarkers.Place(EXIT_WEST, 10, 120, ARROW_LEFT_GRAPHIC);
 }
 
-function on_event(EventType event, int data) {
+void on_event(EventType event, int data) {
   if (event == eEventEnterRoomBeforeFadein) {
     // Clear markers from previous room
     RoomMarkers.ClearAll();
@@ -198,7 +197,7 @@ function on_event(EventType event, int data) {
 
 ```c
 // Example: Custom hints implementation using room markers
-function ShowCustomHints() {
+void ShowCustomHints() {
   int markerID = 100; // Start with high ID to avoid conflicts
   
   // Use RoomIndex to find all interactive objects
@@ -215,7 +214,7 @@ function ShowCustomHints() {
   }
 }
 
-function HideCustomHints() {
+void HideCustomHints() {
   // Clear all hint markers (assuming they start from ID 100)
   for (int i = 100; i < 200; i++) {
     RoomMarkers.Clear(i);

@@ -63,7 +63,7 @@ The module dispatches several signals that your game can listen for:
 
 ```c
 // Listen for input-generated signals
-function repeatedly_execute() {
+void repeatedly_execute() {
   if (Signal.WasDispatched("toggle_inv")) {
     ToggleInventoryDisplay();
   }
@@ -146,13 +146,13 @@ The module dispatches these signals for game systems to handle:
 
 ```c
 // The module works automatically, but you need to handle its signals
-function game_start() {
+void game_start() {
   // Set up the GUIs the module will reference
   pulpGlobals.MainMenuGUI = gMainMenu;
   pulpGlobals.InventoryGUI = gInventory;
 }
 
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Handle signals dispatched by input handling
   if (Signal.WasDispatched("toggle_inv")) {
     if (gInventory.Visible) {

@@ -90,7 +90,7 @@ Display("Rectangle: %s", rectInfo);
 ### Collision Detection
 
 ```c
-function CheckCollision(Rect* rect1, Rect* rect2) {
+void CheckCollision(Rect* rect1, Rect* rect2) {
   if (rect1.left < rect2.right && rect1.right > rect2.left &&
       rect1.top < rect2.bottom && rect1.bottom > rect2.top) {
     // Rectangles are overlapping
@@ -103,7 +103,7 @@ function CheckCollision(Rect* rect1, Rect* rect2) {
 ### Point-in-Rectangle Testing
 
 ```c
-function IsPointInRect(int x, int y, Rect* rect) {
+void IsPointInRect(int x, int y, Rect* rect) {
   if (x >= rect.left && x <= rect.right &&
       y >= rect.top && y <= rect.bottom) {
     return true;
@@ -120,7 +120,7 @@ if (IsPointInRect(mouse.x, mouse.y, buttonBounds)) {
 ### UI Layout
 
 ```c
-function CreateButtonLayout() {
+void CreateButtonLayout() {
   // Create buttons with consistent spacing
   int buttonWidth = 80;
   int buttonHeight = 30;
@@ -139,7 +139,7 @@ function CreateButtonLayout() {
 ### Bounds Checking
 
 ```c
-function KeepCharacterInBounds(Character* character, Rect* bounds) {
+void KeepCharacterInBounds(Character* character, Rect* bounds) {
   if (character.x < bounds.left) character.x = bounds.left;
   if (character.x > bounds.right) character.x = bounds.right;
   if (character.y < bounds.top) character.y = bounds.top;
@@ -172,12 +172,12 @@ gTooltip.SetPosition(screenArea.left, screenArea.top);
 // Example: Create a safe area system for the player
 Rect* safeZone;
 
-function room_FirstLoad() {
+void room_FirstLoad() {
   // Define a safe zone in the room
   safeZone = Rect.Create(50, 100, 250, 200);
 }
 
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Check if player is outside safe zone
   Point* playerPos = Point.Create(player.x, player.y);
   if (!IsPointInRect(player.x, player.y, safeZone)) {

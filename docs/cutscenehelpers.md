@@ -53,7 +53,7 @@ While these functions speed up the cut-scene skip process, there may be some sid
 ### Basic Cutscene Setup
 
 ```c
-function StartCutscene() {
+void StartCutscene() {
   StartCutscene();
   
   // Use cutscene-aware functions
@@ -71,7 +71,7 @@ function StartCutscene() {
 ### Complex Animation Sequence
 
 ```c
-function ComplexCutscene() {
+void ComplexCutscene() {
   StartCutscene();
   
   // Multiple objects animating - will skip properly

@@ -76,7 +76,7 @@ The collision system works automatically when the player moves around:
 The collision system works seamlessly with direct player control:
 
 ```c
-function repeatedly_execute() {
+void repeatedly_execute() {
   // When using PlayerDirectControl, collision detection
   // automatically activates as the player moves around
   
@@ -127,7 +127,7 @@ Objects are prioritized by:
 ```c
 // The collision system works automatically, but you can enhance it:
 
-function room_RepExec() {
+void room_RepExec() {
   // The collision system runs automatically in the background
   // and will set cursor targets and markers as needed
   
@@ -142,7 +142,7 @@ function room_RepExec() {
 }
 
 // Respond to player interactions with detected objects
-function on_mouse_click(MouseButton button) {
+void on_mouse_click(MouseButton button) {
   if (button == eMouseLeft && Cursor.HasClickTarget) {
     // Player clicked on automatically targeted object
     // The target was set by the collision system

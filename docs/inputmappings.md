@@ -53,12 +53,12 @@ For smooth analog movement and cursor control:
 ### Basic Setup
 
 ```c
-function game_start() {
+void game_start() {
   // Configure the pre-made input mappings
   SetupInputMappings();
 }
 
-function SetupInputMappings() {
+void SetupInputMappings() {
   // Configure movement inputs
   inputUp.AddKey(eKeyUpArrow);
   inputUp.AddKey(eKeyW);
@@ -97,7 +97,7 @@ function SetupInputMappings() {
 ### Using in Game Logic
 
 ```c
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Use the pre-configured mappings directly
   if (inputPrimaryButton.IsPressed(eNoRepeat)) {
     HandlePrimaryAction();
@@ -126,7 +126,7 @@ function repeatedly_execute() {
 ### Menu Navigation
 
 ```c
-function HandleMenuNavigation() {
+void HandleMenuNavigation() {
   if (inputUp.IsPressed(eNoRepeat)) {
     SelectPreviousMenuItem();
   }
@@ -150,7 +150,7 @@ function HandleMenuNavigation() {
 You can modify the default mappings to suit your game's needs:
 
 ```c
-function CustomizeInputs() {
+void CustomizeInputs() {
   // Add additional keys to existing mappings
   inputPrimaryButton.AddKey(eKeyReturn);
   inputPrimaryButton.AddKey(eKeySpace);
@@ -206,11 +206,11 @@ All exported AxisTracker objects:
 
 ```c
 // Complete setup example
-function game_start() {
+void game_start() {
   SetupAllInputMappings();
 }
 
-function SetupAllInputMappings() {
+void SetupAllInputMappings() {
   // Movement
   ConfigureMovementInputs();
   
@@ -221,7 +221,7 @@ function SetupAllInputMappings() {
   ConfigureUIInputs();
 }
 
-function ConfigureMovementInputs() {
+void ConfigureMovementInputs() {
   // Up
   inputUp.AddKey(eKeyUpArrow);
   inputUp.AddKey(eKeyW);
@@ -231,7 +231,7 @@ function ConfigureMovementInputs() {
   // Similar for inputDown, inputLeft, inputRight...
 }
 
-function ConfigureActionInputs() {
+void ConfigureActionInputs() {
   // Primary action
   inputPrimaryButton.AddKey(eKeyEnter);
   inputPrimaryButton.AddMouseButton(eMouseLeft);
@@ -245,7 +245,7 @@ function ConfigureActionInputs() {
   inputSecondaryButton.Enabled = true;
 }
 
-function ConfigureUIInputs() {
+void ConfigureUIInputs() {
   // Inventory
   inputInvButton.AddKey(eKeyI);
   inputInvButton.AddControllerButton(eControllerY);

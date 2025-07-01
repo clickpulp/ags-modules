@@ -91,16 +91,16 @@ if (Signal.WasDispatchedWithValue("room_changed", 4, 1)) {} // Previous room (in
 
 ```c
 // Dispatch complex events with multiple values
-function OnPlayerLevelUp(int newLevel, int skillPoints, int newHP) {
+void OnPlayerLevelUp(int newLevel, int skillPoints, int newHP) {
   Signal.Dispatch("player_level_up", newLevel, skillPoints, newHP);
 }
 
-function OnItemPickup(int itemID, int quantity, int rarity) {
+void OnItemPickup(int itemID, int quantity, int rarity) {
   Signal.Dispatch("item_pickup", itemID, quantity, rarity);
 }
 
 // Handle the events elsewhere
-function repeatedly_execute() {
+void repeatedly_execute() {
   if (Signal.WasDispatched("player_level_up")) {
     int level = Signal.GetValue("player_level_up", 0);
     int skillPts = Signal.GetValue("player_level_up", 1);
@@ -124,7 +124,7 @@ function repeatedly_execute() {
 
 ```c
 // Audio system listens for game events
-function AudioManager_RepeatExecute() {
+void AudioManager_RepeatExecute() {
   if (Signal.WasDispatched("door_opened")) {
     aDoorCreak.Play();
   }
@@ -140,7 +140,7 @@ function AudioManager_RepeatExecute() {
 }
 
 // UI system responds to game state changes
-function UI_RepeatExecute() {
+void UI_RepeatExecute() {
   if (Signal.WasDispatched("player_health_changed")) {
     int newHealth = Signal.GetValue("player_health_changed", 0);
     int maxHealth = Signal.GetValue("player_health_changed", 1);
@@ -167,12 +167,12 @@ enum GameState {
 
 GameState currentState;
 
-function ChangeGameState(GameState newState) {
+void ChangeGameState(GameState newState) {
   Signal.Dispatch("game_state_change", currentState, newState);
   currentState = newState;
 }
 
-function HandleStateChanges() {
+void HandleStateChanges() {
   if (Signal.WasDispatched("game_state_change")) {
     int oldState = Signal.GetValue("game_state_change", 0);
     int newState = Signal.GetValue("game_state_change", 1);
@@ -209,11 +209,11 @@ function HandleStateChanges() {
 #define SIGNAL_PLAYER_DIED "player_died"
 #define SIGNAL_GAME_SAVED "game_saved"
 
-function TriggerAchievement(int achievementID) {
+void TriggerAchievement(int achievementID) {
   Signal.Dispatch(SIGNAL_ACHIEVEMENT_UNLOCKED, achievementID);
 }
 
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Achievement system
   if (Signal.WasDispatched(SIGNAL_ACHIEVEMENT_UNLOCKED)) {
     int achID = Signal.GetValue(SIGNAL_ACHIEVEMENT_UNLOCKED, 0);

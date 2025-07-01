@@ -133,7 +133,7 @@ PauseGameOnce();
 ### Character Collision Detection
 
 ```c
-function CheckCharacterCollision(Character* char1, Character* char2) {
+void CheckCharacterCollision(Character* char1, Character* char2) {
   int char1Right = char1.x + char1.GetWidth();
   int char1Bottom = char1.y + char1.GetHeight();
   int char2Right = char2.x + char2.GetWidth();
@@ -151,7 +151,7 @@ function CheckCharacterCollision(Character* char1, Character* char2) {
 ### Smart Mouse Management
 
 ```c
-function ShowInventory() {
+void ShowInventory() {
   // Save mouse position before showing inventory
   Mouse.PushHistory();
   
@@ -161,7 +161,7 @@ function ShowInventory() {
   gInventory.Visible = true;
 }
 
-function HideInventory() {
+void HideInventory() {
   gInventory.Visible = false;
   
   // Restore mouse to previous position
@@ -172,7 +172,7 @@ function HideInventory() {
 ### Dialog Flow Control
 
 ```c
-function ManageDialog() {
+void ManageDialog() {
   if (!Dialog.IsDialogRunning()) {
     // Start a new dialog
     dMainDialog.StartCustom();

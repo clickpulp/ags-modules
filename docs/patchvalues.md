@@ -106,7 +106,7 @@ PatchValues.RemoveAll();
 
 ```c
 // In game_start() - apply balance patches
-function ApplyBalancePatches() {
+void ApplyBalancePatches() {
   // These values can be changed in updates without breaking saves
   int newMaxAmmo = PatchValues.GetInt("max_ammo_patch", 30);
   float newJumpHeight = PatchValues.GetFloat("jump_height_patch", 1.0);
@@ -120,7 +120,7 @@ function ApplyBalancePatches() {
 
 ```c
 // Enable/disable features post-release
-function CheckFeatureFlags() {
+void CheckFeatureFlags() {
   String newFeature = PatchValues.GetString("enable_special_mode");
   if (newFeature == "enabled") {
     // Activate special game mode
@@ -133,7 +133,7 @@ function CheckFeatureFlags() {
 
 ```c
 // Override default settings
-function ApplyConfigOverrides() {
+void ApplyConfigOverrides() {
   int customFPS = PatchValues.GetInt("target_fps", 60);
   SetGameSpeed(customFPS);
   
@@ -148,7 +148,7 @@ function ApplyConfigOverrides() {
 
 ```c
 // Apply fixes based on save game version
-function ApplyVersionFixes() {
+void ApplyVersionFixes() {
   String saveVersion = PatchValues.GetString("save_version");
   
   if (saveVersion == null || saveVersion == "1.0") {
@@ -172,11 +172,11 @@ function ApplyVersionFixes() {
 
 ```c
 // Complete example: Game difficulty adjustment system
-function game_start() {
+void game_start() {
   ApplyDifficultyPatches();
 }
 
-function ApplyDifficultyPatches() {
+void ApplyDifficultyPatches() {
   // These can be adjusted post-release for balancing
   float healthMultiplier = PatchValues.GetFloat("health_multiplier", 1.0);
   float damageMultiplier = PatchValues.GetFloat("damage_multiplier", 1.0);

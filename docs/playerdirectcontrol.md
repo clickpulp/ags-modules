@@ -58,7 +58,7 @@ The module automatically uses the input mappings from [`Pulp_InputMappings`](inp
 ### Example Setup
 
 ```c
-function game_start() {
+void game_start() {
   // Set up input mappings (if using Pulp_InputMappings)
   inputUp.AddKey(eKeyUpArrow);
   inputUp.AddKey(eKeyW);

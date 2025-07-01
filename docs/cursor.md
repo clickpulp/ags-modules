@@ -77,7 +77,7 @@ Cursor.SetLocked(false);
 ```c
 // Move cursor based on current input state
 // This would typically be called in repeatedly_execute
-function UpdateCursor() {
+void UpdateCursor() {
   if (Cursor.ArrowSelectEnabled && !Cursor.Locked) {
     Cursor.MoveByInput();
   }
@@ -106,7 +106,7 @@ function UpdateCursor() {
 ### Game Menu Navigation
 
 ```c
-function ShowMainMenu() {
+void ShowMainMenu() {
   gMainMenu.Visible = true;
   
   // Enable cursor control for menu navigation
@@ -118,7 +118,7 @@ function ShowMainMenu() {
   Cursor.SetClickTarget(firstButton, true);
 }
 
-function HideMainMenu() {
+void HideMainMenu() {
   gMainMenu.Visible = false;
   
   // Disable arrow select when returning to game

@@ -180,7 +180,7 @@ for (int i = 0; i < RoomIndex.EntityCount; i++) {
 
 ```c
 // Find what clickable is at a specific position
-function CheckClickableAtPosition(int x, int y) {
+void CheckClickableAtPosition(int x, int y) {
   for (int i = 0; i < RoomIndex.EntityCount; i++) {
     if (RoomIndex.IsInitialized(i)) {
       Rect* bounds = RoomIndex.GetBounds(i);
@@ -257,7 +257,7 @@ Flags can be combined using bitwise OR operations.
 
 ```c
 // Example: Find all talkable characters in the room
-function FindTalkableCharacters() {
+void FindTalkableCharacters() {
   for (int i = 0; i < RoomIndex.EntityCount; i++) {
     if (RoomIndex.IsInitialized(i) && RoomIndex.IsCharacter(i)) {
       int flags = RoomIndex.GetFlags(i);

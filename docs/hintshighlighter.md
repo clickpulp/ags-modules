@@ -48,7 +48,7 @@ If these properties are not set (value = 0), the module will automatically calcu
 ### Basic Setup
 
 ```c
-function game_start() {
+void game_start() {
   // Calculate hints for the starting room
   HintsHighlighter.CalculateHintsForRoom();
   
@@ -56,7 +56,7 @@ function game_start() {
   HintsHighlighter.EnableHints();
 }
 
-function on_event(EventType event, int data) {
+void on_event(EventType event, int data) {
   if (event == eEventEnterRoomBeforeFadein) {
     // Recalculate hints when entering a new room
     HintsHighlighter.CalculateHintsForRoom();
@@ -88,11 +88,11 @@ if (inputHintsButton.IsPressed()) {
 
 ```c
 // Disable hints during cutscenes
-function StartCutscene() {
+void StartCutscene() {
   HintsHighlighter.DisableHints();
 }
 
-function EndCutsceneExt() {
+void EndCutsceneExt() {
   HintsHighlighter.EnableHints();
 }
 ```
@@ -103,7 +103,7 @@ You can customize where hints appear for specific objects:
 
 ```c
 // In room script - customize hint position for a character
-function room_RepExec() {
+void room_RepExec() {
   // This would be implemented in your room script
   // The module provides GetHintPoint() extensions for objects
 }
@@ -144,7 +144,7 @@ function room_RepExec() {
 
 ```c
 // Complete integration example
-function game_start() {
+void game_start() {
   // Set up hints input
   inputHintsButton.AddKey(eKeyTab);
   inputHintsButton.AddKey(eKeyH);
@@ -155,7 +155,7 @@ function game_start() {
   HintsHighlighter.CalculateHintsForRoom();
 }
 
-function repeatedly_execute() {
+void repeatedly_execute() {
   // Toggle hints on key press
   if (inputHintsButton.IsPressed(eNoRepeat)) {
     if (HintsHighlighter.IsShowingHints()) {
@@ -166,7 +166,7 @@ function repeatedly_execute() {
   }
 }
 
-function on_event(EventType event, int data) {
+void on_event(EventType event, int data) {
   if (event == eEventEnterRoomBeforeFadein) {
     HintsHighlighter.CalculateHintsForRoom();
   }

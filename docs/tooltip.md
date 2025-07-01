@@ -34,7 +34,7 @@ myTooltip.Remove();
 
 ```c
 // Show tooltips on mouse hover
-function on_mouse_move() {
+void on_mouse_move() {
   // Remove any existing tooltip first
   if (currentTooltip != null) {
     currentTooltip.Remove();
