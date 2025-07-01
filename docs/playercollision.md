@@ -21,6 +21,7 @@ This module requires:
 * `Pulp_RoomMarkers` - For visual feedback/highlighting
 * `Pulp_Cursor` - For automatic cursor targeting
 * `Pulp_Rect` - For bounds calculations
+* `Tween` - For math utilities and distance calculations
 
 ## Key Features
 

@@ -19,6 +19,7 @@ This module works with the input system and requires:
 
 * `Pulp_Input` - For input mapping and handling
 * `Pulp_InputMappings` - For pre-configured movement controls
+* `Tween` - For math utilities
 
 ## Usage
 

@@ -8,7 +8,9 @@ Need to put visual indicators in your rooms? This module lets you place markers 
 
 ## Dependencies
 
-This module does not depend on other modules but is used by:
+### Required
+
+* `Tween` - For math utilities
 
 ### Used By
 

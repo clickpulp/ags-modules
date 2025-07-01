@@ -8,7 +8,9 @@ Easily show helpful text when players hover over things in your game! Perfect fo
 
 ## Dependencies
 
-This module does not depend on other modules.
+### Required
+
+* `Tween` - For math utilities and fade animations
 
 ## Usage
 

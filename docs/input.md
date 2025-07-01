@@ -8,7 +8,9 @@ This module lets you create controls that work with any input device - keyboard,
 
 ## Dependencies
 
-This module does not depend on other modules, but it works best with:
+### Required
+
+* `Tween` - For math utilities
 
 ### Optional
 

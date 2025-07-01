@@ -19,6 +19,7 @@ This module uses functionality from other modules:
 
 * `Pulp_RoomIndex` - For indexing interactive objects in the room
 * `Pulp_RoomMarkers` - For drawing the highlight overlays
+* `Tween` - For math utilities and fade animations
 
 ### Optional  
 

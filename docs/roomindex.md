@@ -10,7 +10,9 @@ Automatically finds and organizes all the clickable things in each room - charac
 
 ## Dependencies
 
-This module does not depend on other modules but is used by:
+### Required
+
+* `Tween` - For math utilities
 
 ### Used By
 

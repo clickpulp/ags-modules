@@ -22,6 +22,7 @@ This module requires:
 ### Optional
 
 * `PulpGlobals` - For accessing main menu and inventory GUIs
+* `arrowselect` - For arrow-based navigation support
 
 ## Key Features
 

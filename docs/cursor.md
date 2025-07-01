@@ -12,6 +12,7 @@ This module works with the input system:
 
 * `Pulp_Input` - For input mapping
 * `arrowselect` - For arrow-based navigation  
+* `Tween` - For math utilities
 * Controller plugins - For gamepad support
 
 ## What This Does For Your Players
