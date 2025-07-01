@@ -15,6 +15,25 @@ This module does not depend on other modules but is used by:
 * `Pulp_HintsHighlighter` - For finding interactive objects to highlight
 * Other modules that need to enumerate room objects
 
+## ⚠️ CRITICAL: Required Object Properties Setup
+
+**WARNING: You MUST define these properties in your AGS project BEFORE using this module, or your game will crash!**
+
+This module reads custom properties from your hotspots and objects to determine their behavior. Follow these steps:
+
+1. **In AGS Editor, go to the Properties section**
+2. **Add these custom properties for both Hotspots and Objects:**
+
+**Flag Properties:**
+
+* `Exit` (int) - Set to room number for exits, or any non-zero value to mark as an exit (adds `eEntityFlagExit`)
+* `IsDoor` (bool) - Mark hotspots/objects as doors (adds `eEntityFlagDoor`)
+* `IsSign` (bool) - Mark hotspots/objects as signs/readable items (adds `eEntityFlagSign`)
+
+**Important:** These properties must exist in your project even if you don't plan to use them immediately. The module will crash when it tries to read undefined properties.
+
+These properties are automatically detected and added to the object's flags when the room index is built.
+
 ## Key Features
 
 * **Unified object access**: Access hotspots, characters, and objects through a single index

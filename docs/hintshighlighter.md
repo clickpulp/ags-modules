@@ -24,6 +24,24 @@ This module uses functionality from other modules:
 
 * `Pulp_Input` - For input handling (hints button)
 
+## ⚠️ CRITICAL: Required Object Properties Setup
+
+**WARNING: You MUST define these properties in your AGS project BEFORE using this module, or your game will crash!**
+
+This module reads custom properties from your hotspots and objects to customize hint positioning. Follow these steps:
+
+1. **In AGS Editor, go to the Properties section**
+2. **Add these custom properties for both Hotspots and Objects:**
+
+**Hint Position Properties:**
+
+* `HintX` (int) - Custom X position for hint display (if not set, uses object center)
+* `HintY` (int) - Custom Y position for hint display (if not set, uses object center)
+
+**Important:** These properties must exist in your project even if you don't plan to set custom positions. The module will crash when it tries to read undefined properties.
+
+If these properties are not set (value = 0), the module will automatically calculate the hint position based on the object's bounds.
+
 ## Usage
 
 ### Basic Setup

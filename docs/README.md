@@ -17,6 +17,29 @@ void game_start() {
 }
 ```
 
+## ⚠️ CRITICAL: Required Object Properties Setup
+
+**WARNING: These properties MUST be defined in your AGS project BEFORE using the modules, or your game will crash!**
+
+Some modules use custom properties on your game objects. You must add these property definitions to your AGS project first:
+
+1. **Open your AGS Editor**
+2. **Go to the Properties section** (usually in the project tree)
+3. **Add these custom properties for Hotspots and Objects:**
+
+**For Room Indexing & Organization (required by `Pulp_RoomIndex`):**
+
+* `Exit` (int) - Set to room number for exits, or any non-zero value to mark as an exit
+* `IsDoor` (bool) - Mark hotspots/objects as doors for special handling
+* `IsSign` (bool) - Mark hotspots/objects as signs for special handling
+
+**For Hints & Highlighting (required by `Pulp_HintsHighlighter`):**
+
+* `HintX` (int) - Custom X position for hint display (optional - uses object center if not set)
+* `HintY` (int) - Custom Y position for hint display (optional - uses object center if not set)
+
+**Important:** Even if you don't plan to use these features initially, you should add the properties to avoid crashes if you enable the modules later.
+
 ## What These Modules Do For Your Game
 
 ### Essential Foundation
