@@ -206,6 +206,12 @@ function repeatedly_execute() {
     }
   }
   
+  if (Signal.WasDispatched("gui_popped")) {
+    int guiID = Signal.GetValue("gui_popped", 0);
+    // Handle individual GUI being popped
+    Display("GUI %d was closed", guiID);
+  }
+  
   if (Signal.WasDispatched("guis_popped")) {
     // Resume game when all GUIs are closed
     Game.Paused = false;
