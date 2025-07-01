@@ -6,6 +6,37 @@ This module lets different parts of your game talk to each other easily without 
 
 **Why this is useful:** Instead of having your scripts directly call each other (which gets messy), you can have them send and receive messages. This keeps your code organized and makes it easier to add new features later.
 
+## How Signals Work
+
+The diagram below shows the complete signal lifecycle in AGS:
+
+```mermaid
+flowchart TD
+    A["Game Event<br/>(Button click, door opens, etc.)"] --> B["Signal.Dispatch('door_opened')"]
+    B --> C["Signal stored in memory"]
+    C --> D["Game Loop Continues"]
+    D --> E["repeatedly_execute() called"]
+    E --> F{"Signal.WasDispatched('door_opened')?"}
+    F -->|Yes| G["Handle the signal<br/>(Play sound, update UI, etc.)"]
+    F -->|No| H["Continue with other code"]
+    G --> I["End of Game Loop"]
+    H --> I
+    I --> J["All signals cleared automatically"]
+    J --> K["Next Game Loop begins"]
+    K --> D
+    
+    style A fill:#e1f5fe
+    style B fill:#fff3e0
+    style G fill:#e8f5e8
+    style J fill:#fce4ec
+```
+
+**Key Points:**
+- **Signals are dispatched** when events happen anywhere in your game
+- **Signals are checked** during the game loop in `repeatedly_execute()` or `repeatedly_execute_always()`
+- **Signals last only one frame** - they're automatically cleared at the end of each frame
+- **Multiple handlers** can check for the same signal in different parts of your code
+
 ## Dependencies
 
 * This module does not use any functionality from other modules.
