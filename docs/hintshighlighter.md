@@ -47,7 +47,7 @@ If these properties are not set (value = 0), the module will automatically calcu
 
 ### Basic Setup
 
-```agscript
+```c
 function game_start() {
   // Calculate hints for the starting room
   HintsHighlighter.CalculateHintsForRoom();
@@ -66,7 +66,7 @@ function on_event(EventType event, int data) {
 
 ### Showing/Hiding Hints
 
-```agscript
+```c
 // In your input handling (e.g., repeatedly_execute)
 if (inputHintsButton.IsPressed(eNoRepeat)) {
   if (HintsHighlighter.IsShowingHints()) {
@@ -86,7 +86,7 @@ if (inputHintsButton.IsPressed()) {
 
 ### Enable/Disable System
 
-```agscript
+```c
 // Disable hints during cutscenes
 function StartCutscene() {
   HintsHighlighter.DisableHints();
@@ -101,7 +101,7 @@ function EndCutsceneExt() {
 
 You can customize where hints appear for specific objects:
 
-```agscript
+```c
 // In room script - customize hint position for a character
 function room_RepExec() {
   // This would be implemented in your room script
@@ -142,7 +142,7 @@ function room_RepExec() {
 
 ## Integration Example
 
-```agscript
+```c
 // Complete integration example
 function game_start() {
   // Set up hints input

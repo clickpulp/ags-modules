@@ -51,7 +51,7 @@ Think of this module like having three separate boxes (arrays) that store inform
 
 ### Configuration Defines
 
-```agscript
+```c
 #define MAX_ROOM_HOTSPOTS_SUPPORTED 50  // Max: 49 (AGS limit)
 #define MAX_CHARACTERS_SUPPORTED 32     // Max: Unlimited
 #define MAX_ROOM_OBJECTS_SUPPORTED 64   // Max: 256 (AGS limit)
@@ -69,7 +69,7 @@ Think of this module like having three separate boxes (arrays) that store inform
 
 **For a large game:**
 
-```agscript
+```c
 #define MAX_ROOM_HOTSPOTS_SUPPORTED 49   // Use AGS maximum
 #define MAX_CHARACTERS_SUPPORTED 50      // Support crowded scenes
 #define MAX_ROOM_OBJECTS_SUPPORTED 100   // Many interactive objects
@@ -78,7 +78,7 @@ Think of this module like having three separate boxes (arrays) that store inform
 
 **For a minimal game:**
 
-```agscript
+```c
 #define MAX_ROOM_HOTSPOTS_SUPPORTED 20   // Fewer hotspots
 #define MAX_CHARACTERS_SUPPORTED 10      // Small cast
 #define MAX_ROOM_OBJECTS_SUPPORTED 30    // Simple rooms
@@ -110,7 +110,7 @@ Think of this module like having three separate boxes (arrays) that store inform
 
 ### Getting Clickable Count
 
-```agscript
+```c
 // Get actual number of clickables in the room
 int actualClickables = 0;
 for (int i = 0; i < RoomIndex.EntityCount; i++) {
@@ -126,7 +126,7 @@ Display("This room has %d clickables", actualClickables);
 
 ### Iterating Through Clickables
 
-```agscript
+```c
 // Loop through all clickables in the room
 for (int i = 0; i < RoomIndex.EntityCount; i++) {
   if (RoomIndex.IsInitialized(i)) {
@@ -154,7 +154,7 @@ for (int i = 0; i < RoomIndex.EntityCount; i++) {
 
 **Note:** Don't confuse `&` (single) with `&&` (double). The single `&` is for checking flags, while `&&` means "AND" in regular conditions (like "if this AND that").
 
-```agscript
+```c
 // Check what interactions are available for a clickable
 for (int i = 0; i < RoomIndex.EntityCount; i++) {
   int flags = RoomIndex.GetFlags(i);
@@ -178,7 +178,7 @@ for (int i = 0; i < RoomIndex.EntityCount; i++) {
 
 ### Finding Clickables at Position
 
-```agscript
+```c
 // Find what clickable is at a specific position
 function CheckClickableAtPosition(int x, int y) {
   for (int i = 0; i < RoomIndex.EntityCount; i++) {
@@ -255,7 +255,7 @@ Flags can be combined using bitwise OR operations.
 
 ## Integration Example
 
-```agscript
+```c
 // Example: Find all talkable characters in the room
 function FindTalkableCharacters() {
   for (int i = 0; i < RoomIndex.EntityCount; i++) {

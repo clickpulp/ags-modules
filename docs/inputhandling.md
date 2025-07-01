@@ -47,7 +47,7 @@ The module automatically processes input based on the current game state:
 
 The input handling system works automatically once set up. It monitors the current game state and processes input appropriately:
 
-```agscript
+```c
 // No direct API calls needed - the module works automatically
 // Input is processed based on current game state:
 
@@ -61,7 +61,7 @@ The input handling system works automatically once set up. It monitors the curre
 
 The module dispatches several signals that your game can listen for:
 
-```agscript
+```c
 // Listen for input-generated signals
 function repeatedly_execute() {
   if (Signal.WasDispatched("toggle_inv")) {
@@ -144,7 +144,7 @@ The module dispatches these signals for game systems to handle:
 
 ## Integration Example
 
-```agscript
+```c
 // The module works automatically, but you need to handle its signals
 function game_start() {
   // Set up the GUIs the module will reference

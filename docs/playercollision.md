@@ -63,7 +63,7 @@ The system detects these types of interactive objects:
 
 The collision system works automatically when the player moves around:
 
-```agscript
+```c
 // The system runs automatically - no direct API calls needed
 // When player walks near interactive objects:
 // - Cursor targets are set automatically
@@ -75,7 +75,7 @@ The collision system works automatically when the player moves around:
 
 The collision system works seamlessly with direct player control:
 
-```agscript
+```c
 function repeatedly_execute() {
   // When using PlayerDirectControl, collision detection
   // automatically activates as the player moves around
@@ -91,7 +91,7 @@ function repeatedly_execute() {
 
 The system can provide visual feedback through room markers:
 
-```agscript
+```c
 // Visual indicators are managed automatically
 // - Markers appear when objects are in range
 // - Markers are cleared when player moves away
@@ -124,7 +124,7 @@ Objects are prioritized by:
 
 ## Integration Example
 
-```agscript
+```c
 // The collision system works automatically, but you can enhance it:
 
 function room_RepExec() {
@@ -162,7 +162,7 @@ function on_mouse_click(MouseButton button) {
 
 ### With Player Direct Control
 
-```agscript
+```c
 // When using keyboard/gamepad movement:
 // - Collision detection activates automatically
 // - Objects are detected as player moves around
@@ -171,7 +171,7 @@ function on_mouse_click(MouseButton button) {
 
 ### With Hints Highlighter
 
-```agscript
+```c
 // The collision system can work alongside hints:
 // - Collision shows nearby objects during movement
 // - Hints show all interactive objects on key press
@@ -180,7 +180,7 @@ function on_mouse_click(MouseButton button) {
 
 ### With Input Handling
 
-```agscript
+```c
 // Input handling automatically responds to collision targets:
 // - Primary button interacts with collision-targeted objects
 // - Cursor is automatically positioned on detected objects

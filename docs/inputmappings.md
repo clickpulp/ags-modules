@@ -52,7 +52,7 @@ For smooth analog movement and cursor control:
 
 ### Basic Setup
 
-```agscript
+```c
 function game_start() {
   // Configure the pre-made input mappings
   SetupInputMappings();
@@ -96,7 +96,7 @@ function SetupInputMappings() {
 
 ### Using in Game Logic
 
-```agscript
+```c
 function repeatedly_execute() {
   // Use the pre-configured mappings directly
   if (inputPrimaryButton.IsPressed(eNoRepeat)) {
@@ -125,7 +125,7 @@ function repeatedly_execute() {
 
 ### Menu Navigation
 
-```agscript
+```c
 function HandleMenuNavigation() {
   if (inputUp.IsPressed(eNoRepeat)) {
     SelectPreviousMenuItem();
@@ -149,7 +149,7 @@ function HandleMenuNavigation() {
 
 You can modify the default mappings to suit your game's needs:
 
-```agscript
+```c
 function CustomizeInputs() {
   // Add additional keys to existing mappings
   inputPrimaryButton.AddKey(eKeyReturn);
@@ -204,7 +204,7 @@ All exported AxisTracker objects:
 
 ## Integration Example
 
-```agscript
+```c
 // Complete setup example
 function game_start() {
   SetupAllInputMappings();

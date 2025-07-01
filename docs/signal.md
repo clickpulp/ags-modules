@@ -43,7 +43,7 @@ At the end of each frame, all signals are automatically cleared from memory. Thi
 
 ## Usage
 
-```agscript
+```c
 // Dispatch a Signal:
 Signal.Dispatch("dancing_ended");
 
@@ -89,7 +89,7 @@ if (Signal.WasDispatchedWithValue("room_changed", 4, 1)) {} // Previous room (in
 
 ### Complex Game Events
 
-```agscript
+```c
 // Dispatch complex events with multiple values
 function OnPlayerLevelUp(int newLevel, int skillPoints, int newHP) {
   Signal.Dispatch("player_level_up", newLevel, skillPoints, newHP);
@@ -122,7 +122,7 @@ function repeatedly_execute() {
 
 ### Decoupled System Communication
 
-```agscript
+```c
 // Audio system listens for game events
 function AudioManager_RepeatExecute() {
   if (Signal.WasDispatched("door_opened")) {
@@ -156,7 +156,7 @@ function UI_RepeatExecute() {
 
 ### Signal-Based State Machine
 
-```agscript
+```c
 // Game state management using signals
 enum GameState {
   eGameStatePlaying,
@@ -203,7 +203,7 @@ function HandleStateChanges() {
 
 ## Integration Example
 
-```agscript
+```c
 // Complete signal-based notification system
 #define SIGNAL_ACHIEVEMENT_UNLOCKED "achievement_unlocked"
 #define SIGNAL_PLAYER_DIED "player_died"

@@ -16,7 +16,7 @@ Easily show helpful text when players hover over things in your game! Perfect fo
 
 ### Creating a Tooltip
 
-```agscript
+```c
 // Create a tooltip at screen position (100, 50)
 Tooltip* myTooltip = Tooltip.Create(100, 50, "This is a helpful tooltip!");
 
@@ -25,14 +25,14 @@ Tooltip* myTooltip = Tooltip.Create(100, 50, "This is a helpful tooltip!");
 
 ### Removing a Tooltip
 
-```agscript
+```c
 // Remove the tooltip when no longer needed
 myTooltip.Remove();
 ```
 
 ### Dynamic Tooltips
 
-```agscript
+```c
 // Show tooltips on mouse hover
 function on_mouse_move() {
   // Remove any existing tooltip first

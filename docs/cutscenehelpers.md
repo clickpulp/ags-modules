@@ -52,7 +52,7 @@ While these functions speed up the cut-scene skip process, there may be some sid
 
 ### Basic Cutscene Setup
 
-```agscript
+```c
 function StartCutscene() {
   StartCutscene();
   
@@ -70,7 +70,7 @@ function StartCutscene() {
 
 ### Complex Animation Sequence
 
-```agscript
+```c
 function ComplexCutscene() {
   StartCutscene();
   

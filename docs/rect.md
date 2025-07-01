@@ -20,7 +20,7 @@ This module does not depend on other modules but is used by:
 
 ### Creating Rectangles
 
-```agscript
+```c
 // Create a rectangle at specific coordinates
 Rect* bounds = Rect.Create(10, 20, 100, 80); // left, top, right, bottom
 
@@ -35,7 +35,7 @@ Rect* singlePoint = Rect.FromPoints(topLeft);
 
 ### Accessing Rectangle Properties
 
-```agscript
+```c
 Rect* rect = Rect.Create(10, 20, 100, 80);
 
 // Direct coordinate access
@@ -51,7 +51,7 @@ int height = rect.Height;     // 60 (bottom - top)
 
 ### Rectangle Operations
 
-```agscript
+```c
 // Copy a rectangle
 Rect* original = Rect.Create(0, 0, 50, 50);
 Rect* copy = original.Copy();
@@ -89,7 +89,7 @@ Display("Rectangle: %s", rectInfo);
 
 ### Collision Detection
 
-```agscript
+```c
 function CheckCollision(Rect* rect1, Rect* rect2) {
   if (rect1.left < rect2.right && rect1.right > rect2.left &&
       rect1.top < rect2.bottom && rect1.bottom > rect2.top) {
@@ -102,7 +102,7 @@ function CheckCollision(Rect* rect1, Rect* rect2) {
 
 ### Point-in-Rectangle Testing
 
-```agscript
+```c
 function IsPointInRect(int x, int y, Rect* rect) {
   if (x >= rect.left && x <= rect.right &&
       y >= rect.top && y <= rect.bottom) {
@@ -119,7 +119,7 @@ if (IsPointInRect(mouse.x, mouse.y, buttonBounds)) {
 
 ### UI Layout
 
-```agscript
+```c
 function CreateButtonLayout() {
   // Create buttons with consistent spacing
   int buttonWidth = 80;
@@ -138,7 +138,7 @@ function CreateButtonLayout() {
 
 ### Bounds Checking
 
-```agscript
+```c
 function KeepCharacterInBounds(Character* character, Rect* bounds) {
   if (character.x < bounds.left) character.x = bounds.left;
   if (character.x > bounds.right) character.x = bounds.right;
@@ -149,7 +149,7 @@ function KeepCharacterInBounds(Character* character, Rect* bounds) {
 
 ### Screen and Room Coordinate Conversion
 
-```agscript
+```c
 // Convert room rectangle to screen coordinates for GUI positioning
 Rect* roomArea = Rect.Create(100, 50, 200, 150);
 Rect* screenArea = roomArea.ToScreenRect();
@@ -168,7 +168,7 @@ gTooltip.SetPosition(screenArea.left, screenArea.top);
 
 ## Integration Example
 
-```agscript
+```c
 // Example: Create a safe area system for the player
 Rect* safeZone;
 

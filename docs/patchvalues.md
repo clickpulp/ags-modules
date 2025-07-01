@@ -21,7 +21,7 @@ This module does not depend on other modules.
 
 ### String Values
 
-```agscript
+```c
 // Set a string value
 PatchValues.SetString("game_version", "1.2.0");
 PatchValues.SetString("player_name_override", "Hero");
@@ -38,7 +38,7 @@ if (PatchValues.GetString("special_mode") != null) {
 
 ### Integer Values
 
-```agscript
+```c
 // Set integer values
 PatchValues.SetInt("max_health", 150);
 PatchValues.SetInt("difficulty_modifier", 2);
@@ -53,7 +53,7 @@ player.SetMaxHealth(maxHealth);
 
 ### Float Values
 
-```agscript
+```c
 // Set float values  
 PatchValues.SetFloat("movement_speed", 1.5);
 PatchValues.SetFloat("damage_multiplier", 0.8);
@@ -68,7 +68,7 @@ player.WalkSpeed = FloatToInt(moveSpeed * 100);
 
 ### Managing Values
 
-```agscript
+```c
 // Remove specific value
 PatchValues.Remove("old_setting");
 
@@ -104,7 +104,7 @@ PatchValues.RemoveAll();
 
 ### Post-Release Balancing
 
-```agscript
+```c
 // In game_start() - apply balance patches
 function ApplyBalancePatches() {
   // These values can be changed in updates without breaking saves
@@ -118,7 +118,7 @@ function ApplyBalancePatches() {
 
 ### Feature Flags
 
-```agscript
+```c
 // Enable/disable features post-release
 function CheckFeatureFlags() {
   String newFeature = PatchValues.GetString("enable_special_mode");
@@ -131,7 +131,7 @@ function CheckFeatureFlags() {
 
 ### Configuration Overrides
 
-```agscript
+```c
 // Override default settings
 function ApplyConfigOverrides() {
   int customFPS = PatchValues.GetInt("target_fps", 60);
@@ -146,7 +146,7 @@ function ApplyConfigOverrides() {
 
 ### Version-Specific Fixes
 
-```agscript
+```c
 // Apply fixes based on save game version
 function ApplyVersionFixes() {
   String saveVersion = PatchValues.GetString("save_version");
@@ -170,7 +170,7 @@ function ApplyVersionFixes() {
 
 ## Integration Example
 
-```agscript
+```c
 // Complete example: Game difficulty adjustment system
 function game_start() {
   ApplyDifficultyPatches();

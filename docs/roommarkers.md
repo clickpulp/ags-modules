@@ -27,7 +27,7 @@ Need to put visual indicators in your rooms? This module lets you place markers 
 
 ### Basic Marker Placement
 
-```agscript
+```c
 // Place a marker at room coordinates (100, 50) with graphic 0
 RoomMarkers.Place(1, 100, 50, 0);
 
@@ -40,7 +40,7 @@ RoomMarkers.Place(3, 150, 75, 2, eRoomMarkerStateInactive);
 
 ### Managing Markers
 
-```agscript
+```c
 // Clear a specific marker by ID
 RoomMarkers.Clear(1);
 
@@ -50,7 +50,7 @@ RoomMarkers.ClearAll();
 
 ### Dynamic Marker System
 
-```agscript
+```c
 int nextMarkerID = 1;
 
 function PlaceQuestMarker(int x, int y) {
@@ -82,7 +82,7 @@ function RemoveQuestMarker(int markerID) {
 
 ### Highlighting Interactive Objects
 
-```agscript
+```c
 function HighlightInteractiveObjects() {
   int markerID = 1;
   
@@ -112,7 +112,7 @@ function ClearHighlights() {
 
 ### Quest Waypoint System
 
-```agscript
+```c
 int[] questMarkerIDs = new int[10];
 int questMarkerCount = 0;
 
@@ -137,7 +137,7 @@ function ClearQuestWaypoints() {
 
 ### Temporary Visual Feedback
 
-```agscript
+```c
 int feedbackMarkerID = -1;
 
 function ShowTemporaryMarker(int x, int y, int duration) {
@@ -166,7 +166,7 @@ function on_event(EventType event, int data) {
 
 ### Room Transition Markers
 
-```agscript
+```c
 function MarkRoomExits() {
   // Mark all room exits with directional indicators
   RoomMarkers.Place(EXIT_NORTH, 160, 50, ARROW_UP_GRAPHIC);
@@ -196,7 +196,7 @@ function on_event(EventType event, int data) {
 
 ## Integration with Hints System
 
-```agscript
+```c
 // Example: Custom hints implementation using room markers
 function ShowCustomHints() {
   int markerID = 100; // Start with high ID to avoid conflicts

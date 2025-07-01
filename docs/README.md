@@ -8,7 +8,7 @@
 
 **Optional Setup:** If you want to use the input handling features, you can tell the modules which menus you're using. Add this to your `game_start` function:
 
-```agsscript
+```c
 void game_start() {
   pulpGlobals.MainMenuGUI = gYourMainMenu;
   pulpGlobals.InventoryGUI = gYourInventory;

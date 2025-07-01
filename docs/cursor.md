@@ -27,7 +27,7 @@ This module works with the input system:
 
 ### Basic Cursor Control
 
-```agscript
+```c
 // Enable arrow select (keyboard/gamepad cursor control)
 Cursor.SetArrowSelectEnabled(true);
 
@@ -39,7 +39,7 @@ if (Cursor.ArrowSelectEnabled) {
 
 ### Click Targeting
 
-```agscript
+```c
 // Set a click target (cursor will move here and click)
 Point* target = Point.Create(100, 50);
 Cursor.SetClickTarget(target);
@@ -59,7 +59,7 @@ Cursor.ClearClickTarget();
 
 ### Cursor Locking
 
-```agscript
+```c
 // Lock the cursor (prevent movement)
 Cursor.SetLocked(true);
 
@@ -74,7 +74,7 @@ Cursor.SetLocked(false);
 
 ### Input-Based Movement
 
-```agscript
+```c
 // Move cursor based on current input state
 // This would typically be called in repeatedly_execute
 function UpdateCursor() {
@@ -105,7 +105,7 @@ function UpdateCursor() {
 
 ### Game Menu Navigation
 
-```agscript
+```c
 function ShowMainMenu() {
   gMainMenu.Visible = true;
   
@@ -129,7 +129,7 @@ function HideMainMenu() {
 
 ### Cutscene Cursor Management
 
-```agscript
+```c
 function StartCutscene() {
   // Lock cursor during cutscenes
   Cursor.SetLocked(true);
@@ -145,7 +145,7 @@ function EndCutscene() {
 
 ### Inventory Interface
 
-```agscript
+```c
 function ShowInventory() {
   gInventory.Visible = true;
   
@@ -169,7 +169,7 @@ function repeatedly_execute() {
 
 ### Accessibility Features
 
-```agscript
+```c
 function EnableAccessibilityMode() {
   // Always enable cursor control for accessibility
   Cursor.SetArrowSelectEnabled(true);
@@ -188,7 +188,7 @@ function ShowCursorTarget() {
 
 ### Smart Cursor Positioning
 
-```agscript
+```c
 function PositionCursorOnObject(Object* obj) {
   // Calculate center point of object
   Point* objCenter = Point.Create(obj.x + obj.Graphic.Width/2,
@@ -215,7 +215,7 @@ function PositionCursorOnObject(Object* obj) {
 
 ## Controller Integration
 
-```agscript
+```c
 // Example: Set up controller cursor movement
 function SetupControllerCursor() {
   if (Input.ControllerConnected) {

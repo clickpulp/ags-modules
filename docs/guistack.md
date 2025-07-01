@@ -34,7 +34,7 @@ There are two ways to work with menus using this system. Both do the same thing,
 
 ### Static Methods
 
-```agscript
+```c
 // Push the main menu into the stack, and place the cursor in the continue button:
 GUIStack.PushGUI(gMainMenu, btnContinue);
 
@@ -62,7 +62,7 @@ if (GUIStack.ShowingGUI) {}
 
 The module extends GUI objects with convenient methods that work directly on the GUI:
 
-```agscript
+```c
 // Push the main menu and focus on continue button:
 gMainMenu.Push(btnContinue);
 
@@ -106,7 +106,7 @@ if (gMainMenu.IsInStack()) {}
 
 Using GUI extender functions makes menu navigation more intuitive:
 
-```agscript
+```c
 function ShowGameMenu() {
   // Push main menu with cursor on continue button
   gMainMenu.Push(btnContinue);
@@ -137,7 +137,7 @@ function CloseSpecificMenu() {
 
 ### Game State Management
 
-```agscript
+```c
 function ShowInventory() {
   // Always push inventory - stack handles previous GUI automatically
   gInventory.Push(invSlot1);
@@ -197,7 +197,7 @@ function HandleInventoryToggle() {
 
 This example shows a complete implementation using both static methods and GUI extender functions:
 
-```agscript
+```c
 function repeatedly_execute() {
   // Handle GUI stack signals
   if (Signal.WasDispatched("gui_pushed")) {

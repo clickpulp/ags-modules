@@ -14,7 +14,7 @@ This module does not depend on other modules but is used by many other Clickpulp
 
 ### Character Extensions
 
-```agscript
+```c
 // Get character dimensions and properties
 int centerY = player.GetCenterY();
 int width = player.GetWidth();
@@ -29,7 +29,7 @@ if (player.x + player.GetWidth() > Screen.Width) {
 
 ### Point Extensions
 
-```agscript
+```c
 // Create points more easily
 Point* position = Point.Create(100, 50);
 
@@ -41,7 +41,7 @@ position.SetPosition(200, 75);
 
 Enhanced mouse functionality with history tracking and positioning:
 
-```agscript
+```c
 // Track mouse position history
 Mouse.PushHistory();        // Save current position
 mouse.x = 100;
@@ -67,7 +67,7 @@ Mouse.SetRoomPosition(player.x, player.y - 50);
 
 Improved dialog management with tracking:
 
-```agscript
+```c
 // Start dialog with tracking capability
 dTestDialog.StartCustom();
 
@@ -87,7 +87,7 @@ int lastOption = dTestDialog.FindFirstActiveOption(true); // reverse search
 
 ### Global Game Extensions
 
-```agscript
+```c
 // Pause game only if not already paused
 PauseGameOnce();
 ```
@@ -132,7 +132,7 @@ PauseGameOnce();
 
 ### Character Collision Detection
 
-```agscript
+```c
 function CheckCharacterCollision(Character* char1, Character* char2) {
   int char1Right = char1.x + char1.GetWidth();
   int char1Bottom = char1.y + char1.GetHeight();
@@ -150,7 +150,7 @@ function CheckCharacterCollision(Character* char1, Character* char2) {
 
 ### Smart Mouse Management
 
-```agscript
+```c
 function ShowInventory() {
   // Save mouse position before showing inventory
   Mouse.PushHistory();
@@ -171,7 +171,7 @@ function HideInventory() {
 
 ### Dialog Flow Control
 
-```agscript
+```c
 function ManageDialog() {
   if (!Dialog.IsDialogRunning()) {
     // Start a new dialog

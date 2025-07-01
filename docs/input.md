@@ -30,7 +30,7 @@ This module lets you create controls that work with any input device - keyboard,
 
 Here's how to create a "Jump" action that works with any input device:
 
-```agscript
+```c
 // Create a new action called "jump"
 InputMapping* jumpInput = new InputMapping;
 
@@ -45,7 +45,7 @@ jumpInput.Enabled = true;
 
 ### Using the Controls in Your Game
 
-```agscript
+```c
 // Check if the player wants to jump (works with any input they mapped):
 if (jumpInput.IsPressed()) {
   // Player pressed their jump button!
@@ -60,7 +60,7 @@ if (jumpInput.IsPressed(eNoRepeat)) {
 
 ### Controller Support
 
-```agscript
+```c
 // Check if controller is connected
 if (Input.ControllerConnected) {
   // Adjust UI based on controller type
@@ -74,7 +74,7 @@ if (Input.ControllerConnected) {
 
 ### Axis Input (Analog Sticks)
 
-```agscript
+```c
 InputMapping* moveLeftInput = new InputMapping;
 InputMapping* moveRightInput = new InputMapping;
 

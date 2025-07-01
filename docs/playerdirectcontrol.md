@@ -25,7 +25,7 @@ This module works with the input system and requires:
 
 ### Enabling Direct Control
 
-```agscript
+```c
 // Enable direct control in game_start() or when needed
 PlayerDirectControl.Enabled = true;
 
@@ -35,7 +35,7 @@ PlayerDirectControl.Enabled = false;
 
 ### Checking Control State
 
-```agscript
+```c
 // Check if direct control is currently enabled
 if (PlayerDirectControl.Enabled) {
   // Player is using keyboard/gamepad controls
@@ -57,7 +57,7 @@ The module automatically uses the input mappings from [`Pulp_InputMappings`](inp
 
 ### Example Setup
 
-```agscript
+```c
 function game_start() {
   // Set up input mappings (if using Pulp_InputMappings)
   inputUp.AddKey(eKeyUpArrow);

@@ -14,7 +14,7 @@ This module does not depend on other modules.
 
 ### Basic Usage
 
-```agscript
+```c
 // Check if a blocking script is running
 if (IsInBlockingScript()) {
   // Game is in a blocking state (cutscene, dialog, etc.)
@@ -28,7 +28,7 @@ ProcessPlayerInput();
 
 ### Input Handling
 
-```agscript
+```c
 function repeatedly_execute() {
   // Only process input when not in a blocking script
   if (!IsInBlockingScript()) {
@@ -45,7 +45,7 @@ function repeatedly_execute() {
 
 ### GUI Management
 
-```agscript
+```c
 function UpdateGUI() {
   // Disable certain GUI elements during blocking scripts
   bool allowInput = !IsInBlockingScript();
@@ -77,7 +77,7 @@ A blocking script is any script that prevents normal game interaction, including
 
 ### Preventing Input During Cutscenes
 
-```agscript
+```c
 function on_key_press(eKeyCode keycode) {
   if (IsInBlockingScript()) {
     // Don't process regular input during cutscenes
@@ -93,7 +93,7 @@ function on_key_press(eKeyCode keycode) {
 
 ### Conditional Save/Load
 
-```agscript
+```c
 function AttemptQuickSave() {
   if (IsInBlockingScript()) {
     Display("Cannot save during cutscenes or dialog.");
@@ -107,7 +107,7 @@ function AttemptQuickSave() {
 
 ### Dynamic UI Updates
 
-```agscript
+```c
 function interface_click(int interface, int button) {
   if (button == btnQuickActions) {
     if (IsInBlockingScript()) {
@@ -123,7 +123,7 @@ function interface_click(int interface, int button) {
 
 ### Background System Updates
 
-```agscript
+```c
 function repeatedly_execute_always() {
   // Some systems should only run when player has control
   if (!IsInBlockingScript()) {
@@ -148,7 +148,7 @@ function repeatedly_execute_always() {
 
 ## Integration Example
 
-```agscript
+```c
 // Example: Smart pause system that respects blocking scripts
 bool gamePaused = false;
 
