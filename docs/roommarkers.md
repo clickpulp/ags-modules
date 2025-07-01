@@ -14,7 +14,7 @@ Need to put visual indicators in your rooms? This module lets you place markers 
 
 ### Used By
 
-* `Pulp_HintsHighlighter` - Uses markers to highlight interactive objects
+* [`Pulp_HintsHighlighter`](hintshighlighter.md) - Uses markers to highlight interactive objects
 
 ## Key Features
 

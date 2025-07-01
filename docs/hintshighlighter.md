@@ -17,13 +17,13 @@ This module uses functionality from other modules:
 
 ### Required
 
-* `Pulp_RoomIndex` - For indexing interactive objects in the room
-* `Pulp_RoomMarkers` - For drawing the highlight overlays
+* [`Pulp_RoomIndex`](roomindex.md) - For indexing interactive objects in the room
+* [`Pulp_RoomMarkers`](roommarkers.md) - For drawing the highlight overlays
 * `Tween` - For math utilities and fade animations
 
 ### Optional  
 
-* `Pulp_Input` - For input handling (hints button)
+* [`Pulp_Input`](input.md) - For input handling (hints button)
 
 ## ⚠️ CRITICAL: Required Object Properties Setup
 

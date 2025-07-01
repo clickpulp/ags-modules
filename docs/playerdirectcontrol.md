@@ -17,8 +17,8 @@ This module works with the input system and requires:
 
 ### Required
 
-* `Pulp_Input` - For input mapping and handling
-* `Pulp_InputMappings` - For pre-configured movement controls
+* [`Pulp_Input`](input.md) - For input mapping and handling
+* [`Pulp_InputMappings`](inputmappings.md) - For pre-configured movement controls
 * `Tween` - For math utilities
 
 ## Usage
@@ -48,7 +48,7 @@ if (PlayerDirectControl.Enabled) {
 
 ### Integration with Input System
 
-The module automatically uses the input mappings from `Pulp_InputMappings`:
+The module automatically uses the input mappings from [`Pulp_InputMappings`](inputmappings.md):
 
 * `inputUp` - Move character up
 * `inputDown` - Move character down  

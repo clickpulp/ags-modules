@@ -17,10 +17,10 @@ This module requires:
 
 ### Required
 
-* `Pulp_RoomIndex` - For finding interactive objects in the room
-* `Pulp_RoomMarkers` - For visual feedback/highlighting
-* `Pulp_Cursor` - For automatic cursor targeting
-* `Pulp_Rect` - For bounds calculations
+* [`Pulp_RoomIndex`](roomindex.md) - For finding interactive objects in the room
+* [`Pulp_RoomMarkers`](roommarkers.md) - For visual feedback/highlighting
+* [`Pulp_Cursor`](cursor.md) - For automatic cursor targeting
+* [`Pulp_Rect`](rect.md) - For bounds calculations
 * `Tween` - For math utilities and distance calculations
 
 ## Key Features

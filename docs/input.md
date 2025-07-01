@@ -14,8 +14,8 @@ This module lets you create controls that work with any input device - keyboard,
 
 ### Optional
 
-* `Pulp_InputMappings` - Provides pre-configured input mappings
-* `Pulp_InputHandling` - Handles the actual input processing
+* [`Pulp_InputMappings`](inputmappings.md) - Provides pre-configured input mappings
+* [`Pulp_InputHandling`](inputhandling.md) - Handles the actual input processing
 
 ## What This Does For Your Players
 

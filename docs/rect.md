@@ -12,8 +12,8 @@ This module does not depend on other modules but is used by:
 
 ### Used By
 
-* `Pulp_RoomIndex` - For object bounds
-* `Pulp_HintsHighlighter` - For highlight positioning
+* [`Pulp_RoomIndex`](roomindex.md) - For object bounds
+* [`Pulp_HintsHighlighter`](hintshighlighter.md) - For highlight positioning
 * Other modules that need rectangular bounds
 
 ## Usage

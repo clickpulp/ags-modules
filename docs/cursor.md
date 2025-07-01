@@ -10,7 +10,7 @@ This module works with the input system:
 
 ### Optional
 
-* `Pulp_Input` - For input mapping
+* [`Pulp_Input`](input.md) - For input mapping
 * `arrowselect` - For arrow-based navigation  
 * `Tween` - For math utilities
 * Controller plugins - For gamepad support

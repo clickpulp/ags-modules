@@ -12,7 +12,7 @@ This module requires:
 
 ### Required
 
-* `Pulp_Input` - Provides the InputMapping and AxisTracker structs
+* [`Pulp_Input`](input.md) - Provides the InputMapping and AxisTracker structs
 
 ## Pre-configured Input Mappings
 

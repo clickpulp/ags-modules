@@ -16,7 +16,7 @@ Automatically finds and organizes all the clickable things in each room - charac
 
 ### Used By
 
-* `Pulp_HintsHighlighter` - For finding interactive elements to highlight
+* [`Pulp_HintsHighlighter`](hintshighlighter.md) - For finding interactive elements to highlight
 * Other modules that need to enumerate room clickables
 
 ## ⚠️ CRITICAL: Required Object Properties Setup

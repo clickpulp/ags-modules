@@ -12,12 +12,12 @@ This module requires:
 
 ### Required
 
-* `Pulp_Input` - For input mapping system
-* `Pulp_InputMappings` - For pre-configured input mappings
-* `Pulp_Signal` - For dispatching game events
-* `Pulp_GUIStack` - For GUI management
-* `Pulp_Cursor` - For cursor control
-* `Pulp_IsInBlockingScript` - For game state detection
+* [`Pulp_Input`](input.md) - For input mapping system
+* [`Pulp_InputMappings`](inputmappings.md) - For pre-configured input mappings
+* [`Pulp_Signal`](signal.md) - For dispatching game events
+* [`Pulp_GUIStack`](guistack.md) - For GUI management
+* [`Pulp_Cursor`](cursor.md) - For cursor control
+* [`Pulp_IsInBlockingScript`](isinblockingscript.md) - For game state detection
 
 ### Optional
 
@@ -80,7 +80,7 @@ function repeatedly_execute() {
 
 ## Input Mappings Used
 
-The module processes these input mappings from `Pulp_InputMappings`:
+The module processes these input mappings from [`Pulp_InputMappings`](inputmappings.md):
 
 ### Primary Actions
 

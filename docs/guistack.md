@@ -18,14 +18,14 @@ This uses functionality from other modules. The modules listed below need to be 
 
 ### Required
 
-* `Pulp_Extenders`
-* `Pulp_Signal`
-* `Pulp_Input`
+* [`Pulp_Extenders`](extenders.md)
+* [`Pulp_Signal`](signal.md)
+* [`Pulp_Input`](input.md)
 
 ### Optional
 
 * `arrowselect`
-* `Pulp_Input`
+* [`Pulp_Input`](input.md)
 * `TwoClickHandler`
 
 ## How To Use This
