@@ -11,7 +11,7 @@ This module lets different parts of your game talk to each other easily without 
 The diagram below shows the complete signal lifecycle in AGS:
 
 ```mermaid
-graph LR
+flowchart LR
     A[Game Event] --> B[Dispatch Signal]
     B --> C[Store in Memory]
     C --> D[Game Loop]
