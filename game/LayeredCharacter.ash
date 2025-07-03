@@ -23,6 +23,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+/*
+Example usage: Setting up and using LayeredCharacter for Ego
+
+In a header file:
+import LayeredCharacter* lcEgo;
+
+In a script file:
+
+LayeredCharacter* lcEgo; // Declare as global if not already present
+export lcEgo;
+
+function game_start() {
+  // Create the LayeredCharacter for Ego, passing body and head characters
+  lcEgo = LayeredCharacter.Create(cEgo, cEgoHead, false);
+
+  // Add extra layers
+  lcEgo.AddLayer("Gesture", cEgoGesture);      // Gesture layer (for arm/hand animations)
+  lcEgo.AddLayer("Blink", cEgoBlink);    // Blinking layer (usually overlays the head)
+
+  // Add animations to each layerhead
+  lcEgo.AddAnimation("Blink", "Blink", 12, 0, eOnce);         // View 12, loop 0 for blink
+  lcEgo.AddAnimation("Wave", "Gesture", 13, 0, eOnce);        // View 13, loop 0 for waving gesture
+}
+
+In room script (e.g., room1.asc):
+
+function room_EnterAfterFadeIn() {
+  // Play a gesture animation when entering the room
+  lcEgo.Animate("Gesture", "Wave");
+
+  // Optionally, trigger a blink animation
+  lcEgo.Animate("Blink", "Blink");
+}
+*/
+
 #ifndef __LAYERED_CHARACTER_MODULE__
 #define __LAYERED_CHARACTER_MODULE__
 
@@ -117,9 +152,5 @@ managed struct LayeredCharacter {
 };
 
 import LayeredCharacter* GetLayeredCharacter(this CharacterLayer*);
-
-managed struct LayeredCharacterModule {
-  import static void Init();
-};
 
 #endif // __LAYERED_CHARACTER_MODULE__
