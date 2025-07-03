@@ -42,19 +42,25 @@ function game_start() {
   lcEgo.AddLayer("Gesture", cEgoGesture);      // Gesture layer (for arm/hand animations)
   lcEgo.AddLayer("Blink", cEgoBlink);    // Blinking layer (usually overlays the head)
 
-  // Add animations to each layerhead
-  lcEgo.AddAnimation("Blink", "Blink", 12, 0, eOnce);         // View 12, loop 0 for blink
-  lcEgo.AddAnimation("Wave", "Gesture", 13, 0, eOnce);        // View 13, loop 0 for waving gesture
+  // Add animations to layers (each animation name must be unique across the layered character)
+  lcEgo.AddAnimation("BodyIdle", "Body", 10, 0, eRepeat);         // View 10, loop 0 for idle body
+  lcEgo.AddAnimation("HeadIdle", "Head", 11, 0, eRepeat);         // View 11, loop 0 for idle head
+  lcEgo.AddAnimation("Blink", "Blink", 12, 0, eOnce);             // View 12, loop 0 for blink
+  lcEgo.AddAnimation("Wave", "Gesture", 13, 0, eOnce);            // View 13, loop 0 for waving gesture
+  lcEgo.AddAnimation("Point", "Gesture", 14, 0, eOnce);           // View 14, loop 0 for pointing gesture
+  
+  // Play idle animations at game start
+  lcEgo.Animate("BodyIdle");
+  lcEgo.Animate("HeadIdle");
 }
 
 In room script (e.g., room1.asc):
 
 function room_EnterAfterFadeIn() {
-  // Play a gesture animation when entering the room
-  lcEgo.Animate("Gesture", "Wave");
-
-  // Optionally, trigger a blink animation
-  lcEgo.Animate("Blink", "Blink");
+  // Play animations by name only (implementation finds the correct layer)
+  lcEgo.Animate("Wave");      // Plays the wave gesture
+  lcEgo.Animate("Blink");     // Plays the blink animation
+  lcEgo.Animate("Point");     // Plays the point gesture
 }
 */
 
@@ -82,7 +88,7 @@ managed struct Keyframe {
   import Keyframe*[] List1(int x, int y);
 };
 
-managed struct CharacterLayerAnimation {
+managed struct CharacterAnimation {
   protected int nameIndex;
 
   writeprotected int View;
@@ -94,7 +100,7 @@ managed struct CharacterLayerAnimation {
   import readonly attribute String Name;
 
   import String get_Name();
-  import static CharacterLayerAnimation* Create(String name, int view, int loop, RepeatStyle repeatStyle, bool headless, Direction direction = eForwards);
+  import static CharacterAnimation* Create(String name, int view, int loop, RepeatStyle repeatStyle, bool headless, Direction direction = eForwards);
   import void Init(String name, int view, int loop, RepeatStyle repeatStyle, bool headless, Direction direction = eForwards);
 };
 
@@ -121,7 +127,7 @@ managed struct CharacterLayer {
   import void StopAnimating();
 
   import Character* GetCharacter();
-  import CharacterLayerAnimation* GetAnimationByName(String animationName);
+  import CharacterAnimation* GetAnimationByName(String animationName);
 };
 
 managed struct LayeredCharacter {
@@ -141,10 +147,11 @@ managed struct LayeredCharacter {
   import void Init(Character* body, Character* head, bool headlessBody);
   import void AddLayer(String name, Character* c);
   import CharacterLayer* GetLayerByName(String name);
+  import CharacterAnimation* GetAnimationByName(String animationName);
   import void AddAnimation(String animationName, String layerName, int view, int loop, RepeatStyle repeatStyle = eOnce, BlockingStyle blockingStyle = eNoBlock, Direction direction = eForwards, bool headless = false);
   import void Say(String message);
   import void SayBackground(String message);
-  import void Animate(String layerName, String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyle = -1, Direction directionOverride = -1);
+  import void Animate(String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyle = -1, Direction directionOverride = -1);
   import void StopAnimating(String layerName);
   import void Update();
   
