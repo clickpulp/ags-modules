@@ -54,12 +54,13 @@ managed struct CharacterLayerAnimation {
   writeprotected int Loop;
   writeprotected RepeatStyle RepeatStyle;
   writeprotected bool Headless;
+  writeprotected Direction Direction;
 
   import readonly attribute String Name;
 
   import String get_Name();
-  import static CharacterLayerAnimation* Create(String name, int view, int loop, RepeatStyle repeatStyle, bool headless);
-  import void Init(String name, int view, int loop, RepeatStyle repeatStyle, bool headless);
+  import static CharacterLayerAnimation* Create(String name, int view, int loop, RepeatStyle repeatStyle, bool headless, Direction direction = eForwards);
+  import void Init(String name, int view, int loop, RepeatStyle repeatStyle, bool headless, Direction direction = eForwards);
 };
 
 managed struct CharacterLayer {
@@ -80,8 +81,8 @@ managed struct CharacterLayer {
   import void set_Visible(bool value);
   
   import void Init(String name, Character* c, int layeredCharacterIndex, bool headless = 0);
-  import void AddAnimation(String animationName, int view, int loop, RepeatStyle repeatStyle, bool headless);
-  import void Animate(String animationName, BlockingStyle blockingStyleOverride = -1, RepeatStyle repeatStyleOverride = -1);
+  import void AddAnimation(String animationName, int view, int loop, RepeatStyle repeatStyle = eOnce, BlockingStyle blockingStyle = eNoBlock, Direction direction = eForwards, bool headless = false);
+  import void Animate(String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyleOverride = -1, Direction directionOverride = -1);
   import void StopAnimating();
 
   import Character* GetCharacter();
@@ -105,10 +106,10 @@ managed struct LayeredCharacter {
   import void Init(Character* body, Character* head, bool headlessBody);
   import void AddLayer(String name, Character* c);
   import CharacterLayer* GetLayerByName(String name);
-  import void AddAnimation(String animationName, String layerName, int view, int loop, RepeatStyle repeatStyle, bool headless);
+  import void AddAnimation(String animationName, String layerName, int view, int loop, RepeatStyle repeatStyle = eOnce, BlockingStyle blockingStyle = eNoBlock, Direction direction = eForwards, bool headless = false);
   import void Say(String message);
   import void SayBackground(String message);
-  import void Animate(String layerName, String animationName, BlockingStyle blockingStyle, RepeatStyle repeatStyleOverride = -1);
+  import void Animate(String layerName, String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyle = -1, Direction directionOverride = -1);
   import void StopAnimating(String layerName);
   import void Update();
   
