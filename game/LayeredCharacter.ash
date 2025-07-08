@@ -118,6 +118,7 @@ managed struct CharacterLayer {
   import attribute bool Visible;
   
   import String get_Name();
+  import void set_Name(String value);
   import bool get_Visible();
   import void set_Visible(bool value);
   
