@@ -142,11 +142,13 @@ managed struct LayeredCharacter {
   import readonly attribute Character* Body;
   import readonly attribute Character* Head;
   import readonly attribute CharacterAnimation* CurrentAnimation;
+  import readonly attribute int Room;
   
   import CharacterLayer* geti_Layers(int index);
   import Character* get_Body();
   import Character* get_Head();
   import CharacterAnimation* get_CurrentAnimation();
+  import int get_Room();
   
   import void Init(Character* body, Character* head, bool headlessBody);
   import void AddLayer(String name, Character* c);
@@ -155,6 +157,7 @@ managed struct LayeredCharacter {
   import void AddAnimation(String animationName, String layerName, int view, int loop, RepeatStyle repeatStyle = eOnce, BlockingStyle blockingStyle = eNoBlock, Direction direction = eForwards, bool headless = false);
   import void Say(String message);
   import void SayBackground(String message);
+  import void ChangeRoom(int room, int x = SCR_NO_VALUE, int y = SCR_NO_VALUE, CharacterDirection direction = eDirectionNone);
   import void Animate(String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyle = -1, Direction directionOverride = -1);
   import void StopAnimating(String layerName);
   import void Update();
