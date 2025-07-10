@@ -2,15 +2,21 @@
 
 ## About
 
-Enhanced cursor functionality that allows the cursor to be controlled via keyboard or gamepad in addition to mouse input. This is particularly useful for games that support multiple input methods or need accessibility features.
+Enhanced cursor functionality that allows the cursor to be controlled via keyboard or gamepad in addition to mouse input. This module provides intelligent cursor management with automatic locking, controller-aware positioning, and seamless integration with GUI systems.
 
 ## Dependencies
 
 This module works with the input system:
 
+### Required
+
+* [`Pulp_Input`](input.md) - For input mapping and controller detection
+* [`Pulp_Signal`](signal.md) - For controller connection events
+* [`Pulp_GUIStack`](guistack.md) - For GUI state management
+* [`Pulp_IsInBlockingScript`](isinblockingscript.md) - For script state detection
+
 ### Optional
 
-* [`Pulp_Input`](input.md) - For input mapping
 * `arrowselect` - For arrow-based navigation  
 * `Tween` - For math utilities
 * Controller plugins - For gamepad support
@@ -20,8 +26,10 @@ This module works with the input system:
 * **Any input moves the cursor**: Players can use keyboard, gamepad, or mouse to control the cursor
 * **Smart auto-targeting**: The cursor can automatically move to important objects
 * **Works with menus**: Navigate menus smoothly with keyboard or gamepad
-* **Cursor can be locked**: Prevent cursor movement during cutscenes or special moments
-* **Feels responsive**: Cursor movement adapts to whatever input the player prefers
+* **Automatic cursor management**: Cursor locks and unlocks based on context
+* **Controller-optimized**: Automatically adjusts for different controller types
+* **Feels responsive**: Advanced analog stick handling with exponential response curves
+* **Context-aware visibility**: Mouse cursor shows/hides intelligently based on game state
 
 ## Usage
 
@@ -76,12 +84,8 @@ Cursor.SetLocked(false);
 
 ```c
 // Move cursor based on current input state
-// This would typically be called in repeatedly_execute
-void UpdateCursor() {
-  if (Cursor.ArrowSelectEnabled && !Cursor.Locked) {
-    Cursor.MoveByInput();
-  }
-}
+// This is handled automatically, but can be called manually
+Cursor.MoveByInput();
 ```
 
 ## API Reference
@@ -100,6 +104,33 @@ void UpdateCursor() {
 * `SetMousePositionToClickTarget()` - Move mouse to the set click target
 * `SetLocked(bool locked)` - Lock/unlock cursor movement
 * `MoveByInput()` - Move cursor based on current input state
+
+## Automatic Features
+
+### Smart Mouse Visibility
+
+The cursor automatically manages mouse visibility based on game state:
+
+* **Hidden during blocking scripts** - No cursor during cutscenes
+* **Hidden when cursor is locked** - Unless inventory is active
+* **Shown for GUI elements** - Automatically appears for buttons and sliders
+* **Context-aware** - Considers arrow select mode and game state
+
+### Automatic Cursor Locking
+
+The cursor intelligently locks and unlocks based on:
+
+* **Controller connection** - Automatically locks when controller is connected
+* **Platform detection** - Locks on Nintendo Switch by default
+* **Mouse movement** - Unlocks when mouse is moved manually
+* **Walk axis movement** - Locks when using movement controls without cursor input
+
+### Controller Optimization
+
+* **Nintendo controller support** - Reduced sensitivity (60% of normal rate)
+* **Exponential response curves** - More precise control at low inputs
+* **Adaptive rate scaling** - Adjusts based on screen resolution
+* **Deadzone handling** - Proper analog stick deadzone management
 
 ## Integration Examples
 
@@ -158,78 +189,97 @@ function ShowInventory() {
     Cursor.SetClickTarget(firstSlot);
   }
 }
-
-function repeatedly_execute() {
-  // Update cursor movement when inventory is open
-  if (gInventory.Visible && Cursor.ArrowSelectEnabled) {
-    Cursor.MoveByInput();
-  }
-}
 ```
 
-### Accessibility Features
+### Advanced Controller Integration
 
 ```c
-function EnableAccessibilityMode() {
-  // Always enable cursor control for accessibility
-  Cursor.SetArrowSelectEnabled(true);
+void repeatedly_execute() {
+  // The module handles this automatically, but you can customize:
   
-  // Provide visual feedback for cursor target
-  if (Cursor.HasClickTarget) {
-    ShowCursorTarget();
+  // Check if controller input is being used for movement
+  if (axisCursorX.IsMoving() || axisCursorY.IsMoving()) {
+    // Cursor will automatically unlock from walk mode
+    // and respond to analog stick input with exponential curves
   }
-}
-
-function ShowCursorTarget() {
-  // Draw a visual indicator at the cursor target
-  // This would be implemented with overlays or GUI elements
+  
+  // Monitor walk axis for intelligent cursor positioning
+  if (axisLeftHorizontal.IsPressed || axisLeftVertical.IsPressed) {
+    // Module automatically positions cursor over player when walking
+  }
 }
 ```
 
-### Smart Cursor Positioning
+### Player Clickability Management
 
 ```c
-function PositionCursorOnObject(Object* obj) {
-  // Calculate center point of object
-  Point* objCenter = Point.Create(obj.x + obj.Graphic.Width/2,
-                                 obj.y + obj.Graphic.Height/2);
-  
-  // Set as click target
-  Cursor.SetClickTarget(objCenter);
-  
-  // Move immediately if needed
-  if (Cursor.ArrowSelectEnabled) {
-    Cursor.SetMousePositionToClickTarget();
+// The module automatically manages player clickability:
+// - Player is clickable when using inventory items
+// - Player is not clickable during normal gameplay
+// This is handled automatically based on ActiveInventory state
+
+void CheckPlayerState() {
+  // This is done automatically by the module
+  if (player.ActiveInventory != null && !player.Clickable) {
+    // Module will automatically make player clickable
+  }
+  else if (player.ActiveInventory == null && player.Clickable) {
+    // Module will automatically make player non-clickable
   }
 }
 ```
+
+## Signal Integration
+
+The cursor module responds to controller connection signals:
+
+```c
+void repeatedly_execute() {
+  if (Signal.WasDispatched("controller_connected")) {
+    // Cursor automatically adjusts rate of motion
+    // and enables appropriate locking behavior
+  }
+}
+```
+
+## Constants and Configuration
+
+### Rate of Motion
+
+* **Base rate**: 8 pixels per frame
+* **Nintendo adjustment**: 60% of normal rate
+* **Screen scaling**: Automatically scales with screen width (based on 160px reference)
+
+### Button Press Tracking
+
+* **Press duration**: 6 frames
+* **Prevents rapid-fire input** during cursor movement
 
 ## Best Practices
 
-1. **Enable for menus**: Use arrow select for GUI navigation
-2. **Lock during cutscenes**: Prevent cursor movement during non-interactive sequences
-3. **Clear targets**: Always clear click targets when switching contexts
-4. **Visual feedback**: Provide visual indicators when cursor targeting is active
-5. **Input integration**: Combine with input system for consistent controls
-6. **Accessibility**: Consider enabling cursor control as an accessibility option
+1. **Let automation work**: The module handles most cursor management automatically
+2. **Use signals**: Monitor controller connection signals for UI updates
+3. **Enable for menus**: Use arrow select for GUI navigation
+4. **Clear targets**: Always clear click targets when switching contexts
+5. **Trust the locking**: The automatic locking system handles most cases
+6. **Visual feedback**: Provide visual indicators when cursor targeting is active
 
-## Controller Integration
+## Troubleshooting
 
-```c
-// Example: Set up controller cursor movement
-function SetupControllerCursor() {
-  if (Input.ControllerConnected) {
-    Cursor.SetArrowSelectEnabled(true);
-    
-    // The input system will handle controller stick input
-    // and translate it to cursor movement via MoveByInput()
-  }
-}
+### Cursor Not Responding to Controller
 
-function repeatedly_execute() {
-  // Update cursor based on controller input
-  if (Input.ControllerConnected && Cursor.ArrowSelectEnabled) {
-    Cursor.MoveByInput();
-  }
-}
-```
+* Ensure `Pulp_Input` module is properly initialized
+* Check that controller is detected: `Input.ControllerConnected`
+* Verify arrow select is enabled: `Cursor.ArrowSelectEnabled`
+
+### Cursor Moving Too Fast/Slow
+
+* Rate automatically adjusts for screen size and controller type
+* Nintendo controllers automatically get reduced sensitivity
+* Check if custom rate modifications are conflicting
+
+### Mouse Not Hiding
+
+* Module automatically manages visibility based on GUI state
+* Ensure `GUIStack` and `IsInBlockingScript` modules are working
+* Check if arrow select mode is properly enabled/disabled
