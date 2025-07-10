@@ -110,17 +110,20 @@ managed struct CharacterLayer {
   protected int characterIndex;
   protected int layeredCharacterIndex;
   protected bool visible;
+  protected int currentAnimationIndex;
 
   writeprotected int AnimationCount;
   writeprotected bool Headless;
   
   import writeprotected attribute String Name;
   import attribute bool Visible;
+  import readonly attribute CharacterAnimation* CurrentAnimation;
   
   import String get_Name();
   import void set_Name(String value);
   import bool get_Visible();
   import void set_Visible(bool value);
+  import CharacterAnimation* get_CurrentAnimation();
   
   import void Init(String name, Character* c, int layeredCharacterIndex, bool headless = 0);
   import void AddAnimation(String animationName, int view, int loop, RepeatStyle repeatStyle = eOnce, BlockingStyle blockingStyle = eNoBlock, Direction direction = eForwards, bool headless = false);
@@ -132,18 +135,18 @@ managed struct CharacterLayer {
 };
 
 managed struct LayeredCharacter {
-  protected int currentAnimationIndex;
-
   writeprotected int Index;  
   writeprotected int LayerCount;
   
   import readonly attribute CharacterLayer* Layers[];
   import readonly attribute Character* Body;
   import readonly attribute Character* Head;
+  import readonly attribute CharacterAnimation* CurrentAnimation;
   
   import CharacterLayer* geti_Layers(int index);
   import Character* get_Body();
   import Character* get_Head();
+  import CharacterAnimation* get_CurrentAnimation();
   
   import void Init(Character* body, Character* head, bool headlessBody);
   import void AddLayer(String name, Character* c);
