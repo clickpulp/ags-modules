@@ -160,6 +160,10 @@ managed struct LayeredCharacter {
   import void ChangeRoom(int room, int x = SCR_NO_VALUE, int y = SCR_NO_VALUE, CharacterDirection direction = eDirectionNone);
   import void Animate(String animationName, RepeatStyle repeatStyleOverride = -1, BlockingStyle blockingStyle = -1, Direction directionOverride = -1);
   import void StopAnimating(String layerName);
+  import void FaceCharacter(Character* toFace, BlockingStyle blockingStyle = eBlock);
+  import void FaceLocation(int x, int y, BlockingStyle blockingStyle = eBlock);
+  import void FaceObject(Object* toFace, BlockingStyle blockingStyle = eBlock);
+  import void FollowCharacter(Character* toFollow, int dist = 10, int eagerness = 97);
   import void Update();
   
   import static LayeredCharacter* Create(Character* body, Character* head, bool headlessBody);
