@@ -142,6 +142,7 @@ if (triggerValue > 0) {
 ### InputMapping Struct
 
 #### Core Methods
+
 * `AddMapping(InputMappingType type, int value)` - Add a generic mapping
 * `AddKey(eKeyCode keyCode)` - Map to a keyboard key
 * `AddMouseButton(MouseButton mouseButton)` - Map to a mouse button
@@ -150,15 +151,18 @@ if (triggerValue > 0) {
 * `AddControllerPOV(ControllerPOV pov)` - Map to controller D-pad
 
 #### Input Checking
+
 * `IsPressed(RepeatStyle style)` - Check if input is pressed
 * `GetMappedKey()` - Get the mapped keyboard key
 * `GetAxis()` - Get raw axis value for analog inputs
 * `Update()` - Update input state (called automatically)
 
 #### Management
+
 * `Delete()` - Clean up the mapping
 
 #### Properties
+
 * `Enabled` - Whether this mapping is active
 * `HasAxisMapping` - Whether this mapping includes axis input
 * `MappedKeyPressed` - Whether the mapped key is currently pressed (ignores modifiers)
@@ -171,10 +175,12 @@ if (triggerValue > 0) {
 ### AxisTracker Struct
 
 #### Methods
+
 * `Update(InputMapping* negativeInput, InputMapping* positiveInput)` - Update axis state
 * `IsMoving(RepeatStyle repeat)` - Check if axis is being moved
 
 #### Properties
+
 * `Value` - Current combined axis value
 * `InDeadZone` - Whether the axis is in the deadzone
 * `IsPressed` - Whether either input is pressed
