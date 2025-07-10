@@ -164,9 +164,12 @@ managed struct LayeredCharacter {
   import void FaceLocation(int x, int y, BlockingStyle blockingStyle = eBlock);
   import void FaceObject(Object* toFace, BlockingStyle blockingStyle = eBlock);
   import void FollowCharacter(Character* toFollow, int dist = 10, int eagerness = 97);
-  import void Update();
+  
+  import void Update(); // $AUTOCOMPLETESIGNORE$
   
   import static LayeredCharacter* Create(Character* body, Character* head, bool headlessBody);
+  
+  import static LayeredCharacter* GetAtScreenXY(int x, int y);
 };
 
 import LayeredCharacter* GetLayeredCharacter(this CharacterLayer*);
