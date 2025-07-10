@@ -30,6 +30,17 @@ See [`/docs`](./docs/README.md) for details.
 * strazer and Rui Pires (Pulp_PlayerDirectControl module based on the [KeyboardMovement module](https://www.adventuregamestudio.co.uk/forums/modules-plugins-tools/module-keyboardmovement-v1-02/))
 * Artium Nihamkin (Pulp_RoomIndex and Pulp_HintsHighlighter modules are based on [Hint Highlighting module](https://www.adventuregamestudio.co.uk/forums/modules-plugins-tools/module-hint-highlighting))
 
+## AI Assistance Disclosure
+
+This project has utilized Large Language Model (LLM) assistance for:
+
+* **Research**: Investigating best practices, algorithms, and implementation patterns
+* **Algorithmic Implementation**: Developing and optimizing code logic and data structures
+* **Code Cleanup**: Refactoring, formatting, and improving code quality and maintainability
+* **Documentation Generation**: Creating and enhancing markdown documentation, comments, and user guides
+
+While LLMs has been used as a tool to accelerate development, all code has been reviewed, tested, and validated by humans to ensure quality and functionality.
+
 ## License
 
 [MIT](./LICENSE)

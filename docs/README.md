@@ -80,3 +80,14 @@ Some modules use custom properties on your game objects. You must add these prop
 ### Post-Release Support
 
 * [`Pulp_PatchValues`](./patchvalues.md) - Change game settings after release without breaking saved games
+
+## AI Assistance Disclosure
+
+The development and documentation of these AGS modules has has used Large Language Models (LLMs) in the following areas:
+
+* **Research**: Exploring game develoment algorithms, math formulas, and best practices
+* **Algorithmic Implementation**: Designing and implementing complex game systems, input handling logic, and optimization algorithms
+* **Code Cleanup**: Improving code structure, consistency, and maintainability across all modules
+* **Documentation Generation**: Creating comprehensive user guides, API documentation, and setup instructions
+
+All LLM-generated content has been thoroughly reviewed, tested, and validated by an experienced AGS developer to ensure accuracy, functionality, and adherence to conventions.
