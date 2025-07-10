@@ -163,7 +163,10 @@ managed struct LayeredCharacter {
   import void FaceCharacter(Character* toFace, BlockingStyle blockingStyle = eBlock);
   import void FaceLocation(int x, int y, BlockingStyle blockingStyle = eBlock);
   import void FaceObject(Object* toFace, BlockingStyle blockingStyle = eBlock);
+  import void FaceCharacterL(LayeredCharacter* toFace, BlockingStyle blockingStyle = eBlock);
   import void FollowCharacter(Character* toFollow, int dist = 10, int eagerness = 97);
+  import void FollowCharacterL(LayeredCharacter* toFollow, int dist = 10, int eagerness = 97);
+  import void PlaceOnWalkableArea();
   
   import void Update(); // $AUTOCOMPLETESIGNORE$
   
