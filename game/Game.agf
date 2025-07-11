@@ -2134,8 +2134,8 @@
             <StartY>120</StartY>
             <StartingRoom>-1</StartingRoom>
             <ThinkingView>0</ThinkingView>
-            <TurnBeforeWalking>True</TurnBeforeWalking>
-            <TurnWhenFacing>True</TurnWhenFacing>
+            <TurnBeforeWalking>False</TurnBeforeWalking>
+            <TurnWhenFacing>False</TurnWhenFacing>
             <UniformMovementSpeed>True</UniformMovementSpeed>
             <UseRoomAreaLighting>True</UseRoomAreaLighting>
             <UseRoomAreaScaling>True</UseRoomAreaScaling>
@@ -5693,6 +5693,48 @@ stop
                         <Image>9</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>1</ID>
+                        <Image>27</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>2</ID>
+                        <Image>28</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>3</ID>
+                        <Image>29</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>4</ID>
+                        <Image>30</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>5</ID>
+                        <Image>31</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>6</ID>
+                        <Image>32</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
                     </Frames>
                   </Loop>
                   <Loop>
@@ -5703,7 +5745,49 @@ stop
                         <Delay>0</Delay>
                         <Flipped>False</Flipped>
                         <ID>0</ID>
-                        <Image>16</Image>
+                        <Image>15</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>1</ID>
+                        <Image>17</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>2</ID>
+                        <Image>18</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>3</ID>
+                        <Image>19</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>4</ID>
+                        <Image>20</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>5</ID>
+                        <Image>21</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>6</ID>
+                        <Image>22</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5716,7 +5800,49 @@ stop
                         <Delay>0</Delay>
                         <Flipped>True</Flipped>
                         <ID>0</ID>
-                        <Image>16</Image>
+                        <Image>15</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>1</ID>
+                        <Image>17</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>2</ID>
+                        <Image>18</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>3</ID>
+                        <Image>19</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>4</ID>
+                        <Image>20</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>5</ID>
+                        <Image>21</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>True</Flipped>
+                        <ID>6</ID>
+                        <Image>22</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5732,6 +5858,48 @@ stop
                         <Image>13</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>1</ID>
+                        <Image>47</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>2</ID>
+                        <Image>48</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>3</ID>
+                        <Image>49</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>4</ID>
+                        <Image>50</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>5</ID>
+                        <Image>51</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>6</ID>
+                        <Image>52</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
                     </Frames>
                   </Loop>
                   <Loop>
@@ -5740,9 +5908,9 @@ stop
                     <Frames>
                       <ViewFrame>
                         <Delay>0</Delay>
-                        <Flipped>False</Flipped>
+                        <Flipped>True</Flipped>
                         <ID>0</ID>
-                        <Image>10</Image>
+                        <Image>16</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5753,9 +5921,9 @@ stop
                     <Frames>
                       <ViewFrame>
                         <Delay>0</Delay>
-                        <Flipped>False</Flipped>
+                        <Flipped>True</Flipped>
                         <ID>0</ID>
-                        <Image>12</Image>
+                        <Image>14</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5766,9 +5934,9 @@ stop
                     <Frames>
                       <ViewFrame>
                         <Delay>0</Delay>
-                        <Flipped>True</Flipped>
+                        <Flipped>False</Flipped>
                         <ID>0</ID>
-                        <Image>10</Image>
+                        <Image>16</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5779,9 +5947,9 @@ stop
                     <Frames>
                       <ViewFrame>
                         <Delay>0</Delay>
-                        <Flipped>True</Flipped>
+                        <Flipped>False</Flipped>
                         <ID>0</ID>
-                        <Image>12</Image>
+                        <Image>14</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
@@ -5892,6 +6060,60 @@ stop
                         <Flipped>False</Flipped>
                         <ID>0</ID>
                         <Image>46</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                    </Frames>
+                  </Loop>
+                </Loops>
+              </View>
+              <View>
+                <ID>4</ID>
+                <Name>ROGER_POSE</Name>
+                <Loops>
+                  <Loop>
+                    <ID>0</ID>
+                    <RunNextLoop>False</RunNextLoop>
+                    <Frames>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>0</ID>
+                        <Image>23</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>1</ID>
+                        <Image>24</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>2</ID>
+                        <Image>25</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>3</ID>
+                        <Image>26</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>4</ID>
+                        <Image>33</Image>
+                        <Sound>0</Sound>
+                      </ViewFrame>
+                      <ViewFrame>
+                        <Delay>0</Delay>
+                        <Flipped>False</Flipped>
+                        <ID>5</ID>
+                        <Image>34</Image>
                         <Sound>0</Sound>
                       </ViewFrame>
                     </Frames>
