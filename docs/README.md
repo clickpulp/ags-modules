@@ -44,7 +44,7 @@ Some modules use custom properties on your game objects. You must add these prop
 
 ### Essential Foundation
 
-* `PulpGlobals` - Shared settings that help all modules work together
+* [`PulpGlobals`](./pulpglobals.md) - Shared settings that help all modules work together, plus debug logging utilities
 * [`Pulp_Signal`](./signal.md) - Lets different parts of your game talk to each other easily
 * [`Pulp_Extenders`](./extenders.md) - Adds useful new abilities to AGS objects (like better mouse handling)
 * [`Pulp_Rect`](./rect.md) - Tools for working with rectangular areas (collision detection, UI layout)

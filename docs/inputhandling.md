@@ -30,7 +30,9 @@ This module requires:
 * **Automatic input translation**: Converts gamepad/keyboard input to mouse actions
 * **Signal-based communication**: Dispatches events for menu actions, inventory, etc.
 * **GUI integration**: Works seamlessly with the GUI stack system
-* **Dialog support**: Special handling for dialog navigation
+* **Dialog support**: Special handling for dialog navigation with per-key debouncing
+* **Smart inventory scrolling**: Automatically skips items marked as "InstantUse"
+* **Improved debouncing**: Per-key debouncing prevents accidental repeated inputs while allowing different keys to work independently
 
 ## How It Works
 
@@ -105,18 +107,22 @@ The module processes these input mappings from [`Pulp_InputMappings`](inputmappi
 ### GUI State (when GUIs are visible)
 
 * `inputPrimaryButton` → Left mouse click
-* `inputSecondaryButton` → Close inventory or pop GUI from stack
+* `inputSecondaryButton` → Close inventory if it's the top GUI, or pop GUI from stack
 * `inputExamineButton` → Right click (in inventory) or left click
 * `inputInvButton` → Toggle inventory (if not in main menu)
 * `inputSkipOrPauseButton` → Show/hide main menu
 * Other inputs → Move cursor
 
+**Note**: Secondary button now checks if inventory is the **top GUI** (using `GUIStack.TopGUI`) rather than just checking if it's visible, preventing conflicts with nested GUIs.
+
 ### Dialog State
 
 * `inputPrimaryButton` → Left mouse click
-* `inputSecondaryButton` → Left mouse click  
+* `inputSecondaryButton` → Left mouse click
 * `inputExamineButton` → Left mouse click
-* `inputUp/inputDown` → Simulate arrow key presses for dialog navigation
+* `inputUp/inputDown` → Simulate arrow key presses for dialog navigation (with per-key debouncing)
+
+**Per-Key Debouncing**: Each navigation key (up/down) is tracked separately, so you can press up multiple times without the down key interfering, and vice versa. This provides responsive dialog navigation while preventing accidental double-inputs.
 
 ### Blocking Script State (cutscenes, etc.)
 
@@ -132,7 +138,9 @@ The module processes these input mappings from [`Pulp_InputMappings`](inputmappi
 * `inputExamineButton` → Right click or toggle hints
 * `inputSkipOrPauseButton` → Show main menu
 * `inputInvButton` → Toggle inventory
-* `inputPrevPage/inputNextPage` → Scroll through inventory items
+* `inputPrevPage/inputNextPage` → Scroll through inventory items (skips items with "InstantUse" property set)
+
+**Smart Inventory Scrolling**: When scrolling through inventory with prev/next page buttons, the module automatically skips items that have the "InstantUse" custom property set to true. This is useful for items that are automatically consumed and shouldn't be selectable as active inventory.
 
 ## Signals Dispatched
 
@@ -196,6 +204,49 @@ void repeatedly_execute() {
 ## Technical Notes
 
 * The module automatically detects game state using `IsInBlockingScript()` and other checks
-* Input timing is managed internally to prevent rapid-fire actions
+* **Per-key debouncing** (8 frames): Each key is tracked separately to prevent rapid-fire while allowing different keys to work independently
 * Mouse position and clicking is handled automatically based on cursor state
 * Dialog navigation uses simulated key presses for compatibility with AGS dialog system
+* Inventory scrolling respects the "InstantUse" custom property on inventory items
+* GUI state checking now uses `GUIStack.TopGUI` for more accurate context detection
+
+## Advanced Features
+
+### Per-Key Debouncing
+
+The module implements sophisticated debouncing that tracks each key separately:
+
+```c
+// Traditional debouncing (old approach):
+// If ANY button was just pressed, ignore ALL button presses
+// Problem: Can't press different buttons in quick succession
+
+// Per-key debouncing (current approach):
+// Track each key separately
+// You can press Up, then quickly press Down, and both work
+// But pressing Up twice rapidly is debounced
+
+// This provides:
+// - Responsive input for different actions
+// - Prevention of accidental double-presses
+// - Better feel for dialog navigation
+```
+
+### InstantUse Item Handling
+
+For inventory items that should be automatically consumed:
+
+```c
+// In AGS Editor, add a custom property to InventoryItems:
+// - Property name: "InstantUse"
+// - Property type: Boolean
+// - Set to true for items that shouldn't be selectable
+
+// Examples of InstantUse items:
+// - Keys that automatically unlock doors
+// - Coins that automatically add to wallet
+// - Food that's immediately consumed
+
+// When scrolling with inputPrevPage/inputNextPage,
+// these items are automatically skipped
+```

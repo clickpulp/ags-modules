@@ -46,6 +46,24 @@ jumpInput.AddControllerButton(eControllerA); // A button on gamepad
 jumpInput.Enabled = true;
 ```
 
+### Remapping Controls
+
+You can clear and reconfigure input mappings at runtime:
+
+```c
+// Clear all current mappings
+jumpInput.ClearMappings();
+
+// Add new mappings based on user preference
+if (useAlternateControls) {
+  jumpInput.AddKey(eKeyW);
+  jumpInput.AddControllerButton(eControllerX);
+} else {
+  jumpInput.AddKey(eKeySpace);
+  jumpInput.AddControllerButton(eControllerA);
+}
+```
+
 ### Using the Controls in Your Game
 
 ```c
@@ -69,12 +87,15 @@ if (Input.ControllerConnected) {
   // Adjust UI based on controller type
   if (Input.ControllerType == eControllerTypeXbox) {
     lblButtonPrompt.Text = "Press A to continue";
-  } 
+  }
   else if (Input.ControllerType == eControllerTypePlayStation) {
     lblButtonPrompt.Text = "Press X to continue";
-  } 
+  }
   else if (Input.ControllerType == eControllerTypeNintendo) {
     lblButtonPrompt.Text = "Press B to continue";
+  }
+  else if (Input.ControllerType == eControllerTypeSteamDeck) {
+    lblButtonPrompt.Text = "Press A to continue";
   }
 }
 
@@ -159,6 +180,7 @@ if (triggerValue > 0) {
 
 #### Management
 
+* `ClearMappings()` - Remove all mappings from this input (resets to empty state)
 * `Delete()` - Clean up the mapping
 
 #### Properties
@@ -199,9 +221,10 @@ if (triggerValue > 0) {
 ### InputControllerType Enum
 
 * `eControllerTypeNone` - No controller
-* `eControllerTypeXbox` - Xbox controller (starts with "Xbox")
-* `eControllerTypePlayStation` - PlayStation controller (starts with "PS" or "DualSense")
-* `eControllerTypeNintendo` - Nintendo controller (starts with "Nintendo")
+* `eControllerTypeXbox` - Xbox controller (name contains "Xbox")
+* `eControllerTypePlayStation` - PlayStation controller (name starts with "PS" or "DualSense")
+* `eControllerTypeNintendo` - Nintendo controller (name contains "Nintendo", "Joy-Con", or "Switch Pro")
+* `eControllerTypeSteamDeck` - Steam Deck controller (name starts with "Steam")
 * `eControllerTypeUnknown` - Unknown/unrecognized controller type
 
 ### InputMappingAxisDirection Enum
@@ -299,9 +322,11 @@ void LogControllerInfo() {
 3. **Handle controller events**: Listen for connection/disconnection signals to update UI
 4. **Use appropriate repeat styles**: Use `eOnce` for actions that should only trigger once per press
 5. **Respect deadzone**: Use AxisTracker for analog input to get proper deadzone handling
-6. **Clean up**: Call `Delete()` on mappings when no longer needed
+6. **Clean up**: Call `Delete()` on mappings when no longer needed, or use `ClearMappings()` to reconfigure
 7. **Check axis properties**: Use `InDeadZone` and `IsMovingByAxis` for better analog handling
-8. **Test controller types**: Different controllers may need different UI prompts
+8. **Test controller types**: Different controllers may need different UI prompts (Xbox, PlayStation, Nintendo, Steam Deck)
+9. **Controller detection**: The module automatically detects when controllers are plugged/unplugged - listen for signals
+10. **Remapping support**: Use `ClearMappings()` to allow players to customize their controls
 
 ## Integration Examples
 

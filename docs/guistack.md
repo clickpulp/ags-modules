@@ -11,6 +11,8 @@ This module makes nested menus work smoothly, like going from Main Menu → Opti
 * Players expect the back button to work consistently
 * You don't have to manually track which menu to return to
 * Gamepad users get their cursor positioned correctly when returning to previous menus
+* Previous GUIs can stay visible but non-clickable (useful for overlay dialogs)
+* Automatic mouse history management when navigating with controller
 
 ## Dependencies
 
@@ -95,7 +97,9 @@ if (gMainMenu.IsInStack()) {}
 
 * `Push(GUIControl* controlToFocus, bool closePreviousGUI, bool withOverlay)` - Push this GUI onto the stack
   * `controlToFocus` (optional) - Control to position cursor on
-  * `closePreviousGUI` (optional, default false) - Whether to hide the previous GUI
+  * `closePreviousGUI` (optional, default false) - Whether to hide the previous GUI completely
+    * **If false** (default): Previous GUI remains visible but becomes non-clickable (useful for dialogs over menus)
+    * **If true**: Previous GUI is completely hidden
   * `withOverlay` (optional, default true) - Whether to show with overlay effect
 * `Pop()` - Remove this GUI from the stack if it's currently on top
 * `IsInStack()` - Check if this GUI is anywhere in the stack
@@ -144,13 +148,16 @@ void ShowInventory() {
 }
 
 void ShowDialogBox() {
-  // Show dialog with overlay, keeping previous GUI visible
+  // Show dialog with overlay, keeping previous GUI visible but non-clickable
+  // Perfect for confirmation dialogs over menus
   gDialog.Push(btnDialogOK, false, true);
+  // Previous GUI stays visible but can't be clicked until dialog is closed
 }
 
 void ShowFullScreenMenu() {
   // Show menu and hide previous GUI completely
   gMainMenu.Push(btnContinue, true);
+  // Previous GUI is completely hidden (not just non-clickable)
 }
 
 void HandleEscapeKey() {
@@ -190,8 +197,10 @@ void HandleInventoryToggle() {
 1. **Consistent cursor positioning**: Always specify a control when pushing GUIs for better UX
 2. **Handle edge cases**: Check `ShowingGUI` before pushing to avoid unexpected behavior
 3. **Signal handling**: Listen for GUI stack signals to update game state appropriately
-4. **Memory management**: The stack automatically manages GUI visibility - don't manually show/hide
+4. **Memory management**: The stack automatically manages GUI visibility and clickability - don't manually modify these
 5. **Deep navigation**: Use `PopAllGUIs()` with a target GUI for complex menu hierarchies
+6. **Overlay dialogs**: Use `closePreviousGUI=false` for dialog boxes that should appear over the current menu
+7. **Mouse history**: The module automatically manages mouse position history for controller users - no manual handling needed
 
 ## Integration Example
 
@@ -270,4 +279,68 @@ void btnSave_OnClick(GUIControl *control, MouseButton button) {
 void btnLoad_OnClick(GUIControl *control, MouseButton button) {
   gLoadGame.Push(btnLoadSlot1, true); // Hide main menu
 }
+```
+
+## Advanced Features
+
+### Automatic Clickability Management
+
+When pushing a new GUI, the previous GUI's clickability is automatically managed:
+
+```c
+// When you push a new GUI:
+gOptionsMenu.Push(btnVideoSettings, false); // closePreviousGUI = false
+
+// The previous GUI (e.g., Main Menu) will:
+// - Remain visible (not hidden)
+// - Become non-clickable (Clickable = false)
+// - Prevent accidental clicks while the new GUI is active
+
+// When you pop the current GUI:
+GUIStack.PopGUI();
+
+// The previous GUI will:
+// - Become clickable again (Clickable = true)
+// - Be ready for interaction
+```
+
+### Mouse History for Controller Users
+
+The module automatically manages mouse position history for controller users:
+
+```c
+// When pushing a GUI with a control to focus:
+gMainMenu.Push(btnContinue); // Controller connected
+
+// The module automatically:
+// 1. Saves current mouse position to history
+// 2. Moves mouse to the btnContinue control
+// 3. Tracks that history was pushed for this GUI
+
+// When popping the GUI:
+GUIStack.PopGUI();
+
+// The module automatically:
+// 1. Restores mouse to previous position
+// 2. Cleans up history stack
+// 3. Only if controller is still connected
+
+// No manual Mouse.PushHistory() or Mouse.PopHistory() needed!
+```
+
+### Debug Logging
+
+In DEBUG mode, the module logs all GUI stack operations:
+
+```c
+// All operations are logged via PulpLog():
+// - "[GUIStack] Opened GUI gMainMenu (5)"
+// - "[GUIStack] Closed GUI gOptions (8)"
+
+// This helps debug:
+// - GUI stack state issues
+// - Mouse history problems
+// - Unexpected GUI behavior
+
+// View logs in: $SAVEGAMEDIR$/pulp-<timestamp>.log (Windows only)
 ```

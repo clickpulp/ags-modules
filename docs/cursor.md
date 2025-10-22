@@ -80,6 +80,23 @@ if (Cursor.Locked) {
 Cursor.SetLocked(false);
 ```
 
+### Cursor Speed Control
+
+```c
+// Set cursor speed (10 = slowest, 70 = fastest, default 40)
+Cursor.SetSpeed(50);
+
+// Check current speed
+int currentSpeed = Cursor.Speed;
+
+// Adjust based on user preference
+if (player.HasPreference("FastCursor")) {
+  Cursor.SetSpeed(60);
+} else {
+  Cursor.SetSpeed(40);
+}
+```
+
 ### Input-Based Movement
 
 ```c
@@ -95,6 +112,7 @@ Cursor.MoveByInput();
 * `HasClickTarget` (readonly) - Whether a click target is currently set
 * `Locked` (readonly) - Whether the cursor is locked from movement
 * `ArrowSelectEnabled` (readonly) - Whether arrow select controls are enabled
+* `Speed` (readonly) - Current cursor speed setting (10-70)
 
 ### Cursor Methods
 
@@ -103,6 +121,7 @@ Cursor.MoveByInput();
 * `ClearClickTarget()` - Remove the current click target
 * `SetMousePositionToClickTarget()` - Move mouse to the set click target
 * `SetLocked(bool locked)` - Lock/unlock cursor movement
+* `SetSpeed(int value)` - Set cursor movement speed (10-70, default 40)
 * `MoveByInput()` - Move cursor based on current input state
 
 ## Automatic Features
@@ -127,10 +146,13 @@ The cursor intelligently locks and unlocks based on:
 
 ### Controller Optimization
 
-* **Nintendo controller support** - Reduced sensitivity (60% of normal rate)
-* **Exponential response curves** - More precise control at low inputs
-* **Adaptive rate scaling** - Adjusts based on screen resolution
+* **Configurable cursor speed** - Adjust from 10 (slowest) to 70 (fastest), default 40
+* **Nintendo controller support** - Automatically reduced to 60% of set speed for better feel
+* **Exponential response curves** - More precise control at low inputs with smooth acceleration
+* **Adaptive rate scaling** - Adjusts based on screen resolution and controller type
 * **Deadzone handling** - Proper analog stick deadzone management
+* **Per-direction debouncing** - Prevents rapid repeated inputs in the same direction
+* **Automatic room locking** - Cursor locks when entering rooms with controller connected
 
 ## Integration Examples
 
@@ -244,16 +266,18 @@ void repeatedly_execute() {
 
 ## Constants and Configuration
 
-### Rate of Motion
+### Cursor Speed
 
-* **Base rate**: 8 pixels per frame
-* **Nintendo adjustment**: 60% of normal rate
+* **Default speed**: 40 (adjustable from 10-70)
+* **Speed calculation**: Uses float precision for smooth movement
+* **Nintendo adjustment**: Automatically reduced to 60% of set speed
 * **Screen scaling**: Automatically scales with screen width (based on 160px reference)
 
 ### Button Press Tracking
 
-* **Press duration**: 6 frames
-* **Prevents rapid-fire input** during cursor movement
+* **Press duration**: 8 frames
+* **Per-direction debouncing**: Tracks each direction separately to prevent rapid-fire
+* **Prevents accidental repeated input** during cursor movement
 
 ## Best Practices
 
