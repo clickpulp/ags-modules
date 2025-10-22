@@ -182,7 +182,12 @@ void repeatedly_execute() {
     btnPause.Text = "Skip";
     btnPause.Enabled = IsSkippable();
   } else {
-    btnPause.Text = gamePaused ? "Resume" : "Pause";
+    if (gamePaused) {
+      btnPause.Text = "Resume";
+    }
+    else {
+      btnPause.Text = "Pause";
+    }
     btnPause.Enabled = true;
   }
 }
