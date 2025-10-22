@@ -2,7 +2,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2024 Clickpulp, LLC
+// Copyright (c) 2024-2025 Clickpulp, LLC
 // Portions (c) 2018 Artium Nihamkin, artium@nihamkin.com
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy

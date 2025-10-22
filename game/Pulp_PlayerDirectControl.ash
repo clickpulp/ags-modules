@@ -2,7 +2,7 @@
 //
 // MIT License
 //
-// Copyright (c) 2024 Clickpulp, LLC
+// Copyright (c) 2024-2025 Clickpulp, LLC
 // Portions derived from the AGS KeyboardControl module by strazer and Rui Pires
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
