@@ -34,4 +34,6 @@ game28.dta
 warnings.log
 
 # Project specific
+.ags/
 .cursor/
+CLAUDE.md
