@@ -24,6 +24,21 @@ This module requires:
 * `PulpGlobals` - For accessing main menu and inventory GUIs
 * `arrowselect` - For arrow-based navigation support
 
+## ⚠️ CRITICAL: Required Custom Property Setup
+
+**WARNING: This property MUST be defined in your AGS project BEFORE using inventory scrolling, or your game will crash!**
+
+The module reads a custom property from inventory items to determine which should be skipped during scrolling:
+
+1. **In AGS Editor, go to the Properties section**
+2. **Add this custom property for Inventory Items:**
+
+**For Inventory Items:**
+
+* `InstantUse` (bool) - Mark items that are automatically consumed (keys, coins, consumables)
+
+**Important:** This property must exist even if you don't set it on any items. The module will crash when it tries to read an undefined property. Items with `InstantUse = true` will be skipped when using prev/next page buttons.
+
 ## Key Features
 
 * **Context-aware input handling**: Different input behaviors for different game states
