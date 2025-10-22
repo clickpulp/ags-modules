@@ -6476,10 +6476,10 @@ stop
                 <ScriptAndHeader_Script>
                   <Script>
                     <FileName>PulpGlobals.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
+                    <Name>PulpGlobals</Name>
+                    <Description>Global configuration for Clickpulp modules</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
                     <Key>1166588251</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6548,10 +6548,10 @@ stop
                 <ScriptAndHeader_Script>
                   <Script>
                     <FileName>Pulp_Rect.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
+                    <Name>Rect</Name>
+                    <Description>Rect struct</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
                     <Key>1599911123</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6623,7 +6623,7 @@ stop
                     <Name>CutsceneHelpers</Name>
                     <Description>Helper and extender functions to use in cut-scenes</Description>
                     <Author>Clickpulp, LLC</Author>
-                    <Version>0.1.0</Version>
+                    <Version>1.0.0</Version>
                     <Key>305803183</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6692,10 +6692,10 @@ stop
                 <ScriptAndHeader_Script>
                   <Script>
                     <FileName>Pulp_Tooltip.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
+                    <Name>Tooltip</Name>
+                    <Description>Display a tooltip in part of the screen</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
                     <Key>1198489960</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6719,7 +6719,7 @@ stop
                     <Name>Input Mappings</Name>
                     <Description>Input mapping object configuration and exports</Description>
                     <Author>Clickpulp, LLC</Author>
-                    <Version />
+                    <Version>1.0.0</Version>
                     <Key>1361956071</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6839,10 +6839,10 @@ See KeyboardMovement.txt for details.
                 <ScriptAndHeader_Script>
                   <Script>
                     <FileName>Pulp_RoomIndex.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
+                    <Name>RoomIndexer</Name>
+                    <Description>Gathers all the information about a room into an index</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
                     <Key>1660818492</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
@@ -6887,10 +6887,10 @@ See KeyboardMovement.txt for details.
                 <ScriptAndHeader_Script>
                   <Script>
                     <FileName>Pulp_PlayerCollision.asc</FileName>
-                    <Name />
-                    <Description />
-                    <Author />
-                    <Version />
+                    <Name>PlayerCollision</Name>
+                    <Description>Controls player collision when moving directly with input</Description>
+                    <Author>Clickpulp, LLC</Author>
+                    <Version>1.0.0</Version>
                     <Key>1727395623</Key>
                     <IsHeader>False</IsHeader>
                   </Script>
