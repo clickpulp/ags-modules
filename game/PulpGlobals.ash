@@ -31,3 +31,6 @@ struct PulpGlobals {
 
 import PulpGlobals pulpGlobals;
 
+/// [PulpGlobals] Logs message to level and to $SAVEGAMEDIR$/pulp-<game_start_time>.log
+import void PulpLog(LogLevel level, const string message);
+

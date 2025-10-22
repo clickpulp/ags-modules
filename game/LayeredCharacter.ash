@@ -82,13 +82,17 @@ function room_EnterAfterFadeIn() {
 #define LC_MAX_KEYFRAMES_PER_LAYER 32
 
 managed struct Keyframe {
-  int X;
-  int Y; 
+  readonly int X;
+  readonly int Y; 
+  readonly int Frame;
+
+  import void Init(int x, int y, int frame);
   
-  import Keyframe*[] List1(int x, int y);
+  import Keyframe*[] List1(int x, int y, int frame);
 };
 
 managed struct CharacterAnimation {
+  
   protected int nameIndex;
 
   writeprotected int View;
@@ -105,7 +109,6 @@ managed struct CharacterAnimation {
 };
 
 managed struct CharacterLayer {
-  protected int keyframeIndices[LC_MAX_KEYFRAMES_PER_LAYER];
   protected int nameIndex;
   protected int characterIndex;
   protected int layeredCharacterIndex;

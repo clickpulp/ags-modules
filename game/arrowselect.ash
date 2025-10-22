@@ -45,6 +45,7 @@
 #define __ARROWSELECT_MODULE__
 
 #define ARROWSELECT_MAX_INTERACTIVES 128
+#define ARROWSELECT_DEFAULT_SPREAD_ANGLE 90
 
 enum InteractiveFilter{
   eI_FilterOut=0, 
@@ -94,7 +95,7 @@ struct ArrowSelect
   import static void filterInteractiveType(InteractiveType interactiveType, InteractiveFilter filter=0);
   
   /// Returns a Triangle instance with one point at the origin points and the two other points separated by spreadAngle, and at the direction angle
-  import static Triangle* triangleFromOriginAngleAndDirection(Point* origin, int direction, int spreadAngle=90);
+  import static Triangle* triangleFromOriginAngleAndDirection(Point* origin, int direction, int spreadAngle=ARROWSELECT_DEFAULT_SPREAD_ANGLE);
 
   /// Retuns the distance between an interactive and a point.
   import static int distanceInteractivePoint(Interactive* s, Point* a);

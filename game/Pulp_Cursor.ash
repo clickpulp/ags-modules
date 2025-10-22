@@ -34,6 +34,9 @@ struct Cursor {
   /// Is it locked?
   import static readonly attribute bool Locked;
   
+  // Cursor Speed
+  import static readonly attribute int Speed;
+  
   /// Wether the cursor can be moved with the arrow select system using the left arrow controls
   import static readonly attribute bool ArrowSelectEnabled;
   
@@ -54,6 +57,9 @@ struct Cursor {
   
   /// Move to next object by input press
   import static void MoveByInput();
+  
+  /// Updates the cursor speed (1-99)
+  import static void SetSpeed(int value);
 };
 
 #endif // __CURSOR_MODULE__

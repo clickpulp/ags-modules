@@ -86,6 +86,7 @@ managed struct InputMapping {
   import void Update(); // $AUTOCOMPLETEIGNORE$
   import void Delete();
   
+  import void ClearMappings();
   import void AddMapping(InputMappingType type, int value);
   import void AddKey(eKeyCode keyCode);
   import void AddMouseButton(MouseButton mouseButton);
